@@ -69,8 +69,8 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.txtInterestRate = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtInterestRate = new DevExpress.XtraEditors.TextEdit();
             this.cboFrequencyOfPayment = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBorrowerCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
@@ -374,6 +374,7 @@
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(737, 144);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barSaveAndClose
             // 
@@ -482,6 +483,14 @@
             this.xtraScrollableControl1.TabIndex = 15;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
             // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(298, 320);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(113, 13);
+            this.labelControl8.TabIndex = 32;
+            this.labelControl8.Text = "Frequency of Payment:";
+            // 
             // txtInterestRate
             // 
             this.txtInterestRate.EditValue = "0.00";
@@ -490,14 +499,6 @@
             this.txtInterestRate.Name = "txtInterestRate";
             this.txtInterestRate.Size = new System.Drawing.Size(100, 20);
             this.txtInterestRate.TabIndex = 25;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(298, 320);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(113, 13);
-            this.labelControl8.TabIndex = 32;
-            this.labelControl8.Text = "Frequency of Payment:";
             // 
             // cboFrequencyOfPayment
             // 

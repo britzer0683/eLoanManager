@@ -30,6 +30,7 @@ namespace eLoanSystem.Transaction
 
             dt.Columns.Add("RefLoanNo", typeof(string));
             dt.Columns.Add("ScheduleNo", typeof(string));
+            dt.Columns.Add("DueDate", typeof(DateTime));
             dt.Columns.Add("CardCode", typeof(string));
             dt.Columns.Add("CardName", typeof(string));
             dt.Columns.Add("LoanAmount", typeof(double));
@@ -100,6 +101,7 @@ namespace eLoanSystem.Transaction
         private void CashFundRelease_Load(object sender, EventArgs e)
         {
             InitializeLineItems();
+            BindGuarantor();
 
             txtCreatedBy.Text = this.ActiveUserID;
             txtModifiedBy.Text = this.ActiveUserID;
@@ -113,6 +115,8 @@ namespace eLoanSystem.Transaction
 
             gridControl1.DataSource = this.LineItems;
             gridControl1.Refresh();
+
+            gridView1.AddNewRow();
         }
 
         private void textEdit5_EditValueChanged(object sender, EventArgs e)
@@ -175,12 +179,18 @@ namespace eLoanSystem.Transaction
             oAdapter.Fill(dt);
 
             oConnection.Close();
-            cboDueDate.Columns.Clear();
-            
-            cboDueDate.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ScheduleNo", 100, "#"));
-            cboDueDate.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DueDate", 100, "Due Date"));
 
-            cboDueDate.DataSource = dt;
+
+
+            //DevExpress.XtraEditors.LookUpEdit oLookUp = cboDueDate.OwnerEdit;
+            //oLookUp = new DevExpress.XtraEditors.LookUpEdit();
+            //oLookUp.Properties.Columns.Clear();
+            //oLookUp.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ScheduleNo"));
+            //oLookUp.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DueDate"));
+
+            //oLookUp.Properties.DataSource = dt;
+            //oLookUp.Refresh();
+
 
             
         }
@@ -188,16 +198,95 @@ namespace eLoanSystem.Transaction
         private void txtLoanNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DevExpress.XtraEditors.TextEdit txt_LoanNum = new DevExpress.XtraEditors.TextEdit();
+            int iFocusedRowIndex = gridView1.FocusedRowHandle;
             findLoan oForm = new findLoan();
 
+            if (cboGuarantorFinancer.EditValue == null)
+            {
+                MessageBox.Show("Please select guarantor before adding documents!!!", "Guarantor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             oForm.ConnectionString = this.ConnectionString;
+            oForm.Guarantor = cboGuarantorFinancer.Text;
             oForm.ShowDialog();
 
             if (oForm.DocumentNo != null)
             {
-                txt_LoanNum.Text = oForm.DocumentNo;
-                BindDueLoans(txt_LoanNum.Text);
+                //txt_LoanNum.Text = oForm.DocumentNo;
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["RefLoanNo"], oForm.DocumentNo);
+
+                SqlConnection oConnection = new SqlConnection();
+                SqlCommand oCommand = new SqlCommand();
+                SqlDataAdapter oAdapter = new SqlDataAdapter();
+
+                DataTable dt = new DataTable();
+
+                oConnection.ConnectionString = this.ConnectionString;
+                oConnection.Open();
+
+                oCommand.Connection = oConnection;
+                oCommand.CommandText = "select * from OLOAN WHERE DocNum=@DocNum";
+                oCommand.Parameters.Add(new SqlParameter("@DocNum", oForm.DocumentNo));
+                oAdapter.SelectCommand = oCommand;
+                oAdapter.Fill(dt);
+
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["CardCode"], dt.Rows[0]["CardCode"].ToString());
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["CardName"], dt.Rows[0]["CardName"].ToString());
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["LoanAmount"], dt.Rows[0]["LoanAmount"].ToString());
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["ReferenceDocument"], "N/A");
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["ReceivedAmount"], 0);
+                gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocStatus"], "Released");
+
+                oConnection.Close();
+
             }
         }
+        void BindGuarantor()
+        {
+            GuarantorFinancerManager oManager = new GuarantorFinancerManager();
+            DataTable dtGuarantor = new DataTable();
+
+            oManager.ConnectionString = this.ConnectionString;
+            oManager.Open();
+
+            dtGuarantor = oManager.GetGuarantorInfo();
+
+            oManager.Close();
+
+            cboGuarantorFinancer.Properties.DataSource = dtGuarantor;
+            cboGuarantorFinancer.Properties.DisplayMember = "GuarantorFinancerName";
+            cboGuarantorFinancer.Properties.ValueMember = "GuarantorFinancerCode";
+
+            DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
+
+            col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GuarantorFinancerCode", "Code", 100);
+
+            cboGuarantorFinancer.Properties.Columns.Add(col);
+
+            col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GuarantorFinancerName", "Name", 100);
+
+            cboGuarantorFinancer.Properties.Columns.Add(col);
+
+            cboGuarantorFinancer.Refresh();
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                if (gridView1.IsLastRow)
+                {
+                    int iFocusedRowIndex = gridView1.FocusedRowHandle;
+                    string sLoanNo = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["RefLoanNo"]).ToString();
+
+                    if (sLoanNo != "")
+                    {
+                        gridView1.AddNewRow();
+                    }
+                }
+            }
+        }
+      
     }
 }

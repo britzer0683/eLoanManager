@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eLoanMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject42 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject41 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject43 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject44 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colInterval = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +51,7 @@
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barNewMenu = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barNewCashFundRelease = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
@@ -65,11 +65,14 @@
             this.colDocNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtLoanNo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -88,27 +91,6 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnRefreshCashReleased = new DevExpress.XtraEditors.SimpleButton();
-            this.dtCFREndDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dtCFRStartDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.backstageViewClientControl4 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.grdCtlEmployersInfo = new DevExpress.XtraGrid.GridControl();
-            this.grdViewEmployersInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewClientControl6 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.grdCtlBorrowerInfo = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -140,12 +122,33 @@
             this.colEmpContact = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmpEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.backstageViewClientControl10 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.btnRefreshCashReleased = new DevExpress.XtraEditors.SimpleButton();
+            this.dtCFREndDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtCFRStartDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.backstageViewClientControl4 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.grdCtlEmployersInfo = new DevExpress.XtraGrid.GridControl();
+            this.grdViewEmployersInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.backstageViewTabItem10 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewItemSeparator1 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
+            this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewTabItem3 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewTabItem4 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
-            this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewItemSeparator2 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
             this.backstageViewTabItem5 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewTabItem6 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
@@ -190,9 +193,6 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.tabLoans = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -211,18 +211,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtPaymentStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            this.backstageViewClientControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            this.backstageViewClientControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).BeginInit();
             this.backstageViewClientControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCtlBorrowerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
@@ -236,6 +224,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardCode)).BeginInit();
             this.backstageViewClientControl10.SuspendLayout();
+            this.backstageViewClientControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            this.splitContainerControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            this.backstageViewClientControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -275,7 +275,7 @@
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.MenuManager = this.ribbonControl1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(812, 575);
+            this.gridControl1.Size = new System.Drawing.Size(812, 571);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2,
@@ -310,7 +310,7 @@
             this.barButtonItem24,
             this.barNewMenu,
             this.barButtonItem17,
-            this.barButtonItem18,
+            this.barNewCashFundRelease,
             this.barButtonItem23,
             this.barButtonItem25,
             this.barButtonItem26});
@@ -392,7 +392,7 @@
             this.barNewMenu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewMenu.LargeGlyph")));
             this.barNewMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem17),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem18, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barNewCashFundRelease, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem23),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem25, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem26)});
@@ -407,13 +407,14 @@
             this.barButtonItem17.Name = "barButtonItem17";
             this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
             // 
-            // barButtonItem18
+            // barNewCashFundRelease
             // 
-            this.barButtonItem18.Caption = "Cash/Fund Release";
-            this.barButtonItem18.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.Glyph")));
-            this.barButtonItem18.Id = 15;
-            this.barButtonItem18.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.LargeGlyph")));
-            this.barButtonItem18.Name = "barButtonItem18";
+            this.barNewCashFundRelease.Caption = "Cash/Fund Release";
+            this.barNewCashFundRelease.Glyph = ((System.Drawing.Image)(resources.GetObject("barNewCashFundRelease.Glyph")));
+            this.barNewCashFundRelease.Id = 15;
+            this.barNewCashFundRelease.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewCashFundRelease.LargeGlyph")));
+            this.barNewCashFundRelease.Name = "barNewCashFundRelease";
+            this.barNewCashFundRelease.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNewCashFundRelease_ItemClick);
             // 
             // barButtonItem23
             // 
@@ -470,13 +471,13 @@
             this.backstageViewControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow;
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl11);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl2);
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl3);
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl4);
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl5);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl6);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl7);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl8);
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl10);
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl5);
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl3);
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl4);
             this.backstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem10);
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem2);
@@ -562,7 +563,7 @@
             // 
             this.txtLoanNo.AutoHeight = false;
             this.txtLoanNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject42, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.txtLoanNo.Name = "txtLoanNo";
             this.txtLoanNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtLoanNo_ButtonClick);
             // 
@@ -572,6 +573,14 @@
             this.gridColumn2.FieldName = "CardCode";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "Guarantor";
+            this.gridColumn26.FieldName = "Guarrantor";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -632,6 +641,30 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CashReleased", "{0:N}")});
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 6;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Total Collection";
+            this.gridColumn27.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn27.FieldName = "TotalCollection";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalCollection", "{0:N}")});
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 7;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "Outstanding Balance";
+            this.gridColumn28.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn28.FieldName = "OutstandingBalance";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OutstandingBalance", "{0:N}")});
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 8;
             // 
             // gridColumn7
             // 
@@ -837,6 +870,307 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPayment", "{0:N}")});
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 7;
+            // 
+            // backstageViewClientControl6
+            // 
+            this.backstageViewClientControl6.Controls.Add(this.grdCtlBorrowerInfo);
+            this.backstageViewClientControl6.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl6.Name = "backstageViewClientControl6";
+            this.backstageViewClientControl6.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl6.TabIndex = 6;
+            // 
+            // grdCtlBorrowerInfo
+            // 
+            this.grdCtlBorrowerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdCtlBorrowerInfo.Location = new System.Drawing.Point(0, 0);
+            this.grdCtlBorrowerInfo.MainView = this.gridView3;
+            this.grdCtlBorrowerInfo.Name = "grdCtlBorrowerInfo";
+            this.grdCtlBorrowerInfo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.txtBorrowerCode});
+            this.grdCtlBorrowerInfo.Size = new System.Drawing.Size(812, 571);
+            this.grdCtlBorrowerInfo.TabIndex = 3;
+            this.grdCtlBorrowerInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colType,
+            this.BorrowerCode,
+            this.colLastName,
+            this.colFirstName,
+            this.colMI,
+            this.colGuarantorFinancer,
+            this.colEmployer});
+            this.gridView3.GridControl = this.grdCtlBorrowerInfo;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // colType
+            // 
+            this.colType.Caption = "Type";
+            this.colType.FieldName = "CardType";
+            this.colType.Name = "colType";
+            // 
+            // BorrowerCode
+            // 
+            this.BorrowerCode.Caption = "Code";
+            this.BorrowerCode.ColumnEdit = this.txtBorrowerCode;
+            this.BorrowerCode.FieldName = "BorrowerCode";
+            this.BorrowerCode.Name = "BorrowerCode";
+            this.BorrowerCode.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.BorrowerCode.Visible = true;
+            this.BorrowerCode.VisibleIndex = 0;
+            // 
+            // txtBorrowerCode
+            // 
+            this.txtBorrowerCode.AutoHeight = false;
+            this.txtBorrowerCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtBorrowerCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.txtBorrowerCode.Name = "txtBorrowerCode";
+            this.txtBorrowerCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBorrowerCode_ButtonClick);
+            // 
+            // colLastName
+            // 
+            this.colLastName.Caption = "Last Name";
+            this.colLastName.FieldName = "LastName";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.Visible = true;
+            this.colLastName.VisibleIndex = 1;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.Caption = "First Name";
+            this.colFirstName.FieldName = "FirstName";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.Visible = true;
+            this.colFirstName.VisibleIndex = 2;
+            // 
+            // colMI
+            // 
+            this.colMI.Caption = "M.I.";
+            this.colMI.FieldName = "MiddleName";
+            this.colMI.Name = "colMI";
+            this.colMI.Visible = true;
+            this.colMI.VisibleIndex = 3;
+            // 
+            // colGuarantorFinancer
+            // 
+            this.colGuarantorFinancer.Caption = "Guarantor/Financer";
+            this.colGuarantorFinancer.FieldName = "GuarantorName";
+            this.colGuarantorFinancer.Name = "colGuarantorFinancer";
+            this.colGuarantorFinancer.Visible = true;
+            this.colGuarantorFinancer.VisibleIndex = 4;
+            // 
+            // colEmployer
+            // 
+            this.colEmployer.Caption = "Employer";
+            this.colEmployer.FieldName = "Employer";
+            this.colEmployer.Name = "colEmployer";
+            this.colEmployer.Visible = true;
+            this.colEmployer.VisibleIndex = 5;
+            // 
+            // backstageViewClientControl7
+            // 
+            this.backstageViewClientControl7.Controls.Add(this.grdCtlGuarantorFinancer);
+            this.backstageViewClientControl7.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl7.Name = "backstageViewClientControl7";
+            this.backstageViewClientControl7.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl7.TabIndex = 7;
+            // 
+            // grdCtlGuarantorFinancer
+            // 
+            this.grdCtlGuarantorFinancer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdCtlGuarantorFinancer.Location = new System.Drawing.Point(0, 0);
+            this.grdCtlGuarantorFinancer.MainView = this.cardView2;
+            this.grdCtlGuarantorFinancer.Name = "grdCtlGuarantorFinancer";
+            this.grdCtlGuarantorFinancer.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.txtCode});
+            this.grdCtlGuarantorFinancer.Size = new System.Drawing.Size(812, 571);
+            this.grdCtlGuarantorFinancer.TabIndex = 1;
+            this.grdCtlGuarantorFinancer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.cardView2});
+            // 
+            // cardView2
+            // 
+            this.cardView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.layoutViewColumn1,
+            this.layoutViewColumn2,
+            this.layoutViewColumn3,
+            this.layoutViewColumn4,
+            this.layoutViewColumn5,
+            this.layoutViewColumn6});
+            this.cardView2.FocusedCardTopFieldIndex = 0;
+            this.cardView2.GridControl = this.grdCtlGuarantorFinancer;
+            this.cardView2.Name = "cardView2";
+            // 
+            // layoutViewColumn1
+            // 
+            this.layoutViewColumn1.Caption = "Code";
+            this.layoutViewColumn1.ColumnEdit = this.txtCode;
+            this.layoutViewColumn1.FieldName = "GuarantorFinancerCode";
+            this.layoutViewColumn1.Name = "layoutViewColumn1";
+            this.layoutViewColumn1.OptionsColumn.ReadOnly = true;
+            this.layoutViewColumn1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.layoutViewColumn1.Visible = true;
+            this.layoutViewColumn1.VisibleIndex = 0;
+            // 
+            // txtCode
+            // 
+            this.txtCode.AutoHeight = false;
+            this.txtCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            this.txtCode.Name = "txtCode";
+            this.txtCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCode_ButtonClick);
+            // 
+            // layoutViewColumn2
+            // 
+            this.layoutViewColumn2.Caption = "Name";
+            this.layoutViewColumn2.FieldName = "GuarantorFinancerName";
+            this.layoutViewColumn2.Name = "layoutViewColumn2";
+            this.layoutViewColumn2.OptionsColumn.AllowEdit = false;
+            this.layoutViewColumn2.Visible = true;
+            this.layoutViewColumn2.VisibleIndex = 1;
+            // 
+            // layoutViewColumn3
+            // 
+            this.layoutViewColumn3.Caption = "Address";
+            this.layoutViewColumn3.FieldName = "Address";
+            this.layoutViewColumn3.Name = "layoutViewColumn3";
+            this.layoutViewColumn3.OptionsColumn.ReadOnly = true;
+            this.layoutViewColumn3.Visible = true;
+            this.layoutViewColumn3.VisibleIndex = 2;
+            // 
+            // layoutViewColumn4
+            // 
+            this.layoutViewColumn4.Caption = "Contact #";
+            this.layoutViewColumn4.FieldName = "ContactNumber";
+            this.layoutViewColumn4.Name = "layoutViewColumn4";
+            this.layoutViewColumn4.OptionsColumn.AllowEdit = false;
+            this.layoutViewColumn4.Visible = true;
+            this.layoutViewColumn4.VisibleIndex = 3;
+            // 
+            // layoutViewColumn5
+            // 
+            this.layoutViewColumn5.Caption = "Email";
+            this.layoutViewColumn5.FieldName = "EmailAddress";
+            this.layoutViewColumn5.Name = "layoutViewColumn5";
+            this.layoutViewColumn5.OptionsColumn.AllowEdit = false;
+            this.layoutViewColumn5.Visible = true;
+            this.layoutViewColumn5.VisibleIndex = 4;
+            // 
+            // layoutViewColumn6
+            // 
+            this.layoutViewColumn6.Caption = "Contact Person";
+            this.layoutViewColumn6.FieldName = "ContactPerson";
+            this.layoutViewColumn6.Name = "layoutViewColumn6";
+            this.layoutViewColumn6.OptionsColumn.AllowEdit = false;
+            this.layoutViewColumn6.Visible = true;
+            this.layoutViewColumn6.VisibleIndex = 5;
+            // 
+            // backstageViewClientControl8
+            // 
+            this.backstageViewClientControl8.Controls.Add(this.gridControl2);
+            this.backstageViewClientControl8.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl8.Name = "backstageViewClientControl8";
+            this.backstageViewClientControl8.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl8.TabIndex = 8;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.cardView1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.txtCardCode});
+            this.gridControl2.Size = new System.Drawing.Size(812, 571);
+            this.gridControl2.TabIndex = 0;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.cardView1});
+            // 
+            // cardView1
+            // 
+            this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colEmpCode,
+            this.colEmpName,
+            this.colEmpAddress,
+            this.colEmpContact,
+            this.colEmpEmail});
+            this.cardView1.FocusedCardTopFieldIndex = 0;
+            this.cardView1.GridControl = this.gridControl2;
+            this.cardView1.Name = "cardView1";
+            // 
+            // colEmpCode
+            // 
+            this.colEmpCode.Caption = "Code";
+            this.colEmpCode.ColumnEdit = this.txtCardCode;
+            this.colEmpCode.FieldName = "EmployerCode";
+            this.colEmpCode.Name = "colEmpCode";
+            this.colEmpCode.OptionsColumn.ReadOnly = true;
+            this.colEmpCode.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.colEmpCode.Visible = true;
+            this.colEmpCode.VisibleIndex = 0;
+            // 
+            // txtCardCode
+            // 
+            this.txtCardCode.AutoHeight = false;
+            this.txtCardCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            this.txtCardCode.Name = "txtCardCode";
+            this.txtCardCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCardCode_ButtonClick);
+            // 
+            // colEmpName
+            // 
+            this.colEmpName.Caption = "Employer Name";
+            this.colEmpName.FieldName = "EmployerName";
+            this.colEmpName.Name = "colEmpName";
+            this.colEmpName.OptionsColumn.AllowEdit = false;
+            this.colEmpName.Visible = true;
+            this.colEmpName.VisibleIndex = 1;
+            // 
+            // colEmpAddress
+            // 
+            this.colEmpAddress.Caption = "Address";
+            this.colEmpAddress.FieldName = "Address";
+            this.colEmpAddress.Name = "colEmpAddress";
+            this.colEmpAddress.OptionsColumn.ReadOnly = true;
+            this.colEmpAddress.Visible = true;
+            this.colEmpAddress.VisibleIndex = 2;
+            // 
+            // colEmpContact
+            // 
+            this.colEmpContact.Caption = "Contact";
+            this.colEmpContact.FieldName = "ContactNumber";
+            this.colEmpContact.Name = "colEmpContact";
+            this.colEmpContact.OptionsColumn.AllowEdit = false;
+            this.colEmpContact.Visible = true;
+            this.colEmpContact.VisibleIndex = 3;
+            // 
+            // colEmpEmail
+            // 
+            this.colEmpEmail.Caption = "Email";
+            this.colEmpEmail.FieldName = "EmailAddress";
+            this.colEmpEmail.Name = "colEmpEmail";
+            this.colEmpEmail.OptionsColumn.AllowEdit = false;
+            this.colEmpEmail.Visible = true;
+            this.colEmpEmail.VisibleIndex = 4;
+            // 
+            // backstageViewClientControl10
+            // 
+            this.backstageViewClientControl10.Controls.Add(this.gridControl1);
+            this.backstageViewClientControl10.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl10.Name = "backstageViewClientControl10";
+            this.backstageViewClientControl10.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl10.TabIndex = 10;
+            // 
+            // backstageViewClientControl5
+            // 
+            this.backstageViewClientControl5.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl5.Name = "backstageViewClientControl5";
+            this.backstageViewClientControl5.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl5.TabIndex = 5;
+            this.backstageViewClientControl5.Load += new System.EventHandler(this.backstageViewClientControl5_Load);
             // 
             // backstageViewClientControl3
             // 
@@ -1059,307 +1393,6 @@
             this.grdViewEmployersInfo.GridControl = this.grdCtlEmployersInfo;
             this.grdViewEmployersInfo.Name = "grdViewEmployersInfo";
             // 
-            // backstageViewClientControl5
-            // 
-            this.backstageViewClientControl5.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl5.Name = "backstageViewClientControl5";
-            this.backstageViewClientControl5.Size = new System.Drawing.Size(812, 571);
-            this.backstageViewClientControl5.TabIndex = 5;
-            this.backstageViewClientControl5.Load += new System.EventHandler(this.backstageViewClientControl5_Load);
-            // 
-            // backstageViewClientControl6
-            // 
-            this.backstageViewClientControl6.Controls.Add(this.grdCtlBorrowerInfo);
-            this.backstageViewClientControl6.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl6.Name = "backstageViewClientControl6";
-            this.backstageViewClientControl6.Size = new System.Drawing.Size(812, 571);
-            this.backstageViewClientControl6.TabIndex = 6;
-            // 
-            // grdCtlBorrowerInfo
-            // 
-            this.grdCtlBorrowerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdCtlBorrowerInfo.Location = new System.Drawing.Point(0, 0);
-            this.grdCtlBorrowerInfo.MainView = this.gridView3;
-            this.grdCtlBorrowerInfo.Name = "grdCtlBorrowerInfo";
-            this.grdCtlBorrowerInfo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.txtBorrowerCode});
-            this.grdCtlBorrowerInfo.Size = new System.Drawing.Size(812, 571);
-            this.grdCtlBorrowerInfo.TabIndex = 3;
-            this.grdCtlBorrowerInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colType,
-            this.BorrowerCode,
-            this.colLastName,
-            this.colFirstName,
-            this.colMI,
-            this.colGuarantorFinancer,
-            this.colEmployer});
-            this.gridView3.GridControl = this.grdCtlBorrowerInfo;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // colType
-            // 
-            this.colType.Caption = "Type";
-            this.colType.FieldName = "CardType";
-            this.colType.Name = "colType";
-            // 
-            // BorrowerCode
-            // 
-            this.BorrowerCode.Caption = "Code";
-            this.BorrowerCode.ColumnEdit = this.txtBorrowerCode;
-            this.BorrowerCode.FieldName = "BorrowerCode";
-            this.BorrowerCode.Name = "BorrowerCode";
-            this.BorrowerCode.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.BorrowerCode.Visible = true;
-            this.BorrowerCode.VisibleIndex = 0;
-            // 
-            // txtBorrowerCode
-            // 
-            this.txtBorrowerCode.AutoHeight = false;
-            this.txtBorrowerCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtBorrowerCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject41, "", null, null, true)});
-            this.txtBorrowerCode.Name = "txtBorrowerCode";
-            this.txtBorrowerCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBorrowerCode_ButtonClick);
-            // 
-            // colLastName
-            // 
-            this.colLastName.Caption = "Last Name";
-            this.colLastName.FieldName = "LastName";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.Visible = true;
-            this.colLastName.VisibleIndex = 1;
-            // 
-            // colFirstName
-            // 
-            this.colFirstName.Caption = "First Name";
-            this.colFirstName.FieldName = "FirstName";
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.Visible = true;
-            this.colFirstName.VisibleIndex = 2;
-            // 
-            // colMI
-            // 
-            this.colMI.Caption = "M.I.";
-            this.colMI.FieldName = "MiddleName";
-            this.colMI.Name = "colMI";
-            this.colMI.Visible = true;
-            this.colMI.VisibleIndex = 3;
-            // 
-            // colGuarantorFinancer
-            // 
-            this.colGuarantorFinancer.Caption = "Guarantor/Financer";
-            this.colGuarantorFinancer.FieldName = "GuarantorName";
-            this.colGuarantorFinancer.Name = "colGuarantorFinancer";
-            this.colGuarantorFinancer.Visible = true;
-            this.colGuarantorFinancer.VisibleIndex = 4;
-            // 
-            // colEmployer
-            // 
-            this.colEmployer.Caption = "Employer";
-            this.colEmployer.FieldName = "Employer";
-            this.colEmployer.Name = "colEmployer";
-            this.colEmployer.Visible = true;
-            this.colEmployer.VisibleIndex = 5;
-            // 
-            // backstageViewClientControl7
-            // 
-            this.backstageViewClientControl7.Controls.Add(this.grdCtlGuarantorFinancer);
-            this.backstageViewClientControl7.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl7.Name = "backstageViewClientControl7";
-            this.backstageViewClientControl7.Size = new System.Drawing.Size(812, 571);
-            this.backstageViewClientControl7.TabIndex = 7;
-            // 
-            // grdCtlGuarantorFinancer
-            // 
-            this.grdCtlGuarantorFinancer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdCtlGuarantorFinancer.Location = new System.Drawing.Point(0, 0);
-            this.grdCtlGuarantorFinancer.MainView = this.cardView2;
-            this.grdCtlGuarantorFinancer.Name = "grdCtlGuarantorFinancer";
-            this.grdCtlGuarantorFinancer.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.txtCode});
-            this.grdCtlGuarantorFinancer.Size = new System.Drawing.Size(812, 571);
-            this.grdCtlGuarantorFinancer.TabIndex = 1;
-            this.grdCtlGuarantorFinancer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardView2});
-            // 
-            // cardView2
-            // 
-            this.cardView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.layoutViewColumn1,
-            this.layoutViewColumn2,
-            this.layoutViewColumn3,
-            this.layoutViewColumn4,
-            this.layoutViewColumn5,
-            this.layoutViewColumn6});
-            this.cardView2.FocusedCardTopFieldIndex = 0;
-            this.cardView2.GridControl = this.grdCtlGuarantorFinancer;
-            this.cardView2.Name = "cardView2";
-            // 
-            // layoutViewColumn1
-            // 
-            this.layoutViewColumn1.Caption = "Code";
-            this.layoutViewColumn1.ColumnEdit = this.txtCode;
-            this.layoutViewColumn1.FieldName = "GuarantorFinancerCode";
-            this.layoutViewColumn1.Name = "layoutViewColumn1";
-            this.layoutViewColumn1.OptionsColumn.ReadOnly = true;
-            this.layoutViewColumn1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.layoutViewColumn1.Visible = true;
-            this.layoutViewColumn1.VisibleIndex = 0;
-            // 
-            // txtCode
-            // 
-            this.txtCode.AutoHeight = false;
-            this.txtCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject43, "", null, null, true)});
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCode_ButtonClick);
-            // 
-            // layoutViewColumn2
-            // 
-            this.layoutViewColumn2.Caption = "Name";
-            this.layoutViewColumn2.FieldName = "GuarantorFinancerName";
-            this.layoutViewColumn2.Name = "layoutViewColumn2";
-            this.layoutViewColumn2.OptionsColumn.AllowEdit = false;
-            this.layoutViewColumn2.Visible = true;
-            this.layoutViewColumn2.VisibleIndex = 1;
-            // 
-            // layoutViewColumn3
-            // 
-            this.layoutViewColumn3.Caption = "Address";
-            this.layoutViewColumn3.FieldName = "Address";
-            this.layoutViewColumn3.Name = "layoutViewColumn3";
-            this.layoutViewColumn3.OptionsColumn.ReadOnly = true;
-            this.layoutViewColumn3.Visible = true;
-            this.layoutViewColumn3.VisibleIndex = 2;
-            // 
-            // layoutViewColumn4
-            // 
-            this.layoutViewColumn4.Caption = "Contact #";
-            this.layoutViewColumn4.FieldName = "ContactNumber";
-            this.layoutViewColumn4.Name = "layoutViewColumn4";
-            this.layoutViewColumn4.OptionsColumn.AllowEdit = false;
-            this.layoutViewColumn4.Visible = true;
-            this.layoutViewColumn4.VisibleIndex = 3;
-            // 
-            // layoutViewColumn5
-            // 
-            this.layoutViewColumn5.Caption = "Email";
-            this.layoutViewColumn5.FieldName = "EmailAddress";
-            this.layoutViewColumn5.Name = "layoutViewColumn5";
-            this.layoutViewColumn5.OptionsColumn.AllowEdit = false;
-            this.layoutViewColumn5.Visible = true;
-            this.layoutViewColumn5.VisibleIndex = 4;
-            // 
-            // layoutViewColumn6
-            // 
-            this.layoutViewColumn6.Caption = "Contact Person";
-            this.layoutViewColumn6.FieldName = "ContactPerson";
-            this.layoutViewColumn6.Name = "layoutViewColumn6";
-            this.layoutViewColumn6.OptionsColumn.AllowEdit = false;
-            this.layoutViewColumn6.Visible = true;
-            this.layoutViewColumn6.VisibleIndex = 5;
-            // 
-            // backstageViewClientControl8
-            // 
-            this.backstageViewClientControl8.Controls.Add(this.gridControl2);
-            this.backstageViewClientControl8.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl8.Name = "backstageViewClientControl8";
-            this.backstageViewClientControl8.Size = new System.Drawing.Size(812, 575);
-            this.backstageViewClientControl8.TabIndex = 8;
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.cardView1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.txtCardCode});
-            this.gridControl2.Size = new System.Drawing.Size(812, 575);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardView1});
-            // 
-            // cardView1
-            // 
-            this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colEmpCode,
-            this.colEmpName,
-            this.colEmpAddress,
-            this.colEmpContact,
-            this.colEmpEmail});
-            this.cardView1.FocusedCardTopFieldIndex = 0;
-            this.cardView1.GridControl = this.gridControl2;
-            this.cardView1.Name = "cardView1";
-            // 
-            // colEmpCode
-            // 
-            this.colEmpCode.Caption = "Code";
-            this.colEmpCode.ColumnEdit = this.txtCardCode;
-            this.colEmpCode.FieldName = "EmployerCode";
-            this.colEmpCode.Name = "colEmpCode";
-            this.colEmpCode.OptionsColumn.ReadOnly = true;
-            this.colEmpCode.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.colEmpCode.Visible = true;
-            this.colEmpCode.VisibleIndex = 0;
-            // 
-            // txtCardCode
-            // 
-            this.txtCardCode.AutoHeight = false;
-            this.txtCardCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject44, "", null, null, true)});
-            this.txtCardCode.Name = "txtCardCode";
-            this.txtCardCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCardCode_ButtonClick);
-            // 
-            // colEmpName
-            // 
-            this.colEmpName.Caption = "Employer Name";
-            this.colEmpName.FieldName = "EmployerName";
-            this.colEmpName.Name = "colEmpName";
-            this.colEmpName.OptionsColumn.AllowEdit = false;
-            this.colEmpName.Visible = true;
-            this.colEmpName.VisibleIndex = 1;
-            // 
-            // colEmpAddress
-            // 
-            this.colEmpAddress.Caption = "Address";
-            this.colEmpAddress.FieldName = "Address";
-            this.colEmpAddress.Name = "colEmpAddress";
-            this.colEmpAddress.OptionsColumn.ReadOnly = true;
-            this.colEmpAddress.Visible = true;
-            this.colEmpAddress.VisibleIndex = 2;
-            // 
-            // colEmpContact
-            // 
-            this.colEmpContact.Caption = "Contact";
-            this.colEmpContact.FieldName = "ContactNumber";
-            this.colEmpContact.Name = "colEmpContact";
-            this.colEmpContact.OptionsColumn.AllowEdit = false;
-            this.colEmpContact.Visible = true;
-            this.colEmpContact.VisibleIndex = 3;
-            // 
-            // colEmpEmail
-            // 
-            this.colEmpEmail.Caption = "Email";
-            this.colEmpEmail.FieldName = "EmailAddress";
-            this.colEmpEmail.Name = "colEmpEmail";
-            this.colEmpEmail.OptionsColumn.AllowEdit = false;
-            this.colEmpEmail.Visible = true;
-            this.colEmpEmail.VisibleIndex = 4;
-            // 
-            // backstageViewClientControl10
-            // 
-            this.backstageViewClientControl10.Controls.Add(this.gridControl1);
-            this.backstageViewClientControl10.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl10.Name = "backstageViewClientControl10";
-            this.backstageViewClientControl10.Size = new System.Drawing.Size(812, 575);
-            this.backstageViewClientControl10.TabIndex = 10;
-            // 
             // backstageViewTabItem10
             // 
             this.backstageViewTabItem10.Caption = "Loan Applications";
@@ -1381,6 +1414,14 @@
             // 
             this.backstageViewItemSeparator1.Name = "backstageViewItemSeparator1";
             // 
+            // backstageViewTabItem1
+            // 
+            this.backstageViewTabItem1.Caption = "Cash Fund Entry";
+            this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl5;
+            this.backstageViewTabItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem1.Glyph")));
+            this.backstageViewTabItem1.Name = "backstageViewTabItem1";
+            this.backstageViewTabItem1.Selected = false;
+            // 
             // backstageViewTabItem3
             // 
             this.backstageViewTabItem3.Caption = "Cash/Fund Release";
@@ -1396,14 +1437,6 @@
             this.backstageViewTabItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem4.Glyph")));
             this.backstageViewTabItem4.Name = "backstageViewTabItem4";
             this.backstageViewTabItem4.Selected = false;
-            // 
-            // backstageViewTabItem1
-            // 
-            this.backstageViewTabItem1.Caption = "Cash Fund Entry";
-            this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl5;
-            this.backstageViewTabItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem1.Glyph")));
-            this.backstageViewTabItem1.Name = "backstageViewTabItem1";
-            this.backstageViewTabItem1.Selected = false;
             // 
             // backstageViewItemSeparator2
             // 
@@ -1758,38 +1791,6 @@
             this.backstageViewClientControl1.Size = new System.Drawing.Size(812, 575);
             this.backstageViewClientControl1.TabIndex = 4;
             // 
-            // gridColumn26
-            // 
-            this.gridColumn26.Caption = "Guarantor";
-            this.gridColumn26.FieldName = "Guarrantor";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 2;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.Caption = "Total Collection";
-            this.gridColumn27.DisplayFormat.FormatString = "{0:N}";
-            this.gridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn27.FieldName = "TotalCollection";
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalCollection", "{0:N}")});
-            this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 7;
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "Outstanding Balance";
-            this.gridColumn28.DisplayFormat.FormatString = "{0:N}";
-            this.gridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn28.FieldName = "OutstandingBalance";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OutstandingBalance", "{0:N}")});
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 8;
-            // 
             // eLoanMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1822,18 +1823,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtPaymentStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            this.backstageViewClientControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            this.backstageViewClientControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).EndInit();
             this.backstageViewClientControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCtlBorrowerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -1847,6 +1836,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardCode)).EndInit();
             this.backstageViewClientControl10.ResumeLayout(false);
+            this.backstageViewClientControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
+            this.splitContainerControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            this.backstageViewClientControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
@@ -1959,7 +1960,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEmployer;
         private DevExpress.XtraBars.BarSubItem barNewMenu;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barNewCashFundRelease;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
         private DevExpress.XtraBars.BarButtonItem barButtonItem26;

@@ -443,5 +443,10 @@ namespace eLoanSystem.Setup
                 cboPayDayCode.ClosePopup();
             }
         }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

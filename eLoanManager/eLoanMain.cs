@@ -394,5 +394,15 @@ namespace eLoanSystem
 
         }
 
+        private void barNewCashFundRelease_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CashFundReleaseDocument oForm = new CashFundReleaseDocument();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ActiveUserID = this.ActiveUserID;
+
+            oForm.ShowDialog();
+        }
+
     }
 }

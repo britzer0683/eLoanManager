@@ -35,12 +35,11 @@
             this.cboSearchIndex = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnChoose = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.colLoanNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGuarantor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoanAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnChoose = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSearchIndex.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -60,10 +59,11 @@
             this.txtSearch.Location = new System.Drawing.Point(162, 16);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("buttonEdit1.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.txtSearch.Size = new System.Drawing.Size(423, 22);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtSearch_ButtonClick);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // cboSearchIndex
             // 
@@ -94,12 +94,43 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colLoanNo,
             this.colCardName,
-            this.colGuarantor,
             this.colLoanAmount});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            // 
+            // colLoanNo
+            // 
+            this.colLoanNo.Caption = "Loan#";
+            this.colLoanNo.FieldName = "DocNum";
+            this.colLoanNo.Name = "colLoanNo";
+            this.colLoanNo.OptionsColumn.FixedWidth = true;
+            this.colLoanNo.Visible = true;
+            this.colLoanNo.VisibleIndex = 0;
+            this.colLoanNo.Width = 64;
+            // 
+            // colCardName
+            // 
+            this.colCardName.Caption = "Borrower";
+            this.colCardName.FieldName = "CardName";
+            this.colCardName.Name = "colCardName";
+            this.colCardName.Visible = true;
+            this.colCardName.VisibleIndex = 1;
+            this.colCardName.Width = 162;
+            // 
+            // colLoanAmount
+            // 
+            this.colLoanAmount.Caption = "Loan Amount";
+            this.colLoanAmount.DisplayFormat.FormatString = "{0:N}";
+            this.colLoanAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colLoanAmount.FieldName = "LoanAmount";
+            this.colLoanAmount.Name = "colLoanAmount";
+            this.colLoanAmount.Visible = true;
+            this.colLoanAmount.VisibleIndex = 2;
+            this.colLoanAmount.Width = 167;
             // 
             // btnChoose
             // 
@@ -118,44 +149,6 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // colLoanNo
-            // 
-            this.colLoanNo.Caption = "Loan#";
-            this.colLoanNo.FieldName = "DocNum";
-            this.colLoanNo.Name = "colLoanNo";
-            this.colLoanNo.OptionsColumn.FixedWidth = true;
-            this.colLoanNo.Visible = true;
-            this.colLoanNo.VisibleIndex = 0;
-            this.colLoanNo.Width = 64;
-            // 
-            // colCardName
-            // 
-            this.colCardName.Caption = "Borrower";
-            this.colCardName.Name = "colCardName";
-            this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 1;
-            this.colCardName.Width = 162;
-            // 
-            // colGuarantor
-            // 
-            this.colGuarantor.Caption = "Guarantor";
-            this.colGuarantor.FieldName = "Guarrantor";
-            this.colGuarantor.Name = "colGuarantor";
-            this.colGuarantor.Visible = true;
-            this.colGuarantor.VisibleIndex = 2;
-            this.colGuarantor.Width = 162;
-            // 
-            // colLoanAmount
-            // 
-            this.colLoanAmount.Caption = "Loan Amount";
-            this.colLoanAmount.DisplayFormat.FormatString = "{0:N}";
-            this.colLoanAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colLoanAmount.FieldName = "LoanAmount";
-            this.colLoanAmount.Name = "colLoanAmount";
-            this.colLoanAmount.Visible = true;
-            this.colLoanAmount.VisibleIndex = 3;
-            this.colLoanAmount.Width = 167;
             // 
             // findLoan
             // 
@@ -192,7 +185,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraGrid.Columns.GridColumn colLoanNo;
         private DevExpress.XtraGrid.Columns.GridColumn colCardName;
-        private DevExpress.XtraGrid.Columns.GridColumn colGuarantor;
         private DevExpress.XtraGrid.Columns.GridColumn colLoanAmount;
     }
 }
