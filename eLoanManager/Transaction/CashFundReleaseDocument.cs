@@ -11,9 +11,9 @@ using eLoanSystem.Transaction;
 
 namespace eLoanSystem.Transaction
 {
-    public partial class CashFundReleaseOldVersion : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class CashFundReleaseDocument : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public CashFundReleaseOldVersion()
+        public CashFundReleaseDocument()
         {
             InitializeComponent();
         }

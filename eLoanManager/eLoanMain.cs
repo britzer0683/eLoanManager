@@ -24,7 +24,7 @@ namespace eLoanSystem
         public string ConnectionString { get; set; }
         public string ActiveUserID { get; set; }
 
-        public void BindLoan()
+        public void BindLoans()
         {
             LoanManager oManager = new LoanManager();
 
@@ -125,7 +125,7 @@ namespace eLoanSystem
         }
         public void RefreshMainMenu()
         {
-            BindLoan();
+            BindLoans();
             BindBorrowers();
             BindGuarantor();
             BindEmployers();
@@ -144,7 +144,7 @@ namespace eLoanSystem
 
 
             backstageViewControl1.SelectedTabIndex = 0;
-            BindLoan();
+            BindLoans();
             BindBorrowers();
             BindGuarantor();
             BindEmployers();
@@ -248,7 +248,7 @@ namespace eLoanSystem
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CashFundReleaseOldVersion oForm = new CashFundReleaseOldVersion();
+            CashFundReleaseDocument oForm = new CashFundReleaseDocument();
 
             oForm.ActiveUserID = this.ActiveUserID;
             oForm.ShowDialog();
@@ -272,7 +272,7 @@ namespace eLoanSystem
 
         private void barCashFundRelease_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CashFundReleaseOldVersion oForm = new CashFundReleaseOldVersion();
+            CashFundReleaseDocument oForm = new CashFundReleaseDocument();
             
             oForm.ActiveUserID = this.ActiveUserID;
             oForm.ShowDialog();
@@ -337,6 +337,7 @@ namespace eLoanSystem
             oForm.ActiveUserID = this.ActiveUserID;
             oForm.ConnectionString = this.ConnectionString;
             oForm.ShowDialog();
+            BindLoans();
         }
 
         private void eLoanMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -365,7 +366,7 @@ namespace eLoanSystem
             oForm.Stopper = true;
             oForm.OpenDocument(txt.Text);
             oForm.ShowDialog();
-            BindLoan();
+            BindLoans();
         }
 
         private void backstageViewTabItem10_SelectedChanged(object sender, DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs e)
@@ -384,6 +385,11 @@ namespace eLoanSystem
         }
 
         private void gridControl4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdCtlLoanInfo_Click(object sender, EventArgs e)
         {
 
         }

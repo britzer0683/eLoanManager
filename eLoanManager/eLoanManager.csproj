@@ -171,6 +171,60 @@
     <Compile Include="Transaction\PaymentBreakdown.Designer.cs">
       <DependentUpon>PaymentBreakdown.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForms\viewBorrowers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewBorrowers.Designer.cs">
+      <DependentUpon>viewBorrowers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewCashFundEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewCashFundEntry.Designer.cs">
+      <DependentUpon>viewCashFundEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewCashFundRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewCashFundRelease.Designer.cs">
+      <DependentUpon>viewCashFundRelease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewEmployer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewEmployer.Designer.cs">
+      <DependentUpon>viewEmployer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewFundTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewFundTransfer.Designer.cs">
+      <DependentUpon>viewFundTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewGuarantorFinancer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewGuarantorFinancer.Designer.cs">
+      <DependentUpon>viewGuarantorFinancer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewLoanApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewLoanApplications.Designer.cs">
+      <DependentUpon>viewLoanApplications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewPayDayCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewPayDayCode.Designer.cs">
+      <DependentUpon>viewPayDayCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\viewPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\viewPayments.Designer.cs">
+      <DependentUpon>viewPayments.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Setup\BorrowerInfo.resx">
       <DependentUpon>BorrowerInfo.cs</DependentUpon>
     </EmbeddedResource>

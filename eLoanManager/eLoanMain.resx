@@ -607,7 +607,7 @@
         vNr3PYC3/ovnfs1+Y+AGs0aPBhq1YNcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="txtLoanNo.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtBorrowerCode.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAASdEVYdFRpdGxlAEZvcndhcmQ7TmV4dOtv9uEAAAO0SURBVDhPTZNtTNNXFMb/cyGbsd34sESM
@@ -656,6 +656,16 @@
         qQCaYmpA6kfsOQAxxaz+jP8DnXwZP0AVTg4AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="backstageViewTabItem1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAALHRFWHRUaXRsZQBBZGQ7SXRl
+        bTtBZGRJdGVtO0JhcnM7UmliYm9uO0l0ZW07UGx1c04y74EAAACXSURBVDhP1ZPNDYAgDIUZjGGcxDgW
+        i5l4q31YmorVajh5aLAIX/8eiYgSLOdMDzbzP5yp1u5gVScAAK6QCKCRJKLNrEJGAIAtowC+f/Ttrgd9
+        Cdav5fwbcJrA1x5MXH9hW2WF7wrJayIOb62BIjr4k6dED4DIOgGj2vJGygAi7cs7wH4IkIcWZ2DF0X+j
+        1rAHAQDpu1PYAbkxzpO28OJHAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="backstageViewTabItem3.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -668,16 +678,6 @@
 </value>
   </data>
   <data name="backstageViewTabItem4.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAJXRFWHRUaXRsZQBDb3B5O0Jh
-        cnM7UmliYm9uO1N0YW5kYXJkO0Nsb25lbQ7fWwAAAIJJREFUOE+1k0sOwCAIBTkYZ/PqtBBLCD+JSRds
-        ahnfKAIRgS9EpKLW+x24vp7QzAsNgMECGQFsMgddLWCoJRCJMnHO/pkAgrPdMAAmzrcASbKbVTlT0Oup
-        nPccyJy0gEznmCC7Pu9sk7WH2CTQMR8BvLNP6QdJHkpSemgnQPUK/wM87SEysbfzgiwAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="backstageViewTabItem1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAJXRFWHRUaXRsZQBDb3B5O0Jh
@@ -833,7 +833,7 @@
         hCuswjH1UFBKRQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="txtBorrowerCode.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtLoanNo.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAASdEVYdFRpdGxlAEZvcndhcmQ7TmV4dOtv9uEAAAO0SURBVDhPTZNtTNNXFMb/cyGbsd34sESM
