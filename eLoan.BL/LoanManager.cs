@@ -49,6 +49,18 @@ namespace eLoan.BL
 
             oCommand.ExecuteNonQuery();
         }
+
+        public void Approved(string sDocNum)
+        {
+            SqlCommand oCommand = new SqlCommand();
+
+            oCommand.Connection = this.Connection;
+            oCommand.CommandType = CommandType.Text;
+            oCommand.CommandText = "UPDATE OLOAN SET DocStatus='Approved' WHERE DocNum=@DocNum";
+            oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocNum));
+
+            oCommand.ExecuteNonQuery();
+        }
         public void PostDocument(string sDocNum)
         {
             SqlCommand oCommand = new SqlCommand();
@@ -211,7 +223,7 @@ namespace eLoan.BL
             oCommand.Connection = this.Connection;
             oCommand.CommandType = CommandType.Text;
 
-            oCommand.CommandText = "SELECT * FROM OLOAN";
+            oCommand.CommandText = "SELECT *, (SELECT CASE WHEN SUM(Amount) is NULL then 0 else SUM(Amount) end FROM LOAN3 WHERE LOAN3.DocNum=OLOAN.DocNum) as CashReleased FROM OLOAN";
 
             oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dt);

@@ -8,8 +8,8 @@ namespace eLoan.BL
 {
     public class CashReleaseUnit
     {
-        public string ReleaseNo { get; set; }
-        public string RefLoanNo { get; set; }
+        public string DocNum { get; set; }
+        public string ReleaseNo { get; set; }        
         public string TypeOfPayment { get; set; }
         public string SourceOfFund { get; set; }
         public string ChequeNo { get; set; }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanApplication));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.dtModified = new DevExpress.XtraEditors.DateEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -357,7 +357,7 @@
             this.txtCardCode.Location = new System.Drawing.Point(118, 99);
             this.txtCardCode.Name = "txtCardCode";
             this.txtCardCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject12, "", null, null, true)});
             this.txtCardCode.Size = new System.Drawing.Size(100, 22);
             this.txtCardCode.TabIndex = 7;
             this.txtCardCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBorrowerCode_ButtonClick);
@@ -566,8 +566,8 @@
             // 
             this.txtOtherCharges.AutoHeight = false;
             this.txtOtherCharges.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, "", null, null, true)});
             this.txtOtherCharges.DisplayFormat.FormatString = "{0:N}";
             this.txtOtherCharges.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtOtherCharges.EditFormat.FormatString = "{0:N}";
@@ -595,8 +595,8 @@
             // 
             this.txtPayment.AutoHeight = false;
             this.txtPayment.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject18, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject19, "", null, null, true)});
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtPayment_ButtonClick);
             this.txtPayment.EditValueChanged += new System.EventHandler(this.txtPayment_EditValueChanged);
@@ -636,19 +636,23 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "Release No";
-            this.gridColumn7.FieldName = "ReleaseNo";
+            this.gridColumn7.Caption = "#";
+            this.gridColumn7.FieldName = "RefNo";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.FixedWidth = true;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 37;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Fund";
             this.gridColumn8.FieldName = "SourceOfFund";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.FixedWidth = true;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 1;
+            this.gridColumn8.Width = 92;
             // 
             // gridColumn9
             // 
@@ -657,14 +661,16 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 2;
+            this.gridColumn9.Width = 170;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "Cash/Checque";
-            this.gridColumn10.FieldName = "Cheque No.";
+            this.gridColumn10.FieldName = "ChequeNo";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 3;
+            this.gridColumn10.Width = 170;
             // 
             // gridColumn11
             // 
@@ -675,6 +681,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 4;
+            this.gridColumn11.Width = 179;
             // 
             // xtraTabPage3
             // 
@@ -704,23 +711,29 @@
             this.gridColumn14});
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn15
             // 
-            this.gridColumn15.Caption = "ScheduleNo";
+            this.gridColumn15.Caption = "#";
             this.gridColumn15.FieldName = "ScheduledNo";
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.FixedWidth = true;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
+            this.gridColumn15.Width = 51;
             // 
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Reference";
             this.gridColumn12.FieldName = "RefNo";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.FixedWidth = true;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 1;
+            this.gridColumn12.Width = 126;
             // 
             // gridColumn13
             // 
@@ -735,6 +748,8 @@
             this.gridColumn14.Caption = "Amount";
             this.gridColumn14.FieldName = "TotalPayment";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPayment", "{0:N}")});
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 3;
             // 
@@ -753,8 +768,8 @@
             this.txtStatus.MenuManager = this.ribbonControl1;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject20, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, "", null, null, true)});
             this.txtStatus.Size = new System.Drawing.Size(111, 22);
             this.txtStatus.TabIndex = 64;
             this.txtStatus.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtStatus_ButtonClick);

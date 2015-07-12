@@ -10,9 +10,10 @@ namespace eLoan.BL
             SqlCommand oCommand = new SqlCommand();
 
             oCommand.Connection = this.Connection;
-            oCommand.CommandText = "INSERT INTO OCR (ReleaseNo, RefLoanNo, TypeOfPayment, SourceOfFund, ChequeNo, Amount, DateCreated, CreatedBy, DateModified, ModifiedBy) VALUES (@ReleaseNo, @RefLoanNo, @TypeOfPayment, @SourceOfFund, @ChequeNo, @Amount, @DateCreated, @CreatedBy, @DateModified, @ModifiedBy)";
-            oCommand.Parameters.Add(new SqlParameter("@ReleaseNo", oUnit.ReleaseNo));
-            oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", oUnit.RefLoanNo));
+            oCommand.CommandText = "INSERT INTO LOAN3 (DocNum, RefNo, TypeOfPayment, SourceOfFund, ChequeNo, Amount, DateCreated, CreatedBy, DateModified, ModifiedBy) VALUES (@DocNum, @RefNo, @TypeOfPayment, @SourceOfFund, @ChequeNo, @Amount, @DateCreated, @CreatedBy, @DateModified, @ModifiedBy)";
+            
+            oCommand.Parameters.Add(new SqlParameter("@DocNum", oUnit.DocNum));
+            oCommand.Parameters.Add(new SqlParameter("@RefNo", oUnit.ReleaseNo));
             oCommand.Parameters.Add(new SqlParameter("@TypeOfPayment", oUnit.TypeOfPayment));
             oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", oUnit.SourceOfFund));
             oCommand.Parameters.Add(new SqlParameter("@ChequeNo", oUnit.ChequeNo));
@@ -30,9 +31,10 @@ namespace eLoan.BL
             SqlCommand oCommand = new SqlCommand();
 
             oCommand.Connection = this.Connection;
-            oCommand.CommandText = "UPDATE OCR SET RefLoanNo=@RefLoanNo, TypeOfPayment=@TypeOfPayment, SourceOfFund=@SourceOfFund, ChequeNo=@ChequeNo, Amount=@Amount, DateModified=@DateModified, ModifiedBy=@ModifiedBy WHERE ReleaseNo=@ReleaseNo";
-            oCommand.Parameters.Add(new SqlParameter("@ReleaseNo", oUnit.ReleaseNo));
-            oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", oUnit.RefLoanNo));
+            oCommand.CommandText = "UPDATE LOAN3 SET DocNum=@DocNum, TypeOfPayment=@TypeOfPayment, SourceOfFund=@SourceOfFund, ChequeNo=@ChequeNo, Amount=@Amount, DateModified=@DateModified, ModifiedBy=@ModifiedBy WHERE ReleaseNo=@ReleaseNo";
+            
+            oCommand.Parameters.Add(new SqlParameter("@DocNum", oUnit.DocNum));
+            oCommand.Parameters.Add(new SqlParameter("@RefNo", oUnit.ReleaseNo));            
             oCommand.Parameters.Add(new SqlParameter("@TypeOfPayment", oUnit.TypeOfPayment));
             oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", oUnit.SourceOfFund));
             oCommand.Parameters.Add(new SqlParameter("@ChequeNo", oUnit.ChequeNo));
@@ -51,7 +53,7 @@ namespace eLoan.BL
 
             oCommand.Connection = this.Connection;
 
-            oCommand.CommandText = "SELECT * FROM OCR Where ReleaseNo=@ReleaseNo";
+            oCommand.CommandText = "SELECT * FROM LOAN3 Where RefNo=@ReleaseNo";
             oCommand.Parameters.Add(new SqlParameter("@ReleaseNo", sReleaseNo));
 
             oAdapter.SelectCommand = oCommand;
@@ -60,28 +62,6 @@ namespace eLoan.BL
             return dt.Rows.Count >= 1 ? true : false;
         }
 
-        public void CancelDocument(string sDocNum)
-        {
-            SqlCommand oCommand = new SqlCommand();
-
-            oCommand.Connection = this.Connection;
-            oCommand.CommandType = CommandType.Text;
-            oCommand.CommandText = "UPDATE OCR SET DocStatus='Canceled' WHERE DocNum=@DocNum";
-            oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocNum));
-
-            oCommand.ExecuteNonQuery();
-        }
-        public void PostDocument(string sDocNum)
-        {
-            SqlCommand oCommand = new SqlCommand();
-
-            oCommand.Connection = this.Connection;
-            oCommand.CommandType = CommandType.Text;
-            oCommand.CommandText = "UPDATE OCR SET DocStatus='Posted' WHERE DocNum=@DocNum";
-            oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocNum));
-
-            oCommand.ExecuteNonQuery();
-        }
         public DataTable GetInfo(string sRefLoanNo)
         {
             SqlCommand oCommand = new SqlCommand();
@@ -90,8 +70,8 @@ namespace eLoan.BL
 
             oCommand.Connection = this.Connection;
             oCommand.CommandType = CommandType.Text;
-            oCommand.CommandText = "SELECT * FROM OCR WHERE RefLoanNo=@RefLoanNo";
-            oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", sRefLoanNo));
+            oCommand.CommandText = "SELECT * FROM LOAN3 WHERE DocNum=@DocNum";
+            oCommand.Parameters.Add(new SqlParameter("@DocNum", sRefLoanNo));
 
             oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dtLoanInfo);

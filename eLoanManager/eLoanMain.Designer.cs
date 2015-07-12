@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eLoanMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colInterval = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -174,6 +174,23 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.tabLoans = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -481,8 +498,8 @@
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem9);
             this.backstageViewControl1.Location = new System.Drawing.Point(0, 144);
             this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem3;
-            this.backstageViewControl1.SelectedTabIndex = 3;
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem10;
+            this.backstageViewControl1.SelectedTabIndex = 0;
             this.backstageViewControl1.Size = new System.Drawing.Size(1004, 575);
             this.backstageViewControl1.TabIndex = 1;
             this.backstageViewControl1.Text = "backstageViewControl1";
@@ -519,9 +536,11 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
+            this.gridColumn25,
             this.gridColumn7});
             this.grdViewLoanInfo.GridControl = this.grdCtlLoanInfo;
             this.grdViewLoanInfo.Name = "grdViewLoanInfo";
+            this.grdViewLoanInfo.OptionsView.ShowFooter = true;
             // 
             // colDocNo
             // 
@@ -538,7 +557,7 @@
             // 
             this.txtLoanNo.AutoHeight = false;
             this.txtLoanNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, "", null, null, true)});
             this.txtLoanNo.Name = "txtLoanNo";
             this.txtLoanNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtLoanNo_ButtonClick);
             // 
@@ -568,6 +587,8 @@
             this.gridColumn4.FieldName = "LoanAmount";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LoanAmount", "{0:N}")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -579,6 +600,8 @@
             this.gridColumn5.FieldName = "TotalAmortization";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmortization", "{0:N}")});
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
             // 
@@ -590,6 +613,8 @@
             this.gridColumn6.FieldName = "TotalInterest";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalInterest", "{0:N}")});
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
             // 
@@ -600,7 +625,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             // 
             // backstageViewClientControl2
             // 
@@ -698,8 +723,21 @@
             // 
             // gridView4
             // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20,
+            this.gridColumn21,
+            this.gridColumn22,
+            this.gridColumn23,
+            this.gridColumn24});
             this.gridView4.GridControl = this.gridControl3;
+            this.gridView4.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DueAmount", this.gridColumn21, "{0:N}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPayment", this.gridColumn24, "{0:N}")});
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowFooter = true;
             // 
             // backstageViewClientControl3
             // 
@@ -794,11 +832,27 @@
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
+            this.gridControl4.Click += new System.EventHandler(this.gridControl4_Click);
             // 
             // gridView5
             // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn14,
+            this.gridColumn16});
             this.gridView5.GridControl = this.gridControl4;
+            this.gridView5.GroupCount = 1;
+            this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", this.gridColumn16, "{0:N}")});
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsView.ShowFooter = true;
+            this.gridView5.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn11, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // backstageViewClientControl4
             // 
@@ -887,7 +941,7 @@
             // 
             this.txtBorrowerCode.AutoHeight = false;
             this.txtBorrowerCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtBorrowerCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtBorrowerCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject10, "", null, null, true)});
             this.txtBorrowerCode.Name = "txtBorrowerCode";
             this.txtBorrowerCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBorrowerCode_ButtonClick);
             // 
@@ -980,7 +1034,7 @@
             // 
             this.txtCode.AutoHeight = false;
             this.txtCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject11, "", null, null, true)});
             this.txtCode.Name = "txtCode";
             this.txtCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCode_ButtonClick);
             // 
@@ -1077,7 +1131,7 @@
             // 
             this.txtCardCode.AutoHeight = false;
             this.txtCardCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject12, "", null, null, true)});
             this.txtCardCode.Name = "txtCardCode";
             this.txtCardCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCardCode_ButtonClick);
             // 
@@ -1131,7 +1185,7 @@
             this.backstageViewTabItem10.ContentControl = this.backstageViewClientControl11;
             this.backstageViewTabItem10.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem10.Glyph")));
             this.backstageViewTabItem10.Name = "backstageViewTabItem10";
-            this.backstageViewTabItem10.Selected = false;
+            this.backstageViewTabItem10.Selected = true;
             this.backstageViewTabItem10.SelectedChanged += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.backstageViewTabItem10_SelectedChanged);
             // 
             // backstageViewTabItem2
@@ -1152,7 +1206,7 @@
             this.backstageViewTabItem3.ContentControl = this.backstageViewClientControl3;
             this.backstageViewTabItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem3.Glyph")));
             this.backstageViewTabItem3.Name = "backstageViewTabItem3";
-            this.backstageViewTabItem3.Selected = true;
+            this.backstageViewTabItem3.Selected = false;
             // 
             // backstageViewTabItem4
             // 
@@ -1523,6 +1577,160 @@
             this.backstageViewClientControl1.Size = new System.Drawing.Size(812, 575);
             this.backstageViewClientControl1.TabIndex = 4;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Date Released";
+            this.gridColumn1.FieldName = "DateReleased";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Loan#";
+            this.gridColumn8.FieldName = "DocNum";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Borrower";
+            this.gridColumn9.FieldName = "CardName";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 2;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Release#";
+            this.gridColumn10.FieldName = "ReleaseNo";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Source of Fund";
+            this.gridColumn11.FieldName = "SourceOfFund";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 4;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Payment Type";
+            this.gridColumn12.FieldName = "TypeOfPayment";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 4;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Cheque No.";
+            this.gridColumn14.FieldName = "ChequeNo";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 5;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Amount";
+            this.gridColumn16.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn16.FieldName = "Amount";
+            this.gridColumn16.GroupFormat.FormatString = "{0:N}";
+            this.gridColumn16.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "{0:N}")});
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 6;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Loan#";
+            this.gridColumn17.FieldName = "DocNum";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 0;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Borrower";
+            this.gridColumn18.FieldName = "CardName";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 1;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Guarrantor";
+            this.gridColumn19.FieldName = "CardName";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 2;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Due Date";
+            this.gridColumn20.FieldName = "DueDate";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 3;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Due Amount";
+            this.gridColumn21.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn21.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn21.FieldName = "DueAmount";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DueAmount", "{0:N}")});
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 4;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "Reference";
+            this.gridColumn22.FieldName = "RefNo";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 5;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "Date of Payment";
+            this.gridColumn23.FieldName = "DateOfPayment";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 6;
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "Paid Amount";
+            this.gridColumn24.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn24.FieldName = "TotalPayment";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPayment", "{0:N}")});
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 7;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "Cash Released";
+            this.gridColumn25.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn25.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn25.FieldName = "CashReleased";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CashReleased", "{0:N}")});
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 6;
+            // 
             // eLoanMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1729,5 +1937,22 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.GridControl gridControl4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
     }
 }

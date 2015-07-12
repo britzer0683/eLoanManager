@@ -345,7 +345,7 @@ namespace eLoanSystem.Transaction
             txtTerms.Text = string.Format("{0:N}", oRow["Terms"]);
             txtInterestRate.Text = oRow["InterestRate"].ToString();
             cboFrequencyOfPayment.Text = oRow["FreqOfPayment"].ToString();
-            cboPayDayCode.Text = oRow["PayDayCode"].ToString();
+            cboPayDayCode.EditValue = oRow["PayDayCode"].ToString();
             dtStartOfPayment.EditValue = (DateTime)oRow["FirstPaymentDate"];
             dtDateOfRelease.EditValue = (DateTime)oRow["DateOfReleasing"];
             txtAmortization.Text = string.Format("{0:N}", oRow["MonthlyPayment"]);
@@ -646,24 +646,50 @@ namespace eLoanSystem.Transaction
         {
             if (e.Button.Index == 0)
             {
-                if (MessageBox.Show("Are you sure you want to post this document? This action is irreversible!!!", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                if (txtStatus.Text == "Draft")
                 {
-                    LoanManager oManager = new LoanManager();
 
-                    oManager.ConnectionString = this.ConnectionString;
-                    oManager.Open();
+                    if (MessageBox.Show("Are you sure you want to approved this document? This action is irreversible!!!", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        LoanManager oManager = new LoanManager();
 
-                    oManager.PostDocument(txtLoanNo.Text);
+                        oManager.ConnectionString = this.ConnectionString;
+                        oManager.Open();
 
-                    oManager.Close();
+                        oManager.Approved(txtLoanNo.Text);
 
-                    MessageBox.Show("Successfully posted!!!", "Posted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        oManager.Close();
 
-                    txtStatus.Text = "Posted";
+                        MessageBox.Show("Successfully approved!!!", "Posted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        txtStatus.Text = "Approved";
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
-                else
+                else if (txtStatus.Text == "Approved")
                 {
-                    return;
+                    if (MessageBox.Show("Are you sure you want to post this document? This action is irreversible!!!", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        LoanManager oManager = new LoanManager();
+
+                        oManager.ConnectionString = this.ConnectionString;
+                        oManager.Open();
+
+                        oManager.PostDocument(txtLoanNo.Text);
+
+                        oManager.Close();
+
+                        MessageBox.Show("Successfully posted!!!", "Posted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        txtStatus.Text = "Posted";
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
             }
             else if (e.Button.Index == 1)
@@ -727,9 +753,18 @@ namespace eLoanSystem.Transaction
                 btnAdd.Enabled = true;
                 
             }
-            else if (txtStatus.Text == "Posted")
+            else if (txtStatus.Text == "Approved")
             {
                 btnReleaseCash.Enabled = true;
+                txtStatus.Properties.Buttons[0].Visible = true;
+                txtStatus.Properties.Buttons[1].Visible = true;
+                btnCalculate.Enabled = false;
+                DisableControls();
+                btnAdd.Enabled = false;
+            }
+            else if (txtStatus.Text == "Posted")
+            {
+                btnReleaseCash.Enabled = false;
                 txtStatus.Properties.Buttons[0].Visible = false;
                 txtStatus.Properties.Buttons[1].Visible = true;
                 btnCalculate.Enabled = false;
@@ -763,6 +798,18 @@ namespace eLoanSystem.Transaction
         {
             if (e.Button.Index == 0)
             {
+                if (txtStatus.Text == "Draft")
+                {
+                    MessageBox.Show("Your not able to add payment to draft documents!!!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (txtStatus.Text == "Approved")
+                {
+                    MessageBox.Show("Your not able to add payment to approved documents!!!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 if (txtStatus.Text == "Closed" || txtStatus.Text == "Canceled")
                 {
                     MessageBox.Show("Your not able to add payment to closed documents!!!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -822,6 +869,16 @@ namespace eLoanSystem.Transaction
         {
             if (e.Button.Index == 0)
             {
+                if (txtStatus.Text == "Draft")
+                {
+                    MessageBox.Show("Your not able to add charges to draft documents!!!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (txtStatus.Text == "Approved")
+                {
+                    MessageBox.Show("Your not able to add charges to approved status documents!!!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 if (txtStatus.Text == "Closed" || txtStatus.Text == "Canceled")
                 {
                     MessageBox.Show("Your not able to add charges to canceled or closed documents!!!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -120,6 +120,7 @@ namespace eLoanSystem
             gridControl4.DataSource = dt;
             gridControl4.Refresh();
 
+            gridView5.ExpandAllGroups();
             oManager.Close();
         }
         public void RefreshMainMenu()
@@ -364,7 +365,7 @@ namespace eLoanSystem
             oForm.Stopper = true;
             oForm.OpenDocument(txt.Text);
             oForm.ShowDialog();
-
+            BindLoan();
         }
 
         private void backstageViewTabItem10_SelectedChanged(object sender, DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs e)
@@ -380,6 +381,11 @@ namespace eLoanSystem
         private void btnRefreshCashReleased_Click(object sender, EventArgs e)
         {
             BindCashReleased((DateTime)dtCFRStartDate.EditValue, (DateTime)dtCFREndDate.EditValue);
+        }
+
+        private void gridControl4_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

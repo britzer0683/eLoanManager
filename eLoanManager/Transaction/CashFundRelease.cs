@@ -62,6 +62,17 @@ namespace eLoanSystem.Transaction
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (cboTypeOfPayment.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select type of Payment!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cboSourceOfFund.EditValue == null)
+            {
+                MessageBox.Show("Please select fund!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (btnAdd.Text == "Add")
             {
                 CashReleaseManager oManager = new CashReleaseManager();
@@ -71,7 +82,7 @@ namespace eLoanSystem.Transaction
                 oManager.Open();
 
                 oUnit.ReleaseNo = txtReleaseNo.Text;
-                oUnit.RefLoanNo = txtLoanNo.Text;
+                oUnit.DocNum = txtLoanNo.Text;
                 oUnit.ChequeNo = txtCheckNo.Text;
                 oUnit.TypeOfPayment = cboTypeOfPayment.Text;
                 oUnit.SourceOfFund = cboSourceOfFund.EditValue == null ? "" : cboSourceOfFund.EditValue.ToString();
@@ -97,7 +108,7 @@ namespace eLoanSystem.Transaction
                 oManager.Open();
 
                 oUnit.ReleaseNo = txtReleaseNo.Text;
-                oUnit.RefLoanNo = txtLoanNo.Text;
+                oUnit.DocNum = txtLoanNo.Text;
                 oUnit.ChequeNo = txtCheckNo.Text;
                 oUnit.TypeOfPayment = cboTypeOfPayment.Text;
                 oUnit.SourceOfFund = cboSourceOfFund.EditValue.ToString();
@@ -122,7 +133,7 @@ namespace eLoanSystem.Transaction
 
         private void cboTypeOfPayment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtCheckNo.Text = cboTypeOfPayment.Text == "Cash" ? "Cash" : "";
+            txtCheckNo.Text = cboTypeOfPayment.Text == "Cash" ? "N/A" : "";
             txtCheckNo.Enabled = cboTypeOfPayment.Text == "Cash" ? false : true;
         }
     }
