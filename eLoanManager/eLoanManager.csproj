@@ -33,6 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=12.0.1100.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=12.0.1100.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -45,6 +55,8 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -123,11 +135,11 @@
     <Compile Include="Transaction\CashFundRelease.Designer.cs">
       <DependentUpon>CashFundRelease.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction\CashFundReleaseOldVersion.cs">
+    <Compile Include="Transaction\CashFundReleaseDocument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction\CashFundReleaseOldVersion.Designer.cs">
-      <DependentUpon>CashFundReleaseOldVersion.cs</DependentUpon>
+    <Compile Include="Transaction\CashFundReleaseDocument.Designer.cs">
+      <DependentUpon>CashFundReleaseDocument.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction\detailOtherCharges.cs">
       <SubType>Form</SubType>
@@ -170,6 +182,12 @@
     </Compile>
     <Compile Include="Transaction\PaymentBreakdown.Designer.cs">
       <DependentUpon>PaymentBreakdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PrintApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PrintApplication.Designer.cs">
+      <DependentUpon>PrintApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewForms\viewBorrowers.cs">
       <SubType>Form</SubType>
@@ -268,8 +286,8 @@
     <EmbeddedResource Include="Transaction\CashFundRelease.resx">
       <DependentUpon>CashFundRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction\CashFundReleaseOldVersion.resx">
-      <DependentUpon>CashFundReleaseOldVersion.cs</DependentUpon>
+    <EmbeddedResource Include="Transaction\CashFundReleaseDocument.resx">
+      <DependentUpon>CashFundReleaseDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\detailOtherCharges.resx">
       <DependentUpon>detailOtherCharges.cs</DependentUpon>
@@ -291,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\PaymentBreakdown.resx">
       <DependentUpon>PaymentBreakdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PrintApplication.resx">
+      <DependentUpon>PrintApplication.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

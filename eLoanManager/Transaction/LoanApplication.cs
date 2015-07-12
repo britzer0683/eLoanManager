@@ -535,7 +535,7 @@ namespace eLoanSystem.Transaction
             digitNo = Convert.ToInt16(oManager.GetDigit(_objectType));
             oManager.Close();
 
-            return sPrefix +  sSeries;
+            return sPrefix + string.Format("{0:D5}", Convert.ToInt16(sSeries));
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -928,6 +928,15 @@ namespace eLoanSystem.Transaction
                 oForm.ShowDialog();
                 ComputeOutstandingBalance();
             }
+        }
+
+        private void btnPrintApplication_Click(object sender, EventArgs e)
+        {
+            PrintApplication oForm = new PrintApplication();
+
+            oForm.DocumentNumber = txtLoanNo.Text;
+            oForm.ViewLayout();
+            oForm.ShowDialog();
         }
     }
 }

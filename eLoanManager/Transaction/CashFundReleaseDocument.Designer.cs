@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashFundReleaseDocument));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.buttonEdit3 = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtDocStatus = new DevExpress.XtraEditors.ButtonEdit();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -44,20 +44,9 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.dtModified = new DevExpress.XtraEditors.DateEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.lblDocNo = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.colRefLoanNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,8 +54,19 @@
             this.colRefDocument = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colReceivedAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.lblDocNo = new DevExpress.XtraEditors.LabelControl();
+            this.txtDocNum = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cboSourceOfFund = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.cboFundDestination = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRemarks = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModifiedBy.Properties)).BeginInit();
@@ -76,11 +76,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocNum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSourceOfFund.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboFundDestination.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl16
@@ -88,20 +88,20 @@
             this.labelControl16.Location = new System.Drawing.Point(476, 64);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(35, 13);
-            this.labelControl16.TabIndex = 65;
+            this.labelControl16.TabIndex = 10;
             this.labelControl16.Text = "Status:";
             // 
-            // buttonEdit3
+            // txtDocStatus
             // 
-            this.buttonEdit3.EditValue = "Draft";
-            this.buttonEdit3.Location = new System.Drawing.Point(575, 64);
-            this.buttonEdit3.MenuManager = this.ribbonControl1;
-            this.buttonEdit3.Name = "buttonEdit3";
-            this.buttonEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("buttonEdit3.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("buttonEdit3.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
-            this.buttonEdit3.Size = new System.Drawing.Size(111, 22);
-            this.buttonEdit3.TabIndex = 66;
+            this.txtDocStatus.EditValue = "Draft";
+            this.txtDocStatus.Location = new System.Drawing.Point(575, 64);
+            this.txtDocStatus.MenuManager = this.ribbonControl1;
+            this.txtDocStatus.Name = "txtDocStatus";
+            this.txtDocStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtDocStatus.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtDocStatus.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.txtDocStatus.Size = new System.Drawing.Size(111, 22);
+            this.txtDocStatus.TabIndex = 11;
             // 
             // ribbonControl1
             // 
@@ -132,7 +132,7 @@
             this.labelControl15.Location = new System.Drawing.Point(476, 92);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(58, 13);
-            this.labelControl15.TabIndex = 23;
+            this.labelControl15.TabIndex = 12;
             this.labelControl15.Text = "Created By:";
             // 
             // txtCreatedBy
@@ -140,21 +140,21 @@
             this.txtCreatedBy.Location = new System.Drawing.Point(575, 92);
             this.txtCreatedBy.Name = "txtCreatedBy";
             this.txtCreatedBy.Size = new System.Drawing.Size(112, 20);
-            this.txtCreatedBy.TabIndex = 25;
+            this.txtCreatedBy.TabIndex = 13;
             // 
             // txtModifiedBy
             // 
             this.txtModifiedBy.Location = new System.Drawing.Point(575, 146);
             this.txtModifiedBy.Name = "txtModifiedBy";
             this.txtModifiedBy.Size = new System.Drawing.Size(112, 20);
-            this.txtModifiedBy.TabIndex = 24;
+            this.txtModifiedBy.TabIndex = 17;
             // 
             // labelControl14
             // 
             this.labelControl14.Location = new System.Drawing.Point(476, 118);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(69, 13);
-            this.labelControl14.TabIndex = 27;
+            this.labelControl14.TabIndex = 14;
             this.labelControl14.Text = "Date Created:";
             // 
             // dtCreated
@@ -169,14 +169,14 @@
             this.dtCreated.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
             this.dtCreated.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
             this.dtCreated.Size = new System.Drawing.Size(112, 20);
-            this.dtCreated.TabIndex = 29;
+            this.dtCreated.TabIndex = 15;
             // 
             // labelControl13
             // 
             this.labelControl13.Location = new System.Drawing.Point(476, 172);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(70, 13);
-            this.labelControl13.TabIndex = 26;
+            this.labelControl13.TabIndex = 18;
             this.labelControl13.Text = "Date Modified:";
             // 
             // dtModified
@@ -191,32 +191,33 @@
             this.dtModified.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
             this.dtModified.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
             this.dtModified.Size = new System.Drawing.Size(112, 20);
-            this.dtModified.TabIndex = 28;
+            this.dtModified.TabIndex = 19;
             // 
             // labelControl12
             // 
             this.labelControl12.Location = new System.Drawing.Point(476, 146);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(59, 13);
-            this.labelControl12.TabIndex = 30;
+            this.labelControl12.TabIndex = 16;
             this.labelControl12.Text = "Modified By:";
             // 
-            // simpleButton2
+            // btnCancel
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(97, 511);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 13;
-            this.simpleButton2.Text = "Cancel";
+            this.btnCancel.Location = new System.Drawing.Point(97, 511);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 22;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // simpleButton1
+            // btnAdd
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(16, 511);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Add";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnAdd.Location = new System.Drawing.Point(16, 511);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 21;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gridView1
             // 
@@ -231,98 +232,6 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(16, 240);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(684, 264);
-            this.gridControl1.TabIndex = 11;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // lblDocNo
-            // 
-            this.lblDocNo.Location = new System.Drawing.Point(16, 64);
-            this.lblDocNo.Name = "lblDocNo";
-            this.lblDocNo.Size = new System.Drawing.Size(63, 13);
-            this.lblDocNo.TabIndex = 68;
-            this.lblDocNo.Text = "Document #:";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(86, 64);
-            this.textEdit1.MenuManager = this.ribbonControl1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 69;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(16, 92);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 13);
-            this.labelControl1.TabIndex = 68;
-            this.labelControl1.Text = "From:";
-            // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(86, 92);
-            this.lookUpEdit1.MenuManager = this.ribbonControl1;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(247, 20);
-            this.lookUpEdit1.TabIndex = 70;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 118);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(16, 13);
-            this.labelControl2.TabIndex = 68;
-            this.labelControl2.Text = "To:";
-            // 
-            // lookUpEdit2
-            // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(86, 118);
-            this.lookUpEdit2.Name = "lookUpEdit2";
-            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Size = new System.Drawing.Size(247, 20);
-            this.lookUpEdit2.TabIndex = 70;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 149);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(45, 13);
-            this.labelControl3.TabIndex = 71;
-            this.labelControl3.Text = "Remarks:";
-            // 
-            // memoEdit1
-            // 
-            this.memoEdit1.Location = new System.Drawing.Point(86, 149);
-            this.memoEdit1.MenuManager = this.ribbonControl1;
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(247, 59);
-            this.memoEdit1.TabIndex = 72;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(16, 214);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(41, 13);
-            this.labelControl4.TabIndex = 68;
-            this.labelControl4.Text = "Amount:";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(86, 214);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(247, 20);
-            this.textEdit2.TabIndex = 69;
             // 
             // colRefLoanNo
             // 
@@ -380,14 +289,106 @@
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 6;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(16, 240);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(684, 264);
+            this.gridControl1.TabIndex = 20;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // lblDocNo
+            // 
+            this.lblDocNo.Location = new System.Drawing.Point(16, 64);
+            this.lblDocNo.Name = "lblDocNo";
+            this.lblDocNo.Size = new System.Drawing.Size(63, 13);
+            this.lblDocNo.TabIndex = 0;
+            this.lblDocNo.Text = "Document #:";
+            // 
+            // txtDocNum
+            // 
+            this.txtDocNum.Location = new System.Drawing.Point(86, 64);
+            this.txtDocNum.MenuManager = this.ribbonControl1;
+            this.txtDocNum.Name = "txtDocNum";
+            this.txtDocNum.Size = new System.Drawing.Size(100, 20);
+            this.txtDocNum.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(16, 92);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(28, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "From:";
+            // 
+            // cboSourceOfFund
+            // 
+            this.cboSourceOfFund.Location = new System.Drawing.Point(86, 92);
+            this.cboSourceOfFund.MenuManager = this.ribbonControl1;
+            this.cboSourceOfFund.Name = "cboSourceOfFund";
+            this.cboSourceOfFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboSourceOfFund.Size = new System.Drawing.Size(247, 20);
+            this.cboSourceOfFund.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(16, 118);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(16, 13);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "To:";
+            // 
+            // cboFundDestination
+            // 
+            this.cboFundDestination.Location = new System.Drawing.Point(86, 118);
+            this.cboFundDestination.Name = "cboFundDestination";
+            this.cboFundDestination.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboFundDestination.Size = new System.Drawing.Size(247, 20);
+            this.cboFundDestination.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(16, 149);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(45, 13);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "Remarks:";
+            // 
+            // txtRemarks
+            // 
+            this.txtRemarks.Location = new System.Drawing.Point(86, 149);
+            this.txtRemarks.MenuManager = this.ribbonControl1;
+            this.txtRemarks.Name = "txtRemarks";
+            this.txtRemarks.Size = new System.Drawing.Size(247, 59);
+            this.txtRemarks.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(16, 214);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(41, 13);
+            this.labelControl4.TabIndex = 8;
+            this.labelControl4.Text = "Amount:";
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(86, 214);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(247, 20);
+            this.txtAmount.TabIndex = 9;
+            // 
             // simpleButton3
             // 
             this.simpleButton3.Location = new System.Drawing.Point(625, 518);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 12;
+            this.simpleButton3.TabIndex = 23;
             this.simpleButton3.Text = "Print";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton1_Click);
+
             // 
             // CashFundReleaseDocument
             // 
@@ -395,17 +396,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 553);
-            this.Controls.Add(this.memoEdit1);
+            this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.lookUpEdit2);
-            this.Controls.Add(this.lookUpEdit1);
+            this.Controls.Add(this.cboFundDestination);
+            this.Controls.Add(this.cboSourceOfFund);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtDocNum);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.lblDocNo);
-            this.Controls.Add(this.buttonEdit3);
+            this.Controls.Add(this.txtDocStatus);
             this.Controls.Add(this.labelControl16);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.dtModified);
@@ -415,9 +416,9 @@
             this.Controls.Add(this.txtModifiedBy);
             this.Controls.Add(this.txtCreatedBy);
             this.Controls.Add(this.labelControl15);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "CashFundReleaseDocument";
@@ -425,7 +426,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cash Fund Release";
             this.Load += new System.EventHandler(this.CashFundRelease_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModifiedBy.Properties)).EndInit();
@@ -435,11 +436,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocNum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSourceOfFund.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboFundDestination.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,7 +449,7 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit3;
+        private DevExpress.XtraEditors.ButtonEdit txtDocStatus;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
@@ -460,20 +461,20 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.DateEdit dtModified;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraEditors.LabelControl lblDocNo;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtDocNum;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit cboSourceOfFund;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
+        private DevExpress.XtraEditors.LookUpEdit cboFundDestination;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.MemoEdit txtRemarks;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRefLoanNo;
         private DevExpress.XtraGrid.Columns.GridColumn colCardCode;
         private DevExpress.XtraGrid.Columns.GridColumn colCardName;
