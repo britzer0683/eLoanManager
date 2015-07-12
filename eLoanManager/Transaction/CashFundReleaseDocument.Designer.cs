@@ -66,6 +66,9 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.colDueDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cboDueDate = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.txtLoanNo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
@@ -81,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboFundDestination.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDueDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoanNo)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl16
@@ -223,6 +228,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colRefLoanNo,
+            this.colDueDate,
             this.colCardCode,
             this.colCardName,
             this.colLoanAmount,
@@ -247,7 +253,7 @@
             this.colCardCode.FieldName = "CardCode";
             this.colCardCode.Name = "colCardCode";
             this.colCardCode.Visible = true;
-            this.colCardCode.VisibleIndex = 1;
+            this.colCardCode.VisibleIndex = 2;
             // 
             // colCardName
             // 
@@ -255,7 +261,7 @@
             this.colCardName.FieldName = "CardName";
             this.colCardName.Name = "colCardName";
             this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 2;
+            this.colCardName.VisibleIndex = 3;
             // 
             // colLoanAmount
             // 
@@ -263,7 +269,7 @@
             this.colLoanAmount.FieldName = "LoanAmount";
             this.colLoanAmount.Name = "colLoanAmount";
             this.colLoanAmount.Visible = true;
-            this.colLoanAmount.VisibleIndex = 3;
+            this.colLoanAmount.VisibleIndex = 4;
             // 
             // colRefDocument
             // 
@@ -271,7 +277,7 @@
             this.colRefDocument.FieldName = "ReferenceDocument";
             this.colRefDocument.Name = "colRefDocument";
             this.colRefDocument.Visible = true;
-            this.colRefDocument.VisibleIndex = 4;
+            this.colRefDocument.VisibleIndex = 5;
             // 
             // colReceivedAmount
             // 
@@ -279,7 +285,7 @@
             this.colReceivedAmount.FieldName = "ReceivedAmount";
             this.colReceivedAmount.Name = "colReceivedAmount";
             this.colReceivedAmount.Visible = true;
-            this.colReceivedAmount.VisibleIndex = 5;
+            this.colReceivedAmount.VisibleIndex = 6;
             // 
             // colStatus
             // 
@@ -287,13 +293,16 @@
             this.colStatus.FieldName = "DocStaus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 6;
+            this.colStatus.VisibleIndex = 7;
             // 
             // gridControl1
             // 
             this.gridControl1.Location = new System.Drawing.Point(16, 240);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cboDueDate,
+            this.txtLoanNo});
             this.gridControl1.Size = new System.Drawing.Size(684, 264);
             this.gridControl1.TabIndex = 20;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -330,6 +339,7 @@
             this.cboSourceOfFund.Name = "cboSourceOfFund";
             this.cboSourceOfFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboSourceOfFund.Properties.NullText = "[Source]";
             this.cboSourceOfFund.Size = new System.Drawing.Size(247, 20);
             this.cboSourceOfFund.TabIndex = 3;
             // 
@@ -347,6 +357,7 @@
             this.cboFundDestination.Name = "cboFundDestination";
             this.cboFundDestination.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboFundDestination.Properties.NullText = "[Destination]";
             this.cboFundDestination.Size = new System.Drawing.Size(247, 20);
             this.cboFundDestination.TabIndex = 5;
             // 
@@ -388,7 +399,29 @@
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
             this.simpleButton3.TabIndex = 23;
             this.simpleButton3.Text = "Print";
-
+            // 
+            // colDueDate
+            // 
+            this.colDueDate.Caption = "Due Date";
+            this.colDueDate.FieldName = "DueDate";
+            this.colDueDate.Name = "colDueDate";
+            this.colDueDate.Visible = true;
+            this.colDueDate.VisibleIndex = 1;
+            // 
+            // cboDueDate
+            // 
+            this.cboDueDate.AutoHeight = false;
+            this.cboDueDate.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboDueDate.Name = "cboDueDate";
+            // 
+            // txtLoanNo
+            // 
+            this.txtLoanNo.AutoHeight = false;
+            this.txtLoanNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtLoanNo.Name = "txtLoanNo";
+            this.txtLoanNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtLoanNo_ButtonClick);
             // 
             // CashFundReleaseDocument
             // 
@@ -441,6 +474,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboFundDestination.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDueDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoanNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,6 +518,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colReceivedAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraGrid.Columns.GridColumn colDueDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit cboDueDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit txtLoanNo;
 
     }
 }
