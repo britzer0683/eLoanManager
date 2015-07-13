@@ -223,7 +223,7 @@ namespace eLoan.BL
             oCommand.Connection = this.Connection;
             oCommand.CommandType = CommandType.Text;
 
-            oCommand.CommandText = "SELECT *, (SELECT CASE WHEN SUM(Amount) is NULL then 0 else SUM(Amount) end FROM LOAN3 WHERE LOAN3.DocNum=OLOAN.DocNum) as CashReleased, (SELECT SUM(PaidAmount + (CASE WHEN OTHERCHARGES IS NULL THEN 0 ELSE OTHERCHARGES END)) FROM LOAN1 WHERE LOAN1.DocNum=OLOAN.DocNum) TotalCollection, TotalAmortization - (SELECT SUM(PaidAmount + (CASE WHEN OTHERCHARGES IS NULL THEN 0 ELSE OTHERCHARGES END)) FROM LOAN1 WHERE LOAN1.DocNum=OLOAN.DocNum) OutstandingBalance FROM OLOAN";
+            oCommand.CommandText = "SELECT *, (SELECT CASE WHEN SUM(Amount) is NULL then 0 else SUM(Amount) end FROM LOAN3 WHERE LOAN3.DocNum=OLOAN.DocNum) as CashReleased, (SELECT SUM(PaidAmount + (CASE WHEN OTHERCHARGES IS NULL THEN 0 ELSE OTHERCHARGES END)) FROM LOAN1 WHERE LOAN1.DocNum=OLOAN.DocNum) TotalCollection, TotalAmortization - (SELECT SUM(PaidAmount + (CASE WHEN OTHERCHARGES IS NULL THEN 0 ELSE OTHERCHARGES END)) FROM LOAN1 WHERE LOAN1.DocNum=OLOAN.DocNum) OutstandingBalance FROM OLOAN ORDER BY DocNum ASC";
 
             oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dt);

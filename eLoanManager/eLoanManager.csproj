@@ -135,11 +135,11 @@
     <Compile Include="Transaction\CashFundRelease.Designer.cs">
       <DependentUpon>CashFundRelease.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction\CashFundReleaseDocument.cs">
+    <Compile Include="Transaction\CashReleaseDocument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction\CashFundReleaseDocument.Designer.cs">
-      <DependentUpon>CashFundReleaseDocument.cs</DependentUpon>
+    <Compile Include="Transaction\CashReleaseDocument.Designer.cs">
+      <DependentUpon>CashReleaseDocument.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction\detailOtherCharges.cs">
       <SubType>Form</SubType>
@@ -292,8 +292,8 @@
     <EmbeddedResource Include="Transaction\CashFundRelease.resx">
       <DependentUpon>CashFundRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction\CashFundReleaseDocument.resx">
-      <DependentUpon>CashFundReleaseDocument.cs</DependentUpon>
+    <EmbeddedResource Include="Transaction\CashReleaseDocument.resx">
+      <DependentUpon>CashReleaseDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\detailOtherCharges.resx">
       <DependentUpon>detailOtherCharges.cs</DependentUpon>

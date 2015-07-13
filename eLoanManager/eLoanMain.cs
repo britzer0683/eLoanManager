@@ -248,7 +248,7 @@ namespace eLoanSystem
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CashFundReleaseDocument oForm = new CashFundReleaseDocument();
+            CashReleaseDocument oForm = new CashReleaseDocument();
 
             oForm.ActiveUserID = this.ActiveUserID;
             oForm.ShowDialog();
@@ -272,7 +272,7 @@ namespace eLoanSystem
 
         private void barCashFundRelease_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CashFundReleaseDocument oForm = new CashFundReleaseDocument();
+            CashReleaseDocument oForm = new CashReleaseDocument();
             
             oForm.ActiveUserID = this.ActiveUserID;
             oForm.ShowDialog();
@@ -396,7 +396,7 @@ namespace eLoanSystem
 
         private void barNewCashFundRelease_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CashFundReleaseDocument oForm = new CashFundReleaseDocument();
+            CashReleaseDocument oForm = new CashReleaseDocument();
 
             oForm.ConnectionString = this.ConnectionString;
             oForm.ActiveUserID = this.ActiveUserID;

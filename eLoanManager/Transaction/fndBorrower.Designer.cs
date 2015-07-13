@@ -1,6 +1,6 @@
 ﻿namespace eLoanSystem.Transaction
 {
-    partial class LA_fndBorrower
+    partial class fndBorrower
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LA_fndBorrower));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fndBorrower));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtSearch = new DevExpress.XtraEditors.ButtonEdit();
@@ -39,13 +39,13 @@
             this.colInterestRate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGuarrantorName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPayDayCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnChoose = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -134,6 +134,12 @@
             this.colPayDayCode.FieldName = "PayDayCode";
             this.colPayDayCode.Name = "colPayDayCode";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "FrequencyOfPayment";
+            this.gridColumn1.FieldName = "FrequencyOfPayment";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // btnChoose
             // 
             this.btnChoose.Image = ((System.Drawing.Image)(resources.GetObject("btnChoose.Image")));
@@ -152,6 +158,7 @@
             this.btnClose.Size = new System.Drawing.Size(87, 40);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Cancel";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ribbonControl1
             // 
@@ -185,13 +192,7 @@
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(531, 31);
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "FrequencyOfPayment";
-            this.gridColumn1.FieldName = "FrequencyOfPayment";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // LA_fndBorrower
+            // fndBorrower
             // 
             this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +205,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "LA_fndBorrower";
+            this.Name = "fndBorrower";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.StatusBar = this.ribbonStatusBar1;

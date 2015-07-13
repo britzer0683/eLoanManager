@@ -91,6 +91,27 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.btnRefreshCashReleased = new DevExpress.XtraEditors.SimpleButton();
+            this.dtCFREndDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtCFRStartDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.backstageViewClientControl4 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.grdCtlEmployersInfo = new DevExpress.XtraGrid.GridControl();
+            this.grdViewEmployersInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewClientControl6 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.grdCtlBorrowerInfo = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -122,27 +143,6 @@
             this.colEmpContact = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmpEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.backstageViewClientControl10 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnRefreshCashReleased = new DevExpress.XtraEditors.SimpleButton();
-            this.dtCFREndDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dtCFRStartDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.backstageViewClientControl4 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.grdCtlEmployersInfo = new DevExpress.XtraGrid.GridControl();
-            this.grdViewEmployersInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.backstageViewTabItem10 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.backstageViewItemSeparator1 = new DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator();
@@ -211,6 +211,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtPaymentStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            this.backstageViewClientControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            this.splitContainerControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            this.backstageViewClientControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).BeginInit();
             this.backstageViewClientControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCtlBorrowerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
@@ -224,18 +236,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardCode)).BeginInit();
             this.backstageViewClientControl10.SuspendLayout();
-            this.backstageViewClientControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            this.backstageViewClientControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -409,7 +409,7 @@
             // 
             // barNewCashFundRelease
             // 
-            this.barNewCashFundRelease.Caption = "Cash/Fund Release";
+            this.barNewCashFundRelease.Caption = "Cash Release";
             this.barNewCashFundRelease.Glyph = ((System.Drawing.Image)(resources.GetObject("barNewCashFundRelease.Glyph")));
             this.barNewCashFundRelease.Id = 15;
             this.barNewCashFundRelease.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewCashFundRelease.LargeGlyph")));
@@ -871,6 +871,235 @@
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 7;
             // 
+            // backstageViewClientControl3
+            // 
+            this.backstageViewClientControl3.Controls.Add(this.splitContainerControl2);
+            this.backstageViewClientControl3.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl3.Name = "backstageViewClientControl3";
+            this.backstageViewClientControl3.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl3.TabIndex = 2;
+            // 
+            // splitContainerControl2
+            // 
+            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl2.Horizontal = false;
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.btnRefreshCashReleased);
+            this.splitContainerControl2.Panel1.Controls.Add(this.dtCFREndDate);
+            this.splitContainerControl2.Panel1.Controls.Add(this.labelControl1);
+            this.splitContainerControl2.Panel1.Controls.Add(this.dtCFRStartDate);
+            this.splitContainerControl2.Panel1.Controls.Add(this.labelControl2);
+            this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.gridControl4);
+            this.splitContainerControl2.Panel2.Text = "Panel2";
+            this.splitContainerControl2.Size = new System.Drawing.Size(812, 571);
+            this.splitContainerControl2.SplitterPosition = 52;
+            this.splitContainerControl2.TabIndex = 2;
+            this.splitContainerControl2.Text = "splitContainerControl2";
+            // 
+            // btnRefreshCashReleased
+            // 
+            this.btnRefreshCashReleased.Location = new System.Drawing.Point(305, 18);
+            this.btnRefreshCashReleased.Name = "btnRefreshCashReleased";
+            this.btnRefreshCashReleased.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshCashReleased.TabIndex = 4;
+            this.btnRefreshCashReleased.Text = "Refresh";
+            this.btnRefreshCashReleased.Click += new System.EventHandler(this.btnRefreshCashReleased_Click);
+            // 
+            // dtCFREndDate
+            // 
+            this.dtCFREndDate.EditValue = null;
+            this.dtCFREndDate.Location = new System.Drawing.Point(187, 18);
+            this.dtCFREndDate.MenuManager = this.ribbonControl1;
+            this.dtCFREndDate.Name = "dtCFREndDate";
+            this.dtCFREndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtCFREndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtCFREndDate.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
+            this.dtCFREndDate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
+            this.dtCFREndDate.Properties.DisplayFormat.FormatString = "MM.dd.yyyy";
+            this.dtCFREndDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtCFREndDate.Properties.EditFormat.FormatString = "MM.dd.yyyy";
+            this.dtCFREndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtCFREndDate.Properties.Mask.EditMask = "MM.dd.yyyy";
+            this.dtCFREndDate.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.dtCFREndDate.Size = new System.Drawing.Size(100, 20);
+            this.dtCFREndDate.TabIndex = 3;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(165, 18);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(16, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "To:";
+            // 
+            // dtCFRStartDate
+            // 
+            this.dtCFRStartDate.EditValue = null;
+            this.dtCFRStartDate.Location = new System.Drawing.Point(50, 18);
+            this.dtCFRStartDate.MenuManager = this.ribbonControl1;
+            this.dtCFRStartDate.Name = "dtCFRStartDate";
+            this.dtCFRStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtCFRStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtCFRStartDate.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
+            this.dtCFRStartDate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
+            this.dtCFRStartDate.Properties.DisplayFormat.FormatString = "MM.dd.yyyy";
+            this.dtCFRStartDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtCFRStartDate.Properties.EditFormat.FormatString = "MM.dd.yyyy";
+            this.dtCFRStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtCFRStartDate.Properties.Mask.EditMask = "MM.dd.yyyy";
+            this.dtCFRStartDate.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.dtCFRStartDate.Size = new System.Drawing.Size(100, 20);
+            this.dtCFRStartDate.TabIndex = 1;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(16, 18);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(28, 13);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "From:";
+            // 
+            // gridControl4
+            // 
+            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl4.Location = new System.Drawing.Point(0, 0);
+            this.gridControl4.MainView = this.gridView5;
+            this.gridControl4.MenuManager = this.ribbonControl1;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(812, 514);
+            this.gridControl4.TabIndex = 0;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            this.gridControl4.Click += new System.EventHandler(this.gridControl4_Click);
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn14,
+            this.gridColumn16});
+            this.gridView5.GridControl = this.gridControl4;
+            this.gridView5.GroupCount = 1;
+            this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", this.gridColumn16, "{0:N}")});
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsView.ShowFooter = true;
+            this.gridView5.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn11, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Date Released";
+            this.gridColumn1.FieldName = "DateReleased";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Loan#";
+            this.gridColumn8.FieldName = "DocNum";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Borrower";
+            this.gridColumn9.FieldName = "CardName";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 2;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Release#";
+            this.gridColumn10.FieldName = "RefNo";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Source of Fund";
+            this.gridColumn11.FieldName = "SourceOfFund";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 4;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Payment Type";
+            this.gridColumn12.FieldName = "TypeOfPayment";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 4;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Cheque No.";
+            this.gridColumn14.FieldName = "ChequeNo";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 5;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Amount";
+            this.gridColumn16.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn16.FieldName = "Amount";
+            this.gridColumn16.GroupFormat.FormatString = "{0:N}";
+            this.gridColumn16.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "{0:N}")});
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 6;
+            // 
+            // backstageViewClientControl4
+            // 
+            this.backstageViewClientControl4.Controls.Add(this.grdCtlEmployersInfo);
+            this.backstageViewClientControl4.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl4.Name = "backstageViewClientControl4";
+            this.backstageViewClientControl4.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl4.TabIndex = 3;
+            // 
+            // grdCtlEmployersInfo
+            // 
+            this.grdCtlEmployersInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdCtlEmployersInfo.Location = new System.Drawing.Point(0, 0);
+            this.grdCtlEmployersInfo.MainView = this.grdViewEmployersInfo;
+            this.grdCtlEmployersInfo.Name = "grdCtlEmployersInfo";
+            this.grdCtlEmployersInfo.Size = new System.Drawing.Size(812, 571);
+            this.grdCtlEmployersInfo.TabIndex = 0;
+            this.grdCtlEmployersInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdViewEmployersInfo});
+            // 
+            // grdViewEmployersInfo
+            // 
+            this.grdViewEmployersInfo.GridControl = this.grdCtlEmployersInfo;
+            this.grdViewEmployersInfo.Name = "grdViewEmployersInfo";
+            // 
+            // backstageViewClientControl5
+            // 
+            this.backstageViewClientControl5.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl5.Name = "backstageViewClientControl5";
+            this.backstageViewClientControl5.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl5.TabIndex = 5;
+            this.backstageViewClientControl5.Load += new System.EventHandler(this.backstageViewClientControl5_Load);
+            // 
             // backstageViewClientControl6
             // 
             this.backstageViewClientControl6.Controls.Add(this.grdCtlBorrowerInfo);
@@ -1163,235 +1392,6 @@
             this.backstageViewClientControl10.Name = "backstageViewClientControl10";
             this.backstageViewClientControl10.Size = new System.Drawing.Size(812, 571);
             this.backstageViewClientControl10.TabIndex = 10;
-            // 
-            // backstageViewClientControl5
-            // 
-            this.backstageViewClientControl5.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl5.Name = "backstageViewClientControl5";
-            this.backstageViewClientControl5.Size = new System.Drawing.Size(812, 571);
-            this.backstageViewClientControl5.TabIndex = 5;
-            this.backstageViewClientControl5.Load += new System.EventHandler(this.backstageViewClientControl5_Load);
-            // 
-            // backstageViewClientControl3
-            // 
-            this.backstageViewClientControl3.Controls.Add(this.splitContainerControl2);
-            this.backstageViewClientControl3.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl3.Name = "backstageViewClientControl3";
-            this.backstageViewClientControl3.Size = new System.Drawing.Size(812, 571);
-            this.backstageViewClientControl3.TabIndex = 2;
-            // 
-            // splitContainerControl2
-            // 
-            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl2.Horizontal = false;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.btnRefreshCashReleased);
-            this.splitContainerControl2.Panel1.Controls.Add(this.dtCFREndDate);
-            this.splitContainerControl2.Panel1.Controls.Add(this.labelControl1);
-            this.splitContainerControl2.Panel1.Controls.Add(this.dtCFRStartDate);
-            this.splitContainerControl2.Panel1.Controls.Add(this.labelControl2);
-            this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.gridControl4);
-            this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(812, 571);
-            this.splitContainerControl2.SplitterPosition = 52;
-            this.splitContainerControl2.TabIndex = 2;
-            this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
-            // btnRefreshCashReleased
-            // 
-            this.btnRefreshCashReleased.Location = new System.Drawing.Point(305, 18);
-            this.btnRefreshCashReleased.Name = "btnRefreshCashReleased";
-            this.btnRefreshCashReleased.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshCashReleased.TabIndex = 4;
-            this.btnRefreshCashReleased.Text = "Refresh";
-            this.btnRefreshCashReleased.Click += new System.EventHandler(this.btnRefreshCashReleased_Click);
-            // 
-            // dtCFREndDate
-            // 
-            this.dtCFREndDate.EditValue = null;
-            this.dtCFREndDate.Location = new System.Drawing.Point(187, 18);
-            this.dtCFREndDate.MenuManager = this.ribbonControl1;
-            this.dtCFREndDate.Name = "dtCFREndDate";
-            this.dtCFREndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtCFREndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtCFREndDate.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
-            this.dtCFREndDate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
-            this.dtCFREndDate.Properties.DisplayFormat.FormatString = "MM.dd.yyyy";
-            this.dtCFREndDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtCFREndDate.Properties.EditFormat.FormatString = "MM.dd.yyyy";
-            this.dtCFREndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtCFREndDate.Properties.Mask.EditMask = "MM.dd.yyyy";
-            this.dtCFREndDate.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dtCFREndDate.Size = new System.Drawing.Size(100, 20);
-            this.dtCFREndDate.TabIndex = 3;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(165, 18);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(16, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "To:";
-            // 
-            // dtCFRStartDate
-            // 
-            this.dtCFRStartDate.EditValue = null;
-            this.dtCFRStartDate.Location = new System.Drawing.Point(50, 18);
-            this.dtCFRStartDate.MenuManager = this.ribbonControl1;
-            this.dtCFRStartDate.Name = "dtCFRStartDate";
-            this.dtCFRStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtCFRStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtCFRStartDate.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
-            this.dtCFRStartDate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
-            this.dtCFRStartDate.Properties.DisplayFormat.FormatString = "MM.dd.yyyy";
-            this.dtCFRStartDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtCFRStartDate.Properties.EditFormat.FormatString = "MM.dd.yyyy";
-            this.dtCFRStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtCFRStartDate.Properties.Mask.EditMask = "MM.dd.yyyy";
-            this.dtCFRStartDate.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dtCFRStartDate.Size = new System.Drawing.Size(100, 20);
-            this.dtCFRStartDate.TabIndex = 1;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 18);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(28, 13);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "From:";
-            // 
-            // gridControl4
-            // 
-            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl4.Location = new System.Drawing.Point(0, 0);
-            this.gridControl4.MainView = this.gridView5;
-            this.gridControl4.MenuManager = this.ribbonControl1;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(812, 514);
-            this.gridControl4.TabIndex = 0;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
-            this.gridControl4.Click += new System.EventHandler(this.gridControl4_Click);
-            // 
-            // gridView5
-            // 
-            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn14,
-            this.gridColumn16});
-            this.gridView5.GridControl = this.gridControl4;
-            this.gridView5.GroupCount = 1;
-            this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", this.gridColumn16, "{0:N}")});
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsView.ShowFooter = true;
-            this.gridView5.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn11, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Date Released";
-            this.gridColumn1.FieldName = "DateReleased";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Loan#";
-            this.gridColumn8.FieldName = "DocNum";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 1;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Borrower";
-            this.gridColumn9.FieldName = "CardName";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 2;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Release#";
-            this.gridColumn10.FieldName = "RefNo";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Source of Fund";
-            this.gridColumn11.FieldName = "SourceOfFund";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 4;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "Payment Type";
-            this.gridColumn12.FieldName = "TypeOfPayment";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 4;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "Cheque No.";
-            this.gridColumn14.FieldName = "ChequeNo";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 5;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Amount";
-            this.gridColumn16.DisplayFormat.FormatString = "{0:N}";
-            this.gridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn16.FieldName = "Amount";
-            this.gridColumn16.GroupFormat.FormatString = "{0:N}";
-            this.gridColumn16.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "{0:N}")});
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 6;
-            // 
-            // backstageViewClientControl4
-            // 
-            this.backstageViewClientControl4.Controls.Add(this.grdCtlEmployersInfo);
-            this.backstageViewClientControl4.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl4.Name = "backstageViewClientControl4";
-            this.backstageViewClientControl4.Size = new System.Drawing.Size(812, 571);
-            this.backstageViewClientControl4.TabIndex = 3;
-            // 
-            // grdCtlEmployersInfo
-            // 
-            this.grdCtlEmployersInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdCtlEmployersInfo.Location = new System.Drawing.Point(0, 0);
-            this.grdCtlEmployersInfo.MainView = this.grdViewEmployersInfo;
-            this.grdCtlEmployersInfo.Name = "grdCtlEmployersInfo";
-            this.grdCtlEmployersInfo.Size = new System.Drawing.Size(812, 571);
-            this.grdCtlEmployersInfo.TabIndex = 0;
-            this.grdCtlEmployersInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdViewEmployersInfo});
-            // 
-            // grdViewEmployersInfo
-            // 
-            this.grdViewEmployersInfo.GridControl = this.grdCtlEmployersInfo;
-            this.grdViewEmployersInfo.Name = "grdViewEmployersInfo";
             // 
             // backstageViewTabItem10
             // 
@@ -1823,6 +1823,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtPaymentStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            this.backstageViewClientControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
+            this.splitContainerControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            this.backstageViewClientControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).EndInit();
             this.backstageViewClientControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCtlBorrowerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -1836,18 +1848,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardCode)).EndInit();
             this.backstageViewClientControl10.ResumeLayout(false);
-            this.backstageViewClientControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFREndDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCFRStartDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            this.backstageViewClientControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdCtlEmployersInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdViewEmployersInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);

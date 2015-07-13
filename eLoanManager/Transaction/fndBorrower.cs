@@ -11,9 +11,9 @@ using eLoan.BL;
 
 namespace eLoanSystem.Transaction
 {
-    public partial class LA_fndBorrower : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class fndBorrower : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public LA_fndBorrower()
+        public fndBorrower()
         {
             InitializeComponent();
         }
@@ -110,6 +110,11 @@ namespace eLoanSystem.Transaction
             {
                 BindGrid(txtSearch.Text);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

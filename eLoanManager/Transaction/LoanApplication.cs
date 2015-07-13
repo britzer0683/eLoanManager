@@ -430,7 +430,7 @@ namespace eLoanSystem.Transaction
 
         private void txtBorrowerCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            LA_fndBorrower findForm = new LA_fndBorrower();
+            fndBorrower findForm = new fndBorrower();
 
             findForm.ConnectionString = this.ConnectionString;
             findForm.ShowDialog();
