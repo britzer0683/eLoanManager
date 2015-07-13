@@ -45,9 +45,10 @@
             this.barSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
             this.barSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
             this.barCloseForm = new DevExpress.XtraBars.BarButtonItem();
+            this.barNew = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barNew = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtContactPerson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmailAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContactNo.Properties)).BeginInit();
@@ -55,18 +56,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            this.xtraScrollableControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtContactPerson
             // 
-            this.txtContactPerson.Location = new System.Drawing.Point(149, 330);
+            this.txtContactPerson.Location = new System.Drawing.Point(147, 199);
             this.txtContactPerson.Name = "txtContactPerson";
             this.txtContactPerson.Size = new System.Drawing.Size(100, 20);
             this.txtContactPerson.TabIndex = 29;
             // 
             // lblContactPerson
             // 
-            this.lblContactPerson.Location = new System.Drawing.Point(23, 330);
+            this.lblContactPerson.Location = new System.Drawing.Point(21, 199);
             this.lblContactPerson.Name = "lblContactPerson";
             this.lblContactPerson.Size = new System.Drawing.Size(74, 13);
             this.lblContactPerson.TabIndex = 28;
@@ -74,14 +76,14 @@
             // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(149, 304);
+            this.txtEmailAddress.Location = new System.Drawing.Point(147, 173);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(100, 20);
             this.txtEmailAddress.TabIndex = 27;
             // 
             // lblEmailAddress
             // 
-            this.lblEmailAddress.Location = new System.Drawing.Point(23, 304);
+            this.lblEmailAddress.Location = new System.Drawing.Point(21, 173);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(66, 13);
             this.lblEmailAddress.TabIndex = 26;
@@ -89,14 +91,14 @@
             // 
             // txtContactNo
             // 
-            this.txtContactNo.Location = new System.Drawing.Point(149, 278);
+            this.txtContactNo.Location = new System.Drawing.Point(147, 147);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(100, 20);
             this.txtContactNo.TabIndex = 25;
             // 
             // lblContactNo
             // 
-            this.lblContactNo.Location = new System.Drawing.Point(23, 278);
+            this.lblContactNo.Location = new System.Drawing.Point(21, 147);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(58, 13);
             this.lblContactNo.TabIndex = 24;
@@ -104,7 +106,7 @@
             // 
             // lblAddress
             // 
-            this.lblAddress.Location = new System.Drawing.Point(23, 209);
+            this.lblAddress.Location = new System.Drawing.Point(21, 78);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(39, 13);
             this.lblAddress.TabIndex = 22;
@@ -112,21 +114,21 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(149, 209);
+            this.txtAddress.Location = new System.Drawing.Point(147, 78);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(260, 63);
             this.txtAddress.TabIndex = 21;
             // 
             // txtEmployerName
             // 
-            this.txtEmployerName.Location = new System.Drawing.Point(149, 183);
+            this.txtEmployerName.Location = new System.Drawing.Point(147, 52);
             this.txtEmployerName.Name = "txtEmployerName";
             this.txtEmployerName.Size = new System.Drawing.Size(260, 20);
             this.txtEmployerName.TabIndex = 19;
             // 
             // lblEmpName
             // 
-            this.lblEmpName.Location = new System.Drawing.Point(23, 183);
+            this.lblEmpName.Location = new System.Drawing.Point(21, 52);
             this.lblEmpName.Name = "lblEmpName";
             this.lblEmpName.Size = new System.Drawing.Size(124, 13);
             this.lblEmpName.TabIndex = 18;
@@ -134,14 +136,14 @@
             // 
             // txtCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(149, 157);
+            this.txtCode.Location = new System.Drawing.Point(147, 26);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 20);
             this.txtCode.TabIndex = 17;
             // 
             // lblEmpCode
             // 
-            this.lblEmpCode.Location = new System.Drawing.Point(23, 157);
+            this.lblEmpCode.Location = new System.Drawing.Point(21, 26);
             this.lblEmpCode.Name = "lblEmpCode";
             this.lblEmpCode.Size = new System.Drawing.Size(29, 13);
             this.lblEmpCode.TabIndex = 16;
@@ -161,7 +163,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(466, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(662, 146);
             // 
             // barSaveAndClose
             // 
@@ -192,12 +194,21 @@
             this.barCloseForm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barCloseForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCloseForm_ItemClick);
             // 
+            // barNew
+            // 
+            this.barNew.Caption = "New";
+            this.barNew.Glyph = ((System.Drawing.Image)(resources.GetObject("barNew.Glyph")));
+            this.barNew.Id = 6;
+            this.barNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNew.LargeGlyph")));
+            this.barNew.Name = "barNew";
+            this.barNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNew_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Contact";
+            this.ribbonPage1.Text = "Guarantor/Financer Information";
             // 
             // ribbonPageGroup1
             // 
@@ -208,37 +219,38 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
             // 
-            // barNew
+            // xtraScrollableControl1
             // 
-            this.barNew.Caption = "New";
-            this.barNew.Glyph = ((System.Drawing.Image)(resources.GetObject("barNew.Glyph")));
-            this.barNew.Id = 6;
-            this.barNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNew.LargeGlyph")));
-            this.barNew.Name = "barNew";
-            this.barNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNew_ItemClick);
+            this.xtraScrollableControl1.Controls.Add(this.txtContactPerson);
+            this.xtraScrollableControl1.Controls.Add(this.lblContactPerson);
+            this.xtraScrollableControl1.Controls.Add(this.txtEmailAddress);
+            this.xtraScrollableControl1.Controls.Add(this.lblEmailAddress);
+            this.xtraScrollableControl1.Controls.Add(this.txtContactNo);
+            this.xtraScrollableControl1.Controls.Add(this.lblContactNo);
+            this.xtraScrollableControl1.Controls.Add(this.lblAddress);
+            this.xtraScrollableControl1.Controls.Add(this.txtAddress);
+            this.xtraScrollableControl1.Controls.Add(this.txtEmployerName);
+            this.xtraScrollableControl1.Controls.Add(this.lblEmpName);
+            this.xtraScrollableControl1.Controls.Add(this.txtCode);
+            this.xtraScrollableControl1.Controls.Add(this.lblEmpCode);
+            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(662, 347);
+            this.xtraScrollableControl1.TabIndex = 31;
             // 
             // GuarantorFinancerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 432);
-            this.Controls.Add(this.txtContactPerson);
-            this.Controls.Add(this.lblContactPerson);
-            this.Controls.Add(this.txtEmailAddress);
-            this.Controls.Add(this.lblEmailAddress);
-            this.Controls.Add(this.txtContactNo);
-            this.Controls.Add(this.lblContactNo);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtEmployerName);
-            this.Controls.Add(this.lblEmpName);
-            this.Controls.Add(this.txtCode);
-            this.Controls.Add(this.lblEmpCode);
+            this.ClientSize = new System.Drawing.Size(662, 493);
+            this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "GuarantorFinancerInfo";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "GuarantorFinancer";
+            this.Text = "Guarantor/Financer File";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GuarantorFinancerInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtContactPerson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmailAddress.Properties)).EndInit();
@@ -247,8 +259,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            this.xtraScrollableControl1.ResumeLayout(false);
+            this.xtraScrollableControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -273,5 +286,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barCloseForm;
         private DevExpress.XtraBars.BarButtonItem barNew;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
     }
 }

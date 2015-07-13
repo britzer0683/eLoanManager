@@ -45,7 +45,7 @@ namespace eLoanSystem
 
             if (isAuthenticated)
             {
-                eLoanMain oForm = new eLoanMain();
+                eLoanMainMenu oForm = new eLoanMainMenu();
                 oForm.ConnectionString = this.ConnectionString;
                 oForm.ActiveUserID = txtUID.Text.ToUpper();
                 this.Visible = false;

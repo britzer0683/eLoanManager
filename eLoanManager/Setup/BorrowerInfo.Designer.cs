@@ -373,7 +373,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(737, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(737, 146);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barSaveAndClose
@@ -428,7 +428,7 @@
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Tag = "";
-            this.ribbonPage1.Text = "Contact";
+            this.ribbonPage1.Text = "Borrower Information";
             // 
             // ribbonPageGroup1
             // 
@@ -477,9 +477,9 @@
             this.xtraScrollableControl1.Controls.Add(this.labelControl2);
             this.xtraScrollableControl1.Controls.Add(this.labelControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 144);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(737, 479);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(737, 477);
             this.xtraScrollableControl1.TabIndex = 15;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
             // 
@@ -530,6 +530,7 @@
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Borrower";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BorrowerInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtBorrowerCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).EndInit();

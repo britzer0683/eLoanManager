@@ -49,7 +49,7 @@ namespace eLoanSystem.Setup
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.MainMenu.RefreshMainMenu();
+            
             this.Close();
         }
 

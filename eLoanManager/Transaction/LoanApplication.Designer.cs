@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanApplication));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.dtModified = new DevExpress.XtraEditors.DateEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -63,6 +63,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barSaveLoan = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.txtLoanNo = new DevExpress.XtraEditors.TextEdit();
@@ -97,10 +100,7 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txtStatus = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtInterestRate = new DevExpress.XtraEditors.TextEdit();
-            this.btnReleaseCash = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.cboPayDayCode = new DevExpress.XtraEditors.LookUpEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cboFrequencyOfPayment = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -118,7 +118,8 @@
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.lblTotalOutstandingBalance = new DevExpress.XtraEditors.LabelControl();
             this.txtOutstandingBalance = new DevExpress.XtraEditors.TextEdit();
-            this.btnPrintApplication = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCreated.Properties.CalendarTimeProperties)).BeginInit();
@@ -164,11 +165,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalAmortization.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoOfPayments.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOutstandingBalance.Properties)).BeginInit();
+            this.xtraScrollableControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(469, 128);
+            this.labelControl12.Location = new System.Drawing.Point(471, 98);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(59, 13);
             this.labelControl12.TabIndex = 61;
@@ -178,7 +180,7 @@
             // 
             this.dtModified.EditValue = null;
             this.dtModified.Enabled = false;
-            this.dtModified.Location = new System.Drawing.Point(568, 154);
+            this.dtModified.Location = new System.Drawing.Point(570, 124);
             this.dtModified.Name = "dtModified";
             this.dtModified.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -191,7 +193,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(469, 154);
+            this.labelControl13.Location = new System.Drawing.Point(471, 124);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(70, 13);
             this.labelControl13.TabIndex = 57;
@@ -201,7 +203,7 @@
             // 
             this.dtCreated.EditValue = null;
             this.dtCreated.Enabled = false;
-            this.dtCreated.Location = new System.Drawing.Point(568, 100);
+            this.dtCreated.Location = new System.Drawing.Point(570, 70);
             this.dtCreated.Name = "dtCreated";
             this.dtCreated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -214,7 +216,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(469, 100);
+            this.labelControl14.Location = new System.Drawing.Point(471, 70);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(69, 13);
             this.labelControl14.TabIndex = 58;
@@ -223,7 +225,7 @@
             // txtModifiedBy
             // 
             this.txtModifiedBy.Enabled = false;
-            this.txtModifiedBy.Location = new System.Drawing.Point(568, 128);
+            this.txtModifiedBy.Location = new System.Drawing.Point(570, 98);
             this.txtModifiedBy.Name = "txtModifiedBy";
             this.txtModifiedBy.Size = new System.Drawing.Size(112, 20);
             this.txtModifiedBy.TabIndex = 55;
@@ -231,14 +233,14 @@
             // txtCreatedBy
             // 
             this.txtCreatedBy.Enabled = false;
-            this.txtCreatedBy.Location = new System.Drawing.Point(568, 74);
+            this.txtCreatedBy.Location = new System.Drawing.Point(570, 44);
             this.txtCreatedBy.Name = "txtCreatedBy";
             this.txtCreatedBy.Size = new System.Drawing.Size(112, 20);
             this.txtCreatedBy.TabIndex = 56;
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(469, 74);
+            this.labelControl15.Location = new System.Drawing.Point(471, 44);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(58, 13);
             this.labelControl15.TabIndex = 54;
@@ -276,7 +278,7 @@
             // 
             // cboModeOfPayment
             // 
-            this.cboModeOfPayment.Location = new System.Drawing.Point(354, 74);
+            this.cboModeOfPayment.Location = new System.Drawing.Point(356, 44);
             this.cboModeOfPayment.Name = "cboModeOfPayment";
             this.cboModeOfPayment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -308,7 +310,7 @@
             // 
             // txtGuarrantor
             // 
-            this.txtGuarrantor.Location = new System.Drawing.Point(118, 126);
+            this.txtGuarrantor.Location = new System.Drawing.Point(120, 96);
             this.txtGuarrantor.Name = "txtGuarrantor";
             this.txtGuarrantor.Size = new System.Drawing.Size(336, 20);
             this.txtGuarrantor.TabIndex = 10;
@@ -324,7 +326,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(225, 74);
+            this.labelControl6.Location = new System.Drawing.Point(227, 44);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(88, 13);
             this.labelControl6.TabIndex = 4;
@@ -340,7 +342,7 @@
             // 
             // txtCardName
             // 
-            this.txtCardName.Location = new System.Drawing.Point(225, 99);
+            this.txtCardName.Location = new System.Drawing.Point(227, 69);
             this.txtCardName.Name = "txtCardName";
             this.txtCardName.Size = new System.Drawing.Size(229, 20);
             this.txtCardName.TabIndex = 8;
@@ -355,17 +357,17 @@
             // 
             // txtCardCode
             // 
-            this.txtCardCode.Location = new System.Drawing.Point(118, 99);
+            this.txtCardCode.Location = new System.Drawing.Point(120, 69);
             this.txtCardCode.Name = "txtCardCode";
             this.txtCardCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.txtCardCode.Size = new System.Drawing.Size(100, 22);
             this.txtCardCode.TabIndex = 7;
             this.txtCardCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBorrowerCode_ButtonClick);
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(8, 127);
+            this.labelControl4.Location = new System.Drawing.Point(10, 97);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(53, 13);
             this.labelControl4.TabIndex = 9;
@@ -373,7 +375,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 100);
+            this.labelControl3.Location = new System.Drawing.Point(10, 70);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(76, 13);
             this.labelControl3.TabIndex = 6;
@@ -381,7 +383,7 @@
             // 
             // cboTransType
             // 
-            this.cboTransType.Location = new System.Drawing.Point(118, 73);
+            this.cboTransType.Location = new System.Drawing.Point(120, 43);
             this.cboTransType.Name = "cboTransType";
             this.cboTransType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -395,7 +397,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(8, 74);
+            this.labelControl2.Location = new System.Drawing.Point(10, 44);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(87, 13);
             this.labelControl2.TabIndex = 2;
@@ -403,7 +405,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(8, 48);
+            this.labelControl1.Location = new System.Drawing.Point(10, 18);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(43, 13);
             this.labelControl1.TabIndex = 0;
@@ -413,30 +415,65 @@
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem});
+            this.ribbonControl1.ExpandCollapseItem,
+            this.barSaveLoan,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(714, 27);
+            this.ribbonControl1.Size = new System.Drawing.Size(714, 146);
+            // 
+            // barSaveLoan
+            // 
+            this.barSaveLoan.Caption = "Save";
+            this.barSaveLoan.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveLoan.Glyph")));
+            this.barSaveLoan.Id = 1;
+            this.barSaveLoan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveLoan.LargeGlyph")));
+            this.barSaveLoan.Name = "barSaveLoan";
+            this.barSaveLoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveLoan_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Print Preview";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Exit";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.ribbonPage1.Text = "Application Form";
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSaveLoan);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Actions";
             // 
             // txtLoanNo
             // 
             this.txtLoanNo.EditValue = "##########";
-            this.txtLoanNo.Location = new System.Drawing.Point(118, 48);
+            this.txtLoanNo.Location = new System.Drawing.Point(120, 18);
             this.txtLoanNo.Name = "txtLoanNo";
             this.txtLoanNo.Properties.ReadOnly = true;
             this.txtLoanNo.Size = new System.Drawing.Size(100, 20);
@@ -444,10 +481,10 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(7, 321);
+            this.xtraTabControl1.Location = new System.Drawing.Point(11, 279);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(672, 249);
+            this.xtraTabControl1.Size = new System.Drawing.Size(672, 217);
             this.xtraTabControl1.TabIndex = 13;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -458,7 +495,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(666, 221);
+            this.xtraTabPage1.Size = new System.Drawing.Size(670, 192);
             this.xtraTabPage1.Text = "Amortization Schedule";
             // 
             // gridControl1
@@ -471,7 +508,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtPayment,
             this.txtOtherCharges});
-            this.gridControl1.Size = new System.Drawing.Size(666, 221);
+            this.gridControl1.Size = new System.Drawing.Size(670, 192);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -567,8 +604,8 @@
             // 
             this.txtOtherCharges.AutoHeight = false;
             this.txtOtherCharges.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtOtherCharges.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.txtOtherCharges.DisplayFormat.FormatString = "{0:N}";
             this.txtOtherCharges.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtOtherCharges.EditFormat.FormatString = "{0:N}";
@@ -596,8 +633,8 @@
             // 
             this.txtPayment.AutoHeight = false;
             this.txtPayment.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject10, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject11, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtPayment.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtPayment_ButtonClick);
             this.txtPayment.EditValueChanged += new System.EventHandler(this.txtPayment_EditValueChanged);
@@ -606,7 +643,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(666, 221);
+            this.xtraTabPage2.Size = new System.Drawing.Size(670, 224);
             this.xtraTabPage2.Text = "Cash Released";
             // 
             // gridControl2
@@ -616,7 +653,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.ribbonControl1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(666, 221);
+            this.gridControl2.Size = new System.Drawing.Size(670, 224);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -688,7 +725,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.gridControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(666, 221);
+            this.xtraTabPage3.Size = new System.Drawing.Size(670, 224);
             this.xtraTabPage3.Text = "Collection";
             // 
             // gridControl3
@@ -698,7 +735,7 @@
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.MenuManager = this.ribbonControl1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(666, 221);
+            this.gridControl3.Size = new System.Drawing.Size(670, 224);
             this.gridControl3.TabIndex = 1;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -756,7 +793,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(469, 49);
+            this.labelControl16.Location = new System.Drawing.Point(471, 19);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(35, 13);
             this.labelControl16.TabIndex = 31;
@@ -765,12 +802,12 @@
             // txtStatus
             // 
             this.txtStatus.EditValue = "Draft";
-            this.txtStatus.Location = new System.Drawing.Point(568, 49);
+            this.txtStatus.Location = new System.Drawing.Point(570, 19);
             this.txtStatus.MenuManager = this.ribbonControl1;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject12, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtStatus.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
             this.txtStatus.Size = new System.Drawing.Size(111, 22);
             this.txtStatus.TabIndex = 64;
             this.txtStatus.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtStatus_ButtonClick);
@@ -784,16 +821,6 @@
             this.labelControl17.TabIndex = 0;
             this.labelControl17.Text = "Loan Amount:";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(8, 576);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 39);
-            this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // txtInterestRate
             // 
             this.txtInterestRate.EditValue = "0.00";
@@ -804,27 +831,6 @@
             this.txtInterestRate.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtInterestRate.Size = new System.Drawing.Size(59, 20);
             this.txtInterestRate.TabIndex = 5;
-            // 
-            // btnReleaseCash
-            // 
-            this.btnReleaseCash.Enabled = false;
-            this.btnReleaseCash.Image = ((System.Drawing.Image)(resources.GetObject("btnReleaseCash.Image")));
-            this.btnReleaseCash.Location = new System.Drawing.Point(88, 576);
-            this.btnReleaseCash.Name = "btnReleaseCash";
-            this.btnReleaseCash.Size = new System.Drawing.Size(148, 39);
-            this.btnReleaseCash.TabIndex = 16;
-            this.btnReleaseCash.Text = "Release Cash/Cheque";
-            this.btnReleaseCash.Click += new System.EventHandler(this.btnReleaseCash_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(299, 576);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 39);
-            this.btnClose.TabIndex = 18;
-            this.btnClose.Text = "Close";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cboPayDayCode
             // 
@@ -854,7 +860,7 @@
             this.groupControl1.Controls.Add(this.dtStartOfPayment);
             this.groupControl1.Controls.Add(this.labelControl10);
             this.groupControl1.Controls.Add(this.labelControl9);
-            this.groupControl1.Location = new System.Drawing.Point(7, 182);
+            this.groupControl1.Location = new System.Drawing.Point(11, 140);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(426, 133);
             this.groupControl1.TabIndex = 11;
@@ -940,7 +946,7 @@
             this.groupSummary.Controls.Add(this.labelControl18);
             this.groupSummary.Controls.Add(this.txtAmortization);
             this.groupSummary.Controls.Add(this.labelControl8);
-            this.groupSummary.Location = new System.Drawing.Point(440, 182);
+            this.groupSummary.Location = new System.Drawing.Point(444, 140);
             this.groupSummary.Name = "groupSummary";
             this.groupSummary.Size = new System.Drawing.Size(240, 133);
             this.groupSummary.TabIndex = 12;
@@ -999,7 +1005,7 @@
             // 
             // lblTotalOutstandingBalance
             // 
-            this.lblTotalOutstandingBalance.Location = new System.Drawing.Point(427, 576);
+            this.lblTotalOutstandingBalance.Location = new System.Drawing.Point(431, 502);
             this.lblTotalOutstandingBalance.Name = "lblTotalOutstandingBalance";
             this.lblTotalOutstandingBalance.Size = new System.Drawing.Size(99, 13);
             this.lblTotalOutstandingBalance.TabIndex = 66;
@@ -1008,7 +1014,7 @@
             // txtOutstandingBalance
             // 
             this.txtOutstandingBalance.EditValue = "0.00";
-            this.txtOutstandingBalance.Location = new System.Drawing.Point(532, 576);
+            this.txtOutstandingBalance.Location = new System.Drawing.Point(536, 502);
             this.txtOutstandingBalance.MenuManager = this.ribbonControl1;
             this.txtOutstandingBalance.Name = "txtOutstandingBalance";
             this.txtOutstandingBalance.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -1017,60 +1023,63 @@
             this.txtOutstandingBalance.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtOutstandingBalance.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtOutstandingBalance.Properties.ReadOnly = true;
-            this.txtOutstandingBalance.Size = new System.Drawing.Size(142, 22);
+            this.txtOutstandingBalance.Size = new System.Drawing.Size(148, 22);
             this.txtOutstandingBalance.TabIndex = 67;
             // 
-            // btnPrintApplication
+            // xtraScrollableControl1
             // 
-            this.btnPrintApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPrintApplication.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintApplication.Image")));
-            this.btnPrintApplication.Location = new System.Drawing.Point(242, 576);
-            this.btnPrintApplication.Name = "btnPrintApplication";
-            this.btnPrintApplication.Size = new System.Drawing.Size(51, 39);
-            this.btnPrintApplication.TabIndex = 69;
-            this.btnPrintApplication.Click += new System.EventHandler(this.btnPrintApplication_Click);
+            this.xtraScrollableControl1.Controls.Add(this.txtOutstandingBalance);
+            this.xtraScrollableControl1.Controls.Add(this.lblTotalOutstandingBalance);
+            this.xtraScrollableControl1.Controls.Add(this.groupSummary);
+            this.xtraScrollableControl1.Controls.Add(this.groupControl1);
+            this.xtraScrollableControl1.Controls.Add(this.txtStatus);
+            this.xtraScrollableControl1.Controls.Add(this.xtraTabControl1);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl12);
+            this.xtraScrollableControl1.Controls.Add(this.dtModified);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl13);
+            this.xtraScrollableControl1.Controls.Add(this.dtCreated);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl14);
+            this.xtraScrollableControl1.Controls.Add(this.txtModifiedBy);
+            this.xtraScrollableControl1.Controls.Add(this.txtLoanNo);
+            this.xtraScrollableControl1.Controls.Add(this.txtCreatedBy);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl15);
+            this.xtraScrollableControl1.Controls.Add(this.cboModeOfPayment);
+            this.xtraScrollableControl1.Controls.Add(this.txtGuarrantor);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl6);
+            this.xtraScrollableControl1.Controls.Add(this.txtCardName);
+            this.xtraScrollableControl1.Controls.Add(this.txtCardCode);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl4);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl3);
+            this.xtraScrollableControl1.Controls.Add(this.cboTransType);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl2);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl16);
+            this.xtraScrollableControl1.Controls.Add(this.labelControl1);
+            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(714, 501);
+            this.xtraScrollableControl1.TabIndex = 71;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Find";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 4;
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // LoanApplication
             // 
-            this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 647);
-            this.Controls.Add(this.btnPrintApplication);
-            this.Controls.Add(this.txtOutstandingBalance);
-            this.Controls.Add(this.lblTotalOutstandingBalance);
-            this.Controls.Add(this.groupSummary);
-            this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnReleaseCash);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.xtraTabControl1);
-            this.Controls.Add(this.labelControl12);
-            this.Controls.Add(this.dtModified);
-            this.Controls.Add(this.labelControl13);
-            this.Controls.Add(this.dtCreated);
-            this.Controls.Add(this.labelControl14);
-            this.Controls.Add(this.txtModifiedBy);
-            this.Controls.Add(this.txtLoanNo);
-            this.Controls.Add(this.txtCreatedBy);
-            this.Controls.Add(this.labelControl15);
-            this.Controls.Add(this.cboModeOfPayment);
-            this.Controls.Add(this.txtGuarrantor);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.txtCardName);
-            this.Controls.Add(this.txtCardCode);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.cboTransType);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl16);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "LoanApplication";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Loan Application";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LoanApplication_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).EndInit();
@@ -1119,8 +1128,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalAmortization.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoOfPayments.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOutstandingBalance.Properties)).EndInit();
+            this.xtraScrollableControl1.ResumeLayout(false);
+            this.xtraScrollableControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1168,10 +1178,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.ButtonEdit txtStatus;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.TextEdit txtInterestRate;
-        private DevExpress.XtraEditors.SimpleButton btnReleaseCash;
-        private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.LookUpEdit cboPayDayCode;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnCalculate;
@@ -1208,6 +1215,10 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit txtOtherCharges;
         private DevExpress.XtraEditors.LabelControl lblTotalOutstandingBalance;
         private DevExpress.XtraEditors.TextEdit txtOutstandingBalance;
-        private DevExpress.XtraEditors.SimpleButton btnPrintApplication;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+        private DevExpress.XtraBars.BarButtonItem barSaveLoan;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }

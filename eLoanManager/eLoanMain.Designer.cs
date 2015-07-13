@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eLoanMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colInterval = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -267,10 +267,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.gridView1;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.LevelTemplate = this.gridView1;
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.MenuManager = this.ribbonControl1;
@@ -319,7 +319,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
-            this.ribbonControl1.Size = new System.Drawing.Size(1004, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(1000, 146);
             // 
             // barNewBorrower
             // 
@@ -491,11 +491,11 @@
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem7);
             this.backstageViewControl1.Items.Add(this.backstageViewItemSeparator3);
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem9);
-            this.backstageViewControl1.Location = new System.Drawing.Point(0, 144);
+            this.backstageViewControl1.Location = new System.Drawing.Point(0, 146);
             this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem5;
-            this.backstageViewControl1.SelectedTabIndex = 7;
-            this.backstageViewControl1.Size = new System.Drawing.Size(1004, 571);
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem10;
+            this.backstageViewControl1.SelectedTabIndex = 0;
+            this.backstageViewControl1.Size = new System.Drawing.Size(1000, 557);
             this.backstageViewControl1.TabIndex = 1;
             this.backstageViewControl1.Text = "backstageViewControl1";
             this.backstageViewControl1.Click += new System.EventHandler(this.backstageViewControl1_Click);
@@ -503,9 +503,9 @@
             // backstageViewClientControl11
             // 
             this.backstageViewClientControl11.Controls.Add(this.grdCtlLoanInfo);
-            this.backstageViewClientControl11.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl11.Location = new System.Drawing.Point(208, 0);
             this.backstageViewClientControl11.Name = "backstageViewClientControl11";
-            this.backstageViewClientControl11.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl11.Size = new System.Drawing.Size(792, 557);
             this.backstageViewClientControl11.TabIndex = 12;
             // 
             // grdCtlLoanInfo
@@ -517,7 +517,7 @@
             this.grdCtlLoanInfo.Name = "grdCtlLoanInfo";
             this.grdCtlLoanInfo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtLoanNo});
-            this.grdCtlLoanInfo.Size = new System.Drawing.Size(812, 571);
+            this.grdCtlLoanInfo.Size = new System.Drawing.Size(792, 557);
             this.grdCtlLoanInfo.TabIndex = 0;
             this.grdCtlLoanInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdViewLoanInfo});
@@ -563,7 +563,7 @@
             // 
             this.txtLoanNo.AutoHeight = false;
             this.txtLoanNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.txtLoanNo.Name = "txtLoanNo";
             this.txtLoanNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtLoanNo_ButtonClick);
             // 
@@ -776,7 +776,7 @@
             this.gridControl3.MainView = this.gridView4;
             this.gridControl3.MenuManager = this.ribbonControl1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(812, 512);
+            this.gridControl3.Size = new System.Drawing.Size(812, 505);
             this.gridControl3.TabIndex = 0;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -972,7 +972,7 @@
             this.gridControl4.MainView = this.gridView5;
             this.gridControl4.MenuManager = this.ribbonControl1;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(812, 514);
+            this.gridControl4.Size = new System.Drawing.Size(812, 507);
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -1103,9 +1103,9 @@
             // backstageViewClientControl6
             // 
             this.backstageViewClientControl6.Controls.Add(this.grdCtlBorrowerInfo);
-            this.backstageViewClientControl6.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl6.Location = new System.Drawing.Point(208, 0);
             this.backstageViewClientControl6.Name = "backstageViewClientControl6";
-            this.backstageViewClientControl6.Size = new System.Drawing.Size(812, 571);
+            this.backstageViewClientControl6.Size = new System.Drawing.Size(792, 557);
             this.backstageViewClientControl6.TabIndex = 6;
             // 
             // grdCtlBorrowerInfo
@@ -1116,7 +1116,7 @@
             this.grdCtlBorrowerInfo.Name = "grdCtlBorrowerInfo";
             this.grdCtlBorrowerInfo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtBorrowerCode});
-            this.grdCtlBorrowerInfo.Size = new System.Drawing.Size(812, 571);
+            this.grdCtlBorrowerInfo.Size = new System.Drawing.Size(792, 557);
             this.grdCtlBorrowerInfo.TabIndex = 3;
             this.grdCtlBorrowerInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1155,7 +1155,7 @@
             // 
             this.txtBorrowerCode.AutoHeight = false;
             this.txtBorrowerCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtBorrowerCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtBorrowerCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.txtBorrowerCode.Name = "txtBorrowerCode";
             this.txtBorrowerCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtBorrowerCode_ButtonClick);
             // 
@@ -1248,7 +1248,7 @@
             // 
             this.txtCode.AutoHeight = false;
             this.txtCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
             this.txtCode.Name = "txtCode";
             this.txtCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCode_ButtonClick);
             // 
@@ -1345,7 +1345,7 @@
             // 
             this.txtCardCode.AutoHeight = false;
             this.txtCardCode.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtCardCode.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
             this.txtCardCode.Name = "txtCardCode";
             this.txtCardCode.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtCardCode_ButtonClick);
             // 
@@ -1399,7 +1399,7 @@
             this.backstageViewTabItem10.ContentControl = this.backstageViewClientControl11;
             this.backstageViewTabItem10.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem10.Glyph")));
             this.backstageViewTabItem10.Name = "backstageViewTabItem10";
-            this.backstageViewTabItem10.Selected = false;
+            this.backstageViewTabItem10.Selected = true;
             this.backstageViewTabItem10.SelectedChanged += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.backstageViewTabItem10_SelectedChanged);
             // 
             // backstageViewTabItem2
@@ -1448,7 +1448,7 @@
             this.backstageViewTabItem5.ContentControl = this.backstageViewClientControl6;
             this.backstageViewTabItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("backstageViewTabItem5.Glyph")));
             this.backstageViewTabItem5.Name = "backstageViewTabItem5";
-            this.backstageViewTabItem5.Selected = true;
+            this.backstageViewTabItem5.Selected = false;
             // 
             // backstageViewTabItem6
             // 
@@ -1795,7 +1795,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 715);
+            this.ClientSize = new System.Drawing.Size(1000, 703);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "eLoanMain";

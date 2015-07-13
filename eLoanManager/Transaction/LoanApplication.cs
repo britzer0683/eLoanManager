@@ -364,7 +364,7 @@ namespace eLoanSystem.Transaction
             gridControl1.DataSource = this.LineScheduleOfPayment;
             gridControl1.Refresh();
 
-            btnAdd.Text = "Update";
+            barSaveLoan.Caption = "Update";
             txtLoanNo.Enabled = false;
 
             BindCashReleased();
@@ -537,94 +537,94 @@ namespace eLoanSystem.Transaction
 
             return sPrefix + string.Format("{0:D5}", Convert.ToInt16(sSeries));
         }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (btnAdd.Text == "Add")
-            {
-                LoanManager oConnectionManager = new LoanManager();
-                LoanUnit oUnit = new LoanUnit();
+        //private void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    if (btnAdd.Text == "Add")
+        //    {
+        //        LoanManager oConnectionManager = new LoanManager();
+        //        LoanUnit oUnit = new LoanUnit();
 
 
-                txtLoanNo.Text = GetSeries();
+        //        txtLoanNo.Text = GetSeries();
 
-                oConnectionManager.ConnectionString = this.ConnectionString;
-                oConnectionManager.Open();
+        //        oConnectionManager.ConnectionString = this.ConnectionString;
+        //        oConnectionManager.Open();
 
-                if (oConnectionManager.IsExists(txtLoanNo.Text))
-                {
-                    MessageBox.Show("Loan Document Number is already exists!!!", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+        //        if (oConnectionManager.IsExists(txtLoanNo.Text))
+        //        {
+        //            MessageBox.Show("Loan Document Number is already exists!!!", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            return;
+        //        }
 
-                oUnit.DocumentNumber = txtLoanNo.Text;
-                oUnit.CardCode = txtCardCode.Text;
-                oUnit.CardName = txtCardName.Text;
-                oUnit.TransactionType = cboTransType.Text;
-                oUnit.Guarantor = txtGuarrantor.Text;
-                oUnit.LoanAmount = Convert.ToDouble(txtLoanAmount.Text.Replace(",", ""));
-                oUnit.Terms = Convert.ToInt16(txtTerms.Text);
-                oUnit.InterestRate = Convert.ToDouble(txtInterestRate.Text);
-                oUnit.FrequencyOfPayment = cboFrequencyOfPayment.EditValue.ToString();
-                oUnit.PayDayCode = cboPayDayCode.EditValue != null? cboPayDayCode.EditValue.ToString() : "";
-                oUnit.FirstDateOfPayment = (DateTime)dtStartOfPayment.EditValue;
-                oUnit.ReleaseDate = (DateTime)dtDateOfRelease.EditValue;
-                oUnit.MonthlyPayment = Convert.ToDouble(string.Format("{0}",txtAmortization.Text));
-                oUnit.NumberOfPayment = Convert.ToInt16(txtNoOfPayments.Text);
-                oUnit.TotalAmortization = Convert.ToDouble(string.Format("{0}", txtTotalAmortization.Text));
-                oUnit.TotalInterest = Convert.ToDouble(txtTotalInterest.Text);
+        //        oUnit.DocumentNumber = txtLoanNo.Text;
+        //        oUnit.CardCode = txtCardCode.Text;
+        //        oUnit.CardName = txtCardName.Text;
+        //        oUnit.TransactionType = cboTransType.Text;
+        //        oUnit.Guarantor = txtGuarrantor.Text;
+        //        oUnit.LoanAmount = Convert.ToDouble(txtLoanAmount.Text.Replace(",", ""));
+        //        oUnit.Terms = Convert.ToInt16(txtTerms.Text);
+        //        oUnit.InterestRate = Convert.ToDouble(txtInterestRate.Text);
+        //        oUnit.FrequencyOfPayment = cboFrequencyOfPayment.EditValue.ToString();
+        //        oUnit.PayDayCode = cboPayDayCode.EditValue != null? cboPayDayCode.EditValue.ToString() : "";
+        //        oUnit.FirstDateOfPayment = (DateTime)dtStartOfPayment.EditValue;
+        //        oUnit.ReleaseDate = (DateTime)dtDateOfRelease.EditValue;
+        //        oUnit.MonthlyPayment = Convert.ToDouble(string.Format("{0}",txtAmortization.Text));
+        //        oUnit.NumberOfPayment = Convert.ToInt16(txtNoOfPayments.Text);
+        //        oUnit.TotalAmortization = Convert.ToDouble(string.Format("{0}", txtTotalAmortization.Text));
+        //        oUnit.TotalInterest = Convert.ToDouble(txtTotalInterest.Text);
 
-                oUnit.DocumentStatus = txtStatus.Text;
-                oUnit.CreatedBy = this.ActiveUserID;
-                oUnit.DateCreated = (DateTime)dtCreated.EditValue;
-                oUnit.ModifiedBy = txtModifiedBy.Text;
-                oUnit.DateModified = (DateTime)dtModified.EditValue;
+        //        oUnit.DocumentStatus = txtStatus.Text;
+        //        oUnit.CreatedBy = this.ActiveUserID;
+        //        oUnit.DateCreated = (DateTime)dtCreated.EditValue;
+        //        oUnit.ModifiedBy = txtModifiedBy.Text;
+        //        oUnit.DateModified = (DateTime)dtModified.EditValue;
 
-                oConnectionManager.AddLoan(oUnit);
+        //        oConnectionManager.AddLoan(oUnit);
 
-                oConnectionManager.AddLineItems(txtLoanNo.Text, this.LineScheduleOfPayment);
-                oConnectionManager.Close();
+        //        oConnectionManager.AddLineItems(txtLoanNo.Text, this.LineScheduleOfPayment);
+        //        oConnectionManager.Close();
 
-                btnAdd.Text = "Update";
-                txtLoanNo.Enabled = false;
+        //        btnAdd.Text = "Update";
+        //        txtLoanNo.Enabled = false;
 
-                MessageBox.Show("Adding completed successfully!!!", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                LoanManager oConnectionManager = new LoanManager();
-                LoanUnit oUnit = new LoanUnit();
+        //        MessageBox.Show("Adding completed successfully!!!", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    else
+        //    {
+        //        LoanManager oConnectionManager = new LoanManager();
+        //        LoanUnit oUnit = new LoanUnit();
 
-                oConnectionManager.ConnectionString = this.ConnectionString;
-                oConnectionManager.Open();
-                oUnit.DocumentNumber = txtLoanNo.Text;
-                oUnit.CardCode = txtCardCode.Text;
-                oUnit.CardName = txtCardName.Text;
-                oUnit.TransactionType = cboTransType.Text;
-                oUnit.Guarantor = txtGuarrantor.Text;
-                oUnit.LoanAmount = Convert.ToDouble(txtLoanAmount.Text.Replace(",", ""));
-                oUnit.Terms = Convert.ToInt16(txtTerms.Text);
-                oUnit.InterestRate = Convert.ToDouble(txtInterestRate.Text);
-                oUnit.FrequencyOfPayment = cboFrequencyOfPayment.EditValue.ToString();
-                oUnit.PayDayCode = cboPayDayCode.EditValue != null ? cboPayDayCode.EditValue.ToString() : "";
-                oUnit.FirstDateOfPayment = (DateTime)dtStartOfPayment.EditValue;
-                oUnit.ReleaseDate = (DateTime)dtDateOfRelease.EditValue;
-                oUnit.MonthlyPayment = Convert.ToDouble(txtAmortization.Text.Replace(",", ""));
-                oUnit.NumberOfPayment = Convert.ToInt16(txtNoOfPayments.Text);
-                oUnit.TotalAmortization = Convert.ToDouble(txtTotalAmortization.Text.Replace(",", ""));
-                oUnit.TotalInterest = Convert.ToDouble(txtTotalInterest.Text);
-                oUnit.DocumentStatus = txtStatus.Text;
-                oUnit.ModifiedBy = txtModifiedBy.Text;
-                oUnit.DateModified = (DateTime)dtModified.EditValue;
+        //        oConnectionManager.ConnectionString = this.ConnectionString;
+        //        oConnectionManager.Open();
+        //        oUnit.DocumentNumber = txtLoanNo.Text;
+        //        oUnit.CardCode = txtCardCode.Text;
+        //        oUnit.CardName = txtCardName.Text;
+        //        oUnit.TransactionType = cboTransType.Text;
+        //        oUnit.Guarantor = txtGuarrantor.Text;
+        //        oUnit.LoanAmount = Convert.ToDouble(txtLoanAmount.Text.Replace(",", ""));
+        //        oUnit.Terms = Convert.ToInt16(txtTerms.Text);
+        //        oUnit.InterestRate = Convert.ToDouble(txtInterestRate.Text);
+        //        oUnit.FrequencyOfPayment = cboFrequencyOfPayment.EditValue.ToString();
+        //        oUnit.PayDayCode = cboPayDayCode.EditValue != null ? cboPayDayCode.EditValue.ToString() : "";
+        //        oUnit.FirstDateOfPayment = (DateTime)dtStartOfPayment.EditValue;
+        //        oUnit.ReleaseDate = (DateTime)dtDateOfRelease.EditValue;
+        //        oUnit.MonthlyPayment = Convert.ToDouble(txtAmortization.Text.Replace(",", ""));
+        //        oUnit.NumberOfPayment = Convert.ToInt16(txtNoOfPayments.Text);
+        //        oUnit.TotalAmortization = Convert.ToDouble(txtTotalAmortization.Text.Replace(",", ""));
+        //        oUnit.TotalInterest = Convert.ToDouble(txtTotalInterest.Text);
+        //        oUnit.DocumentStatus = txtStatus.Text;
+        //        oUnit.ModifiedBy = txtModifiedBy.Text;
+        //        oUnit.DateModified = (DateTime)dtModified.EditValue;
 
-                oConnectionManager.UpdateLoan(oUnit);
+        //        oConnectionManager.UpdateLoan(oUnit);
 
-                oConnectionManager.DeleteLineItems(txtLoanNo.Text);
-                oConnectionManager.AddLineItems(txtLoanNo.Text, this.LineScheduleOfPayment);
+        //        oConnectionManager.DeleteLineItems(txtLoanNo.Text);
+        //        oConnectionManager.AddLineItems(txtLoanNo.Text, this.LineScheduleOfPayment);
 
-                oConnectionManager.Close();
-                MessageBox.Show("Updating completed successfully!!!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //        oConnectionManager.Close();
+        //        MessageBox.Show("Updating completed successfully!!!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
         private void cboFrequencyOfPayment_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -745,39 +745,39 @@ namespace eLoanSystem.Transaction
         {
             if (txtStatus.Text == "Draft")
             {
-                btnReleaseCash.Enabled = false;
+                //btnReleaseCash.Enabled = false;
                 txtStatus.Properties.Buttons[0].Visible = true;
                 txtStatus.Properties.Buttons[1].Visible = true;
                 btnCalculate.Enabled = true;
                 EnableControls();
-                btnAdd.Enabled = true;
+                barSaveLoan.Enabled = true;
                 
             }
             else if (txtStatus.Text == "Approved")
             {
-                btnReleaseCash.Enabled = true;
+                //btnReleaseCash.Enabled = true;
                 txtStatus.Properties.Buttons[0].Visible = true;
                 txtStatus.Properties.Buttons[1].Visible = true;
                 btnCalculate.Enabled = false;
                 DisableControls();
-                btnAdd.Enabled = false;
+                barSaveLoan.Enabled = false;
             }
             else if (txtStatus.Text == "Posted")
             {
-                btnReleaseCash.Enabled = false;
+                //btnReleaseCash.Enabled = false;
                 txtStatus.Properties.Buttons[0].Visible = false;
                 txtStatus.Properties.Buttons[1].Visible = true;
                 btnCalculate.Enabled = false;
                 DisableControls();
-                btnAdd.Enabled = false;
+                barSaveLoan.Enabled = false;
             }
             else if (txtStatus.Text == "Canceled" || txtStatus.Text == "Closed")
             {
-                btnReleaseCash.Enabled = false;
+                //btnReleaseCash.Enabled = false;
                 txtStatus.Properties.Buttons[0].Visible = false;
                 txtStatus.Properties.Buttons[1].Visible = false;
                 btnCalculate.Enabled = false;
-                btnAdd.Enabled = false;
+                barSaveLoan.Enabled = false;
                 DisableControls();
             }
         }
@@ -907,7 +907,7 @@ namespace eLoanSystem.Transaction
                 gridControl1.DataSource = this.LineScheduleOfPayment;
                 gridControl1.Refresh();
 
-                btnAdd.Text = "Update";
+                barSaveLoan.Caption = "Update";
                 txtLoanNo.Enabled = false;
 
                 BindCashReleased();
@@ -931,6 +931,108 @@ namespace eLoanSystem.Transaction
         }
 
         private void btnPrintApplication_Click(object sender, EventArgs e)
+        {
+            PrintApplication oForm = new PrintApplication();
+
+            oForm.DocumentNumber = txtLoanNo.Text;
+            oForm.ViewLayout();
+            oForm.ShowDialog();
+        }
+
+        private void barSaveLoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (barSaveLoan.Caption == "Add")
+            {
+                LoanManager oConnectionManager = new LoanManager();
+                LoanUnit oUnit = new LoanUnit();
+
+                txtLoanNo.Text = GetSeries();
+
+                oConnectionManager.ConnectionString = this.ConnectionString;
+                oConnectionManager.Open();
+
+                if (oConnectionManager.IsExists(txtLoanNo.Text))
+                {
+                    MessageBox.Show("Loan Document Number is already exists!!!", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                oUnit.DocumentNumber = txtLoanNo.Text;
+                oUnit.CardCode = txtCardCode.Text;
+                oUnit.CardName = txtCardName.Text;
+                oUnit.TransactionType = cboTransType.Text;
+                oUnit.Guarantor = txtGuarrantor.Text;
+                oUnit.LoanAmount = Convert.ToDouble(txtLoanAmount.Text.Replace(",", ""));
+                oUnit.Terms = Convert.ToInt16(txtTerms.Text);
+                oUnit.InterestRate = Convert.ToDouble(txtInterestRate.Text);
+                oUnit.FrequencyOfPayment = cboFrequencyOfPayment.EditValue.ToString();
+                oUnit.PayDayCode = cboPayDayCode.EditValue != null ? cboPayDayCode.EditValue.ToString() : "";
+                oUnit.FirstDateOfPayment = (DateTime)dtStartOfPayment.EditValue;
+                oUnit.ReleaseDate = (DateTime)dtDateOfRelease.EditValue;
+                oUnit.MonthlyPayment = Convert.ToDouble(string.Format("{0}", txtAmortization.Text));
+                oUnit.NumberOfPayment = Convert.ToInt16(txtNoOfPayments.Text);
+                oUnit.TotalAmortization = Convert.ToDouble(string.Format("{0}", txtTotalAmortization.Text));
+                oUnit.TotalInterest = Convert.ToDouble(txtTotalInterest.Text);
+
+                oUnit.DocumentStatus = txtStatus.Text;
+                oUnit.CreatedBy = this.ActiveUserID;
+                oUnit.DateCreated = (DateTime)dtCreated.EditValue;
+                oUnit.ModifiedBy = txtModifiedBy.Text;
+                oUnit.DateModified = (DateTime)dtModified.EditValue;
+
+                oConnectionManager.AddLoan(oUnit);
+
+                oConnectionManager.AddLineItems(txtLoanNo.Text, this.LineScheduleOfPayment);
+                oConnectionManager.Close();
+
+                barSaveLoan.Caption = "Update";
+                txtLoanNo.Enabled = false;
+
+                MessageBox.Show("Adding completed successfully!!!", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                LoanManager oConnectionManager = new LoanManager();
+                LoanUnit oUnit = new LoanUnit();
+
+                oConnectionManager.ConnectionString = this.ConnectionString;
+                oConnectionManager.Open();
+                oUnit.DocumentNumber = txtLoanNo.Text;
+                oUnit.CardCode = txtCardCode.Text;
+                oUnit.CardName = txtCardName.Text;
+                oUnit.TransactionType = cboTransType.Text;
+                oUnit.Guarantor = txtGuarrantor.Text;
+                oUnit.LoanAmount = Convert.ToDouble(txtLoanAmount.Text.Replace(",", ""));
+                oUnit.Terms = Convert.ToInt16(txtTerms.Text);
+                oUnit.InterestRate = Convert.ToDouble(txtInterestRate.Text);
+                oUnit.FrequencyOfPayment = cboFrequencyOfPayment.EditValue.ToString();
+                oUnit.PayDayCode = cboPayDayCode.EditValue != null ? cboPayDayCode.EditValue.ToString() : "";
+                oUnit.FirstDateOfPayment = (DateTime)dtStartOfPayment.EditValue;
+                oUnit.ReleaseDate = (DateTime)dtDateOfRelease.EditValue;
+                oUnit.MonthlyPayment = Convert.ToDouble(txtAmortization.Text.Replace(",", ""));
+                oUnit.NumberOfPayment = Convert.ToInt16(txtNoOfPayments.Text);
+                oUnit.TotalAmortization = Convert.ToDouble(txtTotalAmortization.Text.Replace(",", ""));
+                oUnit.TotalInterest = Convert.ToDouble(txtTotalInterest.Text);
+                oUnit.DocumentStatus = txtStatus.Text;
+                oUnit.ModifiedBy = txtModifiedBy.Text;
+                oUnit.DateModified = (DateTime)dtModified.EditValue;
+
+                oConnectionManager.UpdateLoan(oUnit);
+
+                oConnectionManager.DeleteLineItems(txtLoanNo.Text);
+                oConnectionManager.AddLineItems(txtLoanNo.Text, this.LineScheduleOfPayment);
+
+                oConnectionManager.Close();
+                MessageBox.Show("Updating completed successfully!!!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             PrintApplication oForm = new PrintApplication();
 

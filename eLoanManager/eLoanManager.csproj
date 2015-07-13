@@ -51,6 +51,7 @@
     <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -67,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eLoanMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eLoanMainMenu.Designer.cs">
+      <DependentUpon>eLoanMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setup\BorrowerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,11 +172,11 @@
     <Compile Include="Transaction\CashFundEntry.Designer.cs">
       <DependentUpon>CashFundEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction\LA_fndBorrower.cs">
+    <Compile Include="Transaction\fndBorrower.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction\LA_fndBorrower.Designer.cs">
-      <DependentUpon>LA_fndBorrower.cs</DependentUpon>
+    <Compile Include="Transaction\fndBorrower.Designer.cs">
+      <DependentUpon>fndBorrower.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction\LoanApplication.cs">
       <SubType>Form</SubType>
@@ -249,6 +256,9 @@
     <Compile Include="ViewForms\viewPayments.Designer.cs">
       <DependentUpon>viewPayments.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="eLoanMainMenu.resx">
+      <DependentUpon>eLoanMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Setup\BorrowerInfo.resx">
       <DependentUpon>BorrowerInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,8 +317,8 @@
     <EmbeddedResource Include="Transaction\CashFundEntry.resx">
       <DependentUpon>CashFundEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction\LA_fndBorrower.resx">
-      <DependentUpon>LA_fndBorrower.cs</DependentUpon>
+    <EmbeddedResource Include="Transaction\fndBorrower.resx">
+      <DependentUpon>fndBorrower.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\LoanApplication.resx">
       <DependentUpon>LoanApplication.cs</DependentUpon>
