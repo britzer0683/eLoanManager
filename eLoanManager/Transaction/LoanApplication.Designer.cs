@@ -66,6 +66,8 @@
             this.barSaveLoan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barNewApplication = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.txtLoanNo = new DevExpress.XtraEditors.TextEdit();
@@ -119,7 +121,6 @@
             this.lblTotalOutstandingBalance = new DevExpress.XtraEditors.LabelControl();
             this.txtOutstandingBalance = new DevExpress.XtraEditors.TextEdit();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCreated.Properties.CalendarTimeProperties)).BeginInit();
@@ -419,9 +420,10 @@
             this.barSaveLoan,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.barNewApplication});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -452,7 +454,27 @@
             this.barButtonItem2.Id = 3;
             this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Find";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 4;
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barNewApplication
+            // 
+            this.barNewApplication.Caption = "New";
+            this.barNewApplication.Glyph = ((System.Drawing.Image)(resources.GetObject("barNewApplication.Glyph")));
+            this.barNewApplication.Id = 5;
+            this.barNewApplication.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewApplication.LargeGlyph")));
+            this.barNewApplication.Name = "barNewApplication";
+            this.barNewApplication.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNewApplication_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -463,10 +485,11 @@
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barNewApplication);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSaveLoan);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
             // 
@@ -643,7 +666,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(670, 224);
+            this.xtraTabPage2.Size = new System.Drawing.Size(670, 192);
             this.xtraTabPage2.Text = "Cash Released";
             // 
             // gridControl2
@@ -653,7 +676,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.ribbonControl1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(670, 224);
+            this.gridControl2.Size = new System.Drawing.Size(670, 192);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -725,7 +748,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.gridControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(670, 224);
+            this.xtraTabPage3.Size = new System.Drawing.Size(670, 192);
             this.xtraTabPage3.Text = "Collection";
             // 
             // gridControl3
@@ -735,7 +758,7 @@
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.MenuManager = this.ribbonControl1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(670, 224);
+            this.gridControl3.Size = new System.Drawing.Size(670, 192);
             this.gridControl3.TabIndex = 1;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1030,7 +1053,6 @@
             // 
             this.xtraScrollableControl1.Controls.Add(this.txtOutstandingBalance);
             this.xtraScrollableControl1.Controls.Add(this.lblTotalOutstandingBalance);
-            this.xtraScrollableControl1.Controls.Add(this.groupSummary);
             this.xtraScrollableControl1.Controls.Add(this.groupControl1);
             this.xtraScrollableControl1.Controls.Add(this.txtStatus);
             this.xtraScrollableControl1.Controls.Add(this.xtraTabControl1);
@@ -1054,19 +1076,12 @@
             this.xtraScrollableControl1.Controls.Add(this.labelControl2);
             this.xtraScrollableControl1.Controls.Add(this.labelControl16);
             this.xtraScrollableControl1.Controls.Add(this.labelControl1);
+            this.xtraScrollableControl1.Controls.Add(this.groupSummary);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
             this.xtraScrollableControl1.Size = new System.Drawing.Size(714, 501);
             this.xtraScrollableControl1.TabIndex = 71;
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Find";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // LoanApplication
             // 
@@ -1220,5 +1235,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barNewApplication;
     }
 }

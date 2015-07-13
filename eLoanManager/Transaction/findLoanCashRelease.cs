@@ -11,23 +11,25 @@ using System.Windows.Forms;
 
 namespace eLoanSystem.Transaction
 {
-    public partial class findLoan : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class findLoanCashRelease : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public findLoan()
+        public findLoanCashRelease()
         {
             InitializeComponent();
         }
 
         public string ConnectionString { get; set; }
-        public string ActiveUserID { get; set; }
-        public string DocumentNumber { get; set; }
+        public string DocumentNo { get; set; }
+        public string Guarantor { get; set; }
         private void findLoan_Load(object sender, EventArgs e)
         {
             cboSearchIndex.SelectedIndex = 0;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnChoose_Click(object sender, EventArgs e)
         {
+            int iFocusedRowIndex = gridView1.FocusedRowHandle;
+            this.DocumentNo = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
             this.Close();
         }
 
@@ -44,35 +46,38 @@ namespace eLoanSystem.Transaction
             oCommand.Connection = oConnection;
             if (cboSearchIndex.SelectedIndex == 0)
             {
-                oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName";
+                oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName AND Guarrantor=@Guarrantor  AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
                 oCommand.Parameters.Add(new SqlParameter("@CardName", "%" + txtSearch.Text + "%"));
-                
+                oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
             }
             else if (cboSearchIndex.SelectedIndex == 1)
             {
-                oCommand.CommandText = "SELECT * FROM OLOAN WHERE Guarantor LIKE @Guarantor";
-                oCommand.Parameters.Add(new SqlParameter("@Guarantor", "%" + txtSearch.Text + "%"));
-            }
-            else if (cboSearchIndex.SelectedIndex == 2)
-            {
 
-                oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum";
+                oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum AND Guarrantor=@Guarrantor AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
                 oCommand.Parameters.Add(new SqlParameter("@DocNum", "%" + txtSearch.Text + "%"));
+                oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
             }
+
 
             oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dt);
-
+            
             oConnection.Close();
 
             gridControl1.DataSource = dt;
             gridControl1.Refresh();
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+
                 SqlConnection oConnection = new SqlConnection();
                 SqlCommand oCommand = new SqlCommand();
                 SqlDataAdapter oAdapter = new SqlDataAdapter();
@@ -84,20 +89,16 @@ namespace eLoanSystem.Transaction
                 oCommand.Connection = oConnection;
                 if (cboSearchIndex.SelectedIndex == 0)
                 {
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName AND Guarrantor=@Guarrantor  AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
                     oCommand.Parameters.Add(new SqlParameter("@CardName", "%" + txtSearch.Text + "%"));
-
+                    oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
                 }
                 else if (cboSearchIndex.SelectedIndex == 1)
                 {
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE Guarantor LIKE @Guarantor";
-                    oCommand.Parameters.Add(new SqlParameter("@Guarantor", "%" + txtSearch.Text + "%"));
-                }
-                else if (cboSearchIndex.SelectedIndex == 2)
-                {
 
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum AND Guarrantor=@Guarrantor AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
                     oCommand.Parameters.Add(new SqlParameter("@DocNum", "%" + txtSearch.Text + "%"));
+                    oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
                 }
 
                 oAdapter.SelectCommand = oCommand;
@@ -108,34 +109,27 @@ namespace eLoanSystem.Transaction
                 gridControl1.DataSource = dt;
                 gridControl1.Refresh();
             }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            int iFocusedRowIndex = gridView1.FocusedRowHandle;
-            this.DocumentNumber = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
-            this.Close();
+            btnChoose_Click(sender, e);
         }
 
         private void gridView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                int iFocusedRowIndex = gridView1.FocusedRowHandle;
-                this.DocumentNumber = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
-                this.Close();
+                btnChoose_Click(sender, e);
             }
             else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
             }
-        }
-
-        private void btnChoose_Click(object sender, EventArgs e)
-        {
-            int iFocusedRowIndex = gridView1.FocusedRowHandle;
-            this.DocumentNumber = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
-            this.Close();
         }
     }
 }

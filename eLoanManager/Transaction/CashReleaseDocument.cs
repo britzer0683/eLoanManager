@@ -382,7 +382,7 @@ namespace eLoanSystem.Transaction
         {
             DevExpress.XtraEditors.TextEdit txt_LoanNum = new DevExpress.XtraEditors.TextEdit();
             int iFocusedRowIndex = gridView1.FocusedRowHandle;
-            findLoan oForm = new findLoan();
+            findLoanCashRelease oForm = new findLoanCashRelease();
 
             if (cboGuarantorFinancer.EditValue == null)
             {

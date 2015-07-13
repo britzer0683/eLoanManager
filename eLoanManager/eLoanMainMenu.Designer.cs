@@ -39,6 +39,10 @@
             this.barFundSetup = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barNewLoan = new DevExpress.XtraBars.BarButtonItem();
+            this.barCashRelease = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -46,14 +50,19 @@
             this.navBarLoan = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarNewApplicationLoan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarLoanList = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarCashRelease = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarCashReleaseRegister = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
@@ -73,13 +82,17 @@
             this.barNewGuarantor,
             this.barFundSetup,
             this.barButtonItem4,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.barNewLoan,
+            this.barCashRelease,
+            this.barButtonItem6,
+            this.barButtonItem7});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(767, 139);
+            this.ribbonControl1.Size = new System.Drawing.Size(821, 146);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.ribbonControl1_Merge);
             // 
@@ -156,30 +169,70 @@
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
+            // barNewLoan
+            // 
+            this.barNewLoan.Caption = "New";
+            this.barNewLoan.Glyph = ((System.Drawing.Image)(resources.GetObject("barNewLoan.Glyph")));
+            this.barNewLoan.Id = 9;
+            this.barNewLoan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewLoan.LargeGlyph")));
+            this.barNewLoan.Name = "barNewLoan";
+            this.barNewLoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNewLoan_ItemClick);
+            // 
+            // barCashRelease
+            // 
+            this.barCashRelease.Caption = "Cash Release";
+            this.barCashRelease.Glyph = ((System.Drawing.Image)(resources.GetObject("barCashRelease.Glyph")));
+            this.barCashRelease.Id = 10;
+            this.barCashRelease.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barCashRelease.LargeGlyph")));
+            this.barCashRelease.Name = "barCashRelease";
+            this.barCashRelease.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barCashRelease.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCashRelease_ItemClick);
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Cash/Fund Entry";
+            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
+            this.barButtonItem6.Id = 11;
+            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Payment Transaction";
+            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
+            this.barButtonItem7.Id = 12;
+            this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Master Files";
+            this.ribbonPage1.Text = "Main";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barNewBorrower);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barNewLoan);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barCashRelease, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barNewBorrower, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.barNewEmployer);
             this.ribbonPageGroup3.ItemLinks.Add(this.barNewGuarantor);
             this.ribbonPageGroup3.ItemLinks.Add(this.barFundSetup, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Master Files";
+            this.ribbonPageGroup3.Text = "Actions";
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 442);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 488);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(767, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(821, 27);
             // 
             // navBarControl1
             // 
@@ -187,57 +240,67 @@
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarLoan,
-            this.navBarGroup1});
+            this.navBarGroup1,
+            this.navBarGroup2});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarNewApplicationLoan,
             this.navBarLoanList,
-            this.navBarCashRelease,
-            this.navBarItem1});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 139);
+            this.navBarCashReleaseRegister,
+            this.navBarItem1,
+            this.navBarItem2,
+            this.navBarItem3,
+            this.navBarItem4,
+            this.navBarItem5});
+            this.navBarControl1.Location = new System.Drawing.Point(0, 146);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 205;
-            this.navBarControl1.Size = new System.Drawing.Size(205, 303);
+            this.navBarControl1.Size = new System.Drawing.Size(205, 342);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
             // navBarLoan
             // 
-            this.navBarLoan.Caption = "Loan Information";
+            this.navBarLoan.Caption = "Loan Reports";
             this.navBarLoan.Expanded = true;
             this.navBarLoan.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarNewApplicationLoan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLoanList)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLoanList),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.navBarLoan.Name = "navBarLoan";
             // 
             // navBarNewApplicationLoan
             // 
-            this.navBarNewApplicationLoan.Caption = "Application Form";
+            this.navBarNewApplicationLoan.Caption = "Loan Application Register";
             this.navBarNewApplicationLoan.Name = "navBarNewApplicationLoan";
             this.navBarNewApplicationLoan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarNewApplicationLoan_LinkClicked);
             // 
             // navBarLoanList
             // 
-            this.navBarLoanList.Caption = "Browse Applications";
+            this.navBarLoanList.Caption = "Incentive Reports";
             this.navBarLoanList.Name = "navBarLoanList";
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Interest Income Report";
+            this.navBarItem2.Name = "navBarItem2";
             // 
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Cash Receipt/Disbursement";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarCashRelease),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarCashReleaseRegister),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
-            // navBarCashRelease
+            // navBarCashReleaseRegister
             // 
-            this.navBarCashRelease.Caption = "Cash Release";
-            this.navBarCashRelease.Name = "navBarCashRelease";
-            this.navBarCashRelease.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarCashRelease_LinkClicked);
+            this.navBarCashReleaseRegister.Caption = "Cash Release Register";
+            this.navBarCashReleaseRegister.Name = "navBarCashReleaseRegister";
             // 
             // navBarItem1
             // 
-            this.navBarItem1.Caption = "Cash/Fund Entry";
+            this.navBarItem1.Caption = "Cash/Fund Entry Register";
             this.navBarItem1.Name = "navBarItem1";
             // 
             // ribbonPageGroup4
@@ -270,17 +333,43 @@
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Caption = "Master Files";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "Borrower Files";
+            this.navBarItem3.Name = "navBarItem3";
+            // 
+            // navBarItem4
+            // 
+            this.navBarItem4.Caption = "Guarantor/Financer Information";
+            this.navBarItem4.Name = "navBarItem4";
+            // 
+            // navBarItem5
+            // 
+            this.navBarItem5.Caption = "Employer Information";
+            this.navBarItem5.Name = "navBarItem5";
+            // 
             // eLoanMainMenu
             // 
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 469);
+            this.ClientSize = new System.Drawing.Size(821, 515);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "eLoanMainMenu";
+            this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "eLoanMainMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -304,7 +393,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarItem navBarNewApplicationLoan;
         private DevExpress.XtraNavBar.NavBarItem navBarLoanList;
-        private DevExpress.XtraNavBar.NavBarItem navBarCashRelease;
+        private DevExpress.XtraNavBar.NavBarItem navBarCashReleaseRegister;
         private DevExpress.XtraBars.BarButtonItem barNewDocument;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
@@ -320,5 +409,14 @@
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraBars.BarButtonItem barNewLoan;
+        private DevExpress.XtraBars.BarButtonItem barCashRelease;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
     }
 }

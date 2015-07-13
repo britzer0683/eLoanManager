@@ -82,24 +82,10 @@ namespace eLoanSystem
 
         private void navBarNewApplicationLoan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            LoanApplication oForm = new LoanApplication();
-
-            oForm.MdiParent = this;
-            oForm.ActiveUserID = this.ActiveUserID;
-            oForm.ConnectionString = this.ConnectionString;
-            oForm.Show();
+            
         }
 
-        private void navBarCashRelease_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            CashReleaseDocument oForm = new CashReleaseDocument();
-
-            oForm.ConnectionString = this.ConnectionString;
-            oForm.ActiveUserID = this.ActiveUserID;
-            oForm.MdiParent = this;
-            oForm.Show();
-        }
-
+        
         private void ribbonControl1_Merge(object sender, DevExpress.XtraBars.Ribbon.RibbonMergeEventArgs e)
         {
             Ribbon.SelectedPage = Ribbon.MergedPages[0];            
@@ -108,6 +94,26 @@ namespace eLoanSystem
         private void ribbonControl2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barNewLoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoanApplication oForm = new LoanApplication();
+
+            oForm.MdiParent = this;
+            oForm.ActiveUserID = this.ActiveUserID;
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.Show();
+        }
+
+        private void barCashRelease_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CashReleaseDocument oForm = new CashReleaseDocument();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ActiveUserID = this.ActiveUserID;
+            oForm.MdiParent = this;
+            oForm.Show();
         }
     }
 }

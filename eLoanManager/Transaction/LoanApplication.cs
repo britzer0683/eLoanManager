@@ -1040,5 +1040,22 @@ namespace eLoanSystem.Transaction
             oForm.ViewLayout();
             oForm.ShowDialog();
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barNewApplication_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoanApplication oForm = new LoanApplication();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ActiveUserID = this.ActiveUserID;
+
+            oForm.MdiParent = this.MdiParent;
+
+            oForm.Show();
+        }
     }
 }
