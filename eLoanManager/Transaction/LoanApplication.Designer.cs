@@ -434,8 +434,10 @@
             this.barSaveLoan.Caption = "Save";
             this.barSaveLoan.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveLoan.Glyph")));
             this.barSaveLoan.Id = 1;
+            this.barSaveLoan.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.barSaveLoan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveLoan.LargeGlyph")));
             this.barSaveLoan.Name = "barSaveLoan";
+            this.barSaveLoan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barSaveLoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveLoan_ItemClick);
             // 
             // barButtonItem1
@@ -443,6 +445,7 @@
             this.barButtonItem1.Caption = "Print Preview";
             this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
             this.barButtonItem1.Id = 2;
+            this.barButtonItem1.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
             this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
@@ -452,9 +455,9 @@
             this.barButtonItem2.Caption = "Exit";
             this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
             this.barButtonItem2.Id = 3;
+            this.barButtonItem2.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4));
             this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
             this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
@@ -462,6 +465,7 @@
             this.barButtonItem3.Caption = "Find";
             this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
             this.barButtonItem3.Id = 4;
+            this.barButtonItem3.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
             this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
@@ -472,6 +476,7 @@
             this.barNewApplication.Caption = "New";
             this.barNewApplication.Glyph = ((System.Drawing.Image)(resources.GetObject("barNewApplication.Glyph")));
             this.barNewApplication.Id = 5;
+            this.barNewApplication.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
             this.barNewApplication.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewApplication.LargeGlyph")));
             this.barNewApplication.Name = "barNewApplication";
             this.barNewApplication.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNewApplication_ItemClick);
@@ -487,8 +492,8 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barNewApplication);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSaveLoan);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
@@ -1090,6 +1095,8 @@
             this.ClientSize = new System.Drawing.Size(714, 647);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoanApplication";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

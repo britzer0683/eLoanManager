@@ -25,6 +25,24 @@ namespace eLoanSystem.Transaction
         public string ActiveUserID { get; set; }
         private DataTable LineItems { get; set; }
 
+        private void EnableControls()
+        {
+            cboSourceOfFund.Enabled = true;
+            cboFundDestination.Enabled = true;
+            cboGuarantorFinancer.Enabled = true;
+            txtRemarks.Enabled = true;
+            txtAmount.Enabled = true;
+
+        }
+        private void DisableControls()
+        {
+            cboSourceOfFund.Enabled = false;
+            cboFundDestination.Enabled = false;
+            cboGuarantorFinancer.Enabled = false;
+            txtRemarks.Enabled = false;
+            txtAmount.Enabled = false;
+
+        }
         private void InitializeLineItems()
         {
             DataTable dt = new DataTable();
@@ -161,6 +179,8 @@ namespace eLoanSystem.Transaction
             gridControl1.DataSource = this.LineItems;
             gridControl1.Refresh();
             oConnection.Close();
+
+            barSaveDocument.Caption = "Update";
         }
         private void CashFundRelease_Load(object sender, EventArgs e)
         {
@@ -188,160 +208,19 @@ namespace eLoanSystem.Transaction
             gridView1.AddNewRow();
         }
 
-        private void textEdit5_EditValueChanged(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void textEdit4_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         void RemoveBlankRowFirst()
         {
             gridView1.MoveLast();
             int iFocusedRow = gridView1.FocusedRowHandle;
-            string sLastData = gridView1.GetRowCellValue(iFocusedRow, gridView1.Columns["RefLoanNo"]).ToString();
-
-            if (sLastData == "")
+            if (iFocusedRow > 0)
             {
-                gridView1.DeleteRow(iFocusedRow);
-                gridView1.RefreshData();
-            }
-        }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
+                string sLastData = gridView1.GetRowCellValue(iFocusedRow, gridView1.Columns["RefLoanNo"]).ToString();
 
-            RemoveBlankRowFirst();
-
-            if (btnAdd.Text == "Add")
-            {
-                if (cboSourceOfFund.EditValue == null)
+                if (sLastData == "")
                 {
-                    MessageBox.Show("Please select source of fund!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    gridView1.DeleteRow(iFocusedRow);
+                    gridView1.RefreshData();
                 }
-
-                if (cboFundDestination.EditValue == null)
-                {
-                    MessageBox.Show("Please select fund destination!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                if (Convert.ToDouble(txtAmount.EditValue) <= 0)
-                {
-                    MessageBox.Show("Please insert cash amount!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                SqlConnection oConnection = new SqlConnection();
-                SqlCommand oCommand = new SqlCommand();
-
-                oConnection.ConnectionString = this.ConnectionString;
-                oConnection.Open();
-
-
-                oCommand.Connection = oConnection;
-                oCommand.CommandText = "INSERT INTO OCR (DocNum, SourceOfFund, DestinationOfFund, Remarks, Amount, DateCreated, CreatedBy, DateModified, ModifiedBy) VALUES (@DocNum, @SourceOfFund, @DestinationOfFund, @Remarks, @Amount, @DateCreated, @CreatedBy, @DateModified, @ModifiedBy)";
-                txtDocNum.Text = GetSeries();
-                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
-                oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", cboSourceOfFund.EditValue != null ? cboSourceOfFund.EditValue : ""));
-                oCommand.Parameters.Add(new SqlParameter("@DestinationOfFund", cboFundDestination.EditValue != null ? cboFundDestination.EditValue : ""));
-                oCommand.Parameters.Add(new SqlParameter("@Remarks", txtRemarks.Text));
-                oCommand.Parameters.Add(new SqlParameter("@Amount", txtAmount.EditValue != null ? txtAmount.EditValue : "0"));
-
-                oCommand.Parameters.Add(new SqlParameter("@DateCreated", dtCreated.EditValue != null ? (DateTime)dtCreated.EditValue : System.DateTime.Now));
-                oCommand.Parameters.Add(new SqlParameter("@CreatedBy", txtCreatedBy.Text));
-                oCommand.Parameters.Add(new SqlParameter("@DateModified", dtModified.EditValue != null ? (DateTime)dtModified.EditValue : System.DateTime.Now));
-                oCommand.Parameters.Add(new SqlParameter("@ModifiedBy", txtModifiedBy.Text));
-
-                oCommand.ExecuteNonQuery();
-
-                foreach (DataRow oRow in this.LineItems.Rows)
-                {
-                    if (oRow.RowState != DataRowState.Deleted)
-                    {
-                        oCommand = new SqlCommand();
-
-                        oCommand.Connection = oConnection;
-
-                        oCommand.CommandText = "INSERT INTO CR1 (DocNum, RefLoanNo, CardCode, CardName, LoanAmount, ReferenceDocument, ReceivedAmount, DocStatus) VALUES (@DocNum, @RefLoanNo, @CardCode, @CardName, @LoanAmount, @ReferenceDocument, @ReceivedAmount, @DocStatus)";
-                        oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
-                        oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", oRow["RefLoanNo"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@CardCode", oRow["CardCode"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@CardName", oRow["CardName"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@LoanAmount", oRow["LoanAmount"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@ReferenceDocument", oRow["ReferenceDocument"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@ReceivedAmount", oRow["ReceivedAmount"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@DocStatus", oRow["DocStatus"].ToString()));
-
-                        oCommand.ExecuteNonQuery();
-                    }
-                }
-                oConnection.Close();
-                btnAdd.Text = "Update";
-                MessageBox.Show("Operation successfull.","Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-
-                SqlConnection oConnection = new SqlConnection();
-                SqlCommand oCommand = new SqlCommand();
-
-                oConnection.ConnectionString = this.ConnectionString;
-                oConnection.Open();
-
-                oCommand.Connection = oConnection;
-                oCommand.CommandText = "UPDATE OCR SET SourceOfFund=@SourceOfFund, DestinationOfFund=@DestinationOfFund, Remarks=@Remarks, Amount=@Amount, DateModified=@DateModified, ModifiedBy=@ModifiedBy where DocNum=@DocNum";
-
-                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
-                oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", cboSourceOfFund.EditValue != null ? cboSourceOfFund.EditValue : ""));
-                oCommand.Parameters.Add(new SqlParameter("@DestinationOfFund", cboFundDestination.EditValue != null ? cboFundDestination.EditValue : ""));
-                oCommand.Parameters.Add(new SqlParameter("@Remarks", txtRemarks.Text));
-                oCommand.Parameters.Add(new SqlParameter("@Amount", txtAmount.EditValue != null ? txtAmount.EditValue : "0"));
-
-                oCommand.Parameters.Add(new SqlParameter("@DateModified", dtModified.EditValue != null ? (DateTime)dtModified.EditValue : System.DateTime.Now));
-                oCommand.Parameters.Add(new SqlParameter("@ModifiedBy", txtModifiedBy.Text));
-
-                oCommand.ExecuteNonQuery();
-
-                oCommand = new SqlCommand();
-
-                oCommand.Connection = oConnection;
-                oCommand.CommandText = "DELETE CR1 WHERE DocNum=@DocNum";
-                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
-                oCommand.ExecuteNonQuery();
-
-                foreach (DataRow oRow in this.LineItems.Rows)
-                {
-                    if (oRow.RowState != DataRowState.Deleted)
-                    {
-                        oCommand = new SqlCommand();
-
-                        oCommand.Connection = oConnection;
-
-                        oCommand.CommandText = "INSERT INTO CR1 (DocNum, RefLoanNo, CardCode, CardName, LoanAmount, ReferenceDocument, ReceivedAmount, DocStatus) VALUES (@DocNum, @RefLoanNo, @CardCode, @CardName, @LoanAmount, @ReferenceDocument, @ReceivedAmount, @DocStatus)";
-                        oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
-                        oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", oRow["RefLoanNo"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@CardCode", oRow["CardCode"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@CardName", oRow["CardName"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@LoanAmount", oRow["LoanAmount"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@ReferenceDocument", oRow["ReferenceDocument"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@ReceivedAmount", oRow["ReceivedAmount"].ToString()));
-                        oCommand.Parameters.Add(new SqlParameter("@DocStatus", oRow["DocStatus"].ToString()));
-
-                        oCommand.ExecuteNonQuery();
-                    }
-                }
-                oConnection.Close();
-
-                MessageBox.Show("Operation successfull.", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -501,6 +380,7 @@ namespace eLoanSystem.Transaction
                 SqlConnection oConnection = new SqlConnection();
                 SqlCommand oCommand = new SqlCommand();
 
+                oConnection.ConnectionString = this.ConnectionString;
                 oConnection.Open();
 
                 oCommand.Connection = oConnection;
@@ -521,7 +401,7 @@ namespace eLoanSystem.Transaction
                     {
                         SqlConnection oConnection = new SqlConnection();
                         SqlCommand oCommand = new SqlCommand();
-
+                        oConnection.ConnectionString = this.ConnectionString;
                         oConnection.Open();
 
                         oCommand.Connection = oConnection;
@@ -539,7 +419,7 @@ namespace eLoanSystem.Transaction
                     {
                         SqlConnection oConnection = new SqlConnection();
                         SqlCommand oCommand = new SqlCommand();
-
+                        oConnection.ConnectionString = this.ConnectionString;
                         oConnection.Open();
 
                         oCommand.Connection = oConnection;
@@ -552,6 +432,197 @@ namespace eLoanSystem.Transaction
                     }
                 }
             }
+        }
+
+        private void xtraScrollableControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barNewDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CashReleaseDocument oForm = new CashReleaseDocument();
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ActiveUserID = this.ActiveUserID;
+            oForm.MdiParent = this.MdiParent;
+            oForm.Show();
+
+        }
+
+        private void barSaveDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            RemoveBlankRowFirst();
+
+            if (barSaveDocument.Caption == "Save")
+            {
+                if (cboSourceOfFund.EditValue == null)
+                {
+                    MessageBox.Show("Please select source of fund!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (cboFundDestination.EditValue == null)
+                {
+                    MessageBox.Show("Please select fund destination!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (Convert.ToDouble(txtAmount.EditValue) <= 0)
+                {
+                    MessageBox.Show("Please insert cash amount!!!", "Fund", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                SqlConnection oConnection = new SqlConnection();
+                SqlCommand oCommand = new SqlCommand();
+
+                oConnection.ConnectionString = this.ConnectionString;
+                oConnection.Open();
+
+
+                oCommand.Connection = oConnection;
+                oCommand.CommandText = "INSERT INTO OCR (DocNum, SourceOfFund, DestinationOfFund, Remarks, Amount, DocStatus, DateCreated, CreatedBy, DateModified, ModifiedBy) VALUES (@DocNum, @SourceOfFund, @DestinationOfFund, @Remarks, @Amount, @DocStatus, @DateCreated, @CreatedBy, @DateModified, @ModifiedBy)";
+                txtDocNum.Text = GetSeries();
+                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+                oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", cboSourceOfFund.EditValue != null ? cboSourceOfFund.EditValue : ""));
+                oCommand.Parameters.Add(new SqlParameter("@DestinationOfFund", cboFundDestination.EditValue != null ? cboFundDestination.EditValue : ""));
+                oCommand.Parameters.Add(new SqlParameter("@Remarks", txtRemarks.Text));
+                oCommand.Parameters.Add(new SqlParameter("@Amount", txtAmount.EditValue != null ? txtAmount.EditValue : "0"));
+
+                oCommand.Parameters.Add(new SqlParameter("@DocStatus", txtDocStatus.Text));
+                oCommand.Parameters.Add(new SqlParameter("@DateCreated", dtCreated.EditValue != null ? (DateTime)dtCreated.EditValue : System.DateTime.Now));
+                oCommand.Parameters.Add(new SqlParameter("@CreatedBy", txtCreatedBy.Text));
+                oCommand.Parameters.Add(new SqlParameter("@DateModified", dtModified.EditValue != null ? (DateTime)dtModified.EditValue : System.DateTime.Now));
+                oCommand.Parameters.Add(new SqlParameter("@ModifiedBy", txtModifiedBy.Text));
+
+                oCommand.ExecuteNonQuery();
+
+                foreach (DataRow oRow in this.LineItems.Rows)
+                {
+                    if (oRow.RowState != DataRowState.Deleted)
+                    {
+                        oCommand = new SqlCommand();
+
+                        oCommand.Connection = oConnection;
+
+                        oCommand.CommandText = "INSERT INTO CR1 (DocNum, RefLoanNo, CardCode, CardName, LoanAmount, ReferenceDocument, ReceivedAmount, DocStatus) VALUES (@DocNum, @RefLoanNo, @CardCode, @CardName, @LoanAmount, @ReferenceDocument, @ReceivedAmount, @DocStatus)";
+                        oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+                        oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", oRow["RefLoanNo"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@CardCode", oRow["CardCode"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@CardName", oRow["CardName"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@LoanAmount", oRow["LoanAmount"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@ReferenceDocument", oRow["ReferenceDocument"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@ReceivedAmount", oRow["ReceivedAmount"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@DocStatus", oRow["DocStatus"].ToString()));
+
+                        oCommand.ExecuteNonQuery();
+                    }
+                }
+                oConnection.Close();
+                barSaveDocument.Caption = "Update";
+                MessageBox.Show("Operation successfull.", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                SqlConnection oConnection = new SqlConnection();
+                SqlCommand oCommand = new SqlCommand();
+
+                oConnection.ConnectionString = this.ConnectionString;
+                oConnection.Open();
+
+                oCommand.Connection = oConnection;
+                oCommand.CommandText = "UPDATE OCR SET DocStatus=@DocStatus, SourceOfFund=@SourceOfFund, DestinationOfFund=@DestinationOfFund, Remarks=@Remarks, Amount=@Amount, DateModified=@DateModified, ModifiedBy=@ModifiedBy where DocNum=@DocNum";
+
+                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+
+                oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", cboSourceOfFund.EditValue != null ? cboSourceOfFund.EditValue : ""));
+                oCommand.Parameters.Add(new SqlParameter("@DestinationOfFund", cboFundDestination.EditValue != null ? cboFundDestination.EditValue : ""));
+                oCommand.Parameters.Add(new SqlParameter("@Remarks", txtRemarks.Text));
+                oCommand.Parameters.Add(new SqlParameter("@Amount", txtAmount.EditValue != null ? txtAmount.EditValue : "0"));
+
+                oCommand.Parameters.Add(new SqlParameter("@DocStatus", txtDocStatus.Text));
+                oCommand.Parameters.Add(new SqlParameter("@DateModified", dtModified.EditValue != null ? (DateTime)dtModified.EditValue : System.DateTime.Now));
+                oCommand.Parameters.Add(new SqlParameter("@ModifiedBy", txtModifiedBy.Text));
+
+                oCommand.ExecuteNonQuery();
+
+                oCommand = new SqlCommand();
+
+                oCommand.Connection = oConnection;
+                oCommand.CommandText = "DELETE CR1 WHERE DocNum=@DocNum";
+                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+                oCommand.ExecuteNonQuery();
+
+                foreach (DataRow oRow in this.LineItems.Rows)
+                {
+                    if (oRow.RowState != DataRowState.Deleted)
+                    {
+                        oCommand = new SqlCommand();
+
+                        oCommand.Connection = oConnection;
+
+                        oCommand.CommandText = "INSERT INTO CR1 (DocNum, RefLoanNo, CardCode, CardName, LoanAmount, ReferenceDocument, ReceivedAmount, DocStatus) VALUES (@DocNum, @RefLoanNo, @CardCode, @CardName, @LoanAmount, @ReferenceDocument, @ReceivedAmount, @DocStatus)";
+                        oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+                        oCommand.Parameters.Add(new SqlParameter("@RefLoanNo", oRow["RefLoanNo"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@CardCode", oRow["CardCode"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@CardName", oRow["CardName"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@LoanAmount", oRow["LoanAmount"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@ReferenceDocument", oRow["ReferenceDocument"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@ReceivedAmount", oRow["ReceivedAmount"].ToString()));
+                        oCommand.Parameters.Add(new SqlParameter("@DocStatus", oRow["DocStatus"].ToString()));
+
+                        oCommand.ExecuteNonQuery();
+                    }
+                }
+                oConnection.Close();
+
+                MessageBox.Show("Operation successfull.", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void barFindDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barPrintDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void txtDocStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtDocStatus.Text == "Draft")
+            {
+                //btnReleaseCash.Enabled = false;
+                txtDocStatus.Properties.Buttons[0].Visible = true;
+                txtDocStatus.Properties.Buttons[1].Visible = true;
+                EnableControls();
+                barSaveDocument.Enabled = true;
+
+            }
+            else if (txtDocStatus.Text == "Posted")
+            {
+                //btnReleaseCash.Enabled = false;
+                txtDocStatus.Properties.Buttons[0].Visible = false;
+                txtDocStatus.Properties.Buttons[1].Visible = true;
+                DisableControls();
+                //barSaveDocument.Enabled = false;
+            }
+            else if (txtDocStatus.Text == "Canceled" || txtDocStatus.Text == "Closed")
+            {
+                //btnReleaseCash.Enabled = false;
+                txtDocStatus.Properties.Buttons[0].Visible = false;
+                txtDocStatus.Properties.Buttons[1].Visible = false;
+                barSaveDocument.Enabled = false;
+                DisableControls();
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
       
     }

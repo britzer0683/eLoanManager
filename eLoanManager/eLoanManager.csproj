@@ -160,6 +160,12 @@
     <Compile Include="Transaction\findLoan.Designer.cs">
       <DependentUpon>findLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transaction\findLoanCashRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\findLoanCashRelease.Designer.cs">
+      <DependentUpon>findLoanCashRelease.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction\FundTransferEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\findLoan.resx">
       <DependentUpon>findLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\findLoanCashRelease.resx">
+      <DependentUpon>findLoanCashRelease.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\FundTransferEntry.resx">
       <DependentUpon>FundTransferEntry.cs</DependentUpon>

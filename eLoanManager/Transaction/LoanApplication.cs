@@ -941,10 +941,28 @@ namespace eLoanSystem.Transaction
 
         private void barSaveLoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (barSaveLoan.Caption == "Add")
+            if (barSaveLoan.Caption == "Save")
             {
                 LoanManager oConnectionManager = new LoanManager();
                 LoanUnit oUnit = new LoanUnit();
+
+                if (txtCardCode.Text == "")
+                {
+                    MessageBox.Show("Please select borrower before saving!!!", "Loan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (Convert.ToDouble(txtLoanAmount.EditValue) <= 0)
+                {
+                    MessageBox.Show("Please insert loan amount and click calculate button to generate schedule of payment!!!", "Loan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (this.LineScheduleOfPayment.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Please click calculate button to generate schedule of payment!!!", "Loan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 txtLoanNo.Text = GetSeries();
 
@@ -1043,7 +1061,14 @@ namespace eLoanSystem.Transaction
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            findLoan oForm = new findLoan();
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ShowDialog();
 
+            if (oForm.DocumentNumber != null)
+            {
+                OpenDocument(oForm.DocumentNumber);
+            }
         }
 
         private void barNewApplication_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
