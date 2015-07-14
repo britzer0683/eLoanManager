@@ -31,6 +31,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashReleaseDocument));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txtDocStatus = new DevExpress.XtraEditors.ButtonEdit();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -38,6 +39,7 @@
             this.barSaveDocument = new DevExpress.XtraBars.BarButtonItem();
             this.barFindDocument = new DevExpress.XtraBars.BarButtonItem();
             this.barPrintDocument = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
@@ -73,7 +75,6 @@
             this.lblGuarantor = new DevExpress.XtraEditors.LabelControl();
             this.cboGuarantorFinancer = new DevExpress.XtraEditors.LookUpEdit();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
@@ -98,7 +99,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(474, 6);
+            this.labelControl16.Location = new System.Drawing.Point(474, 21);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(35, 13);
             this.labelControl16.TabIndex = 10;
@@ -107,12 +108,13 @@
             // txtDocStatus
             // 
             this.txtDocStatus.EditValue = "Draft";
-            this.txtDocStatus.Location = new System.Drawing.Point(573, 6);
+            this.txtDocStatus.Location = new System.Drawing.Point(573, 21);
             this.txtDocStatus.MenuManager = this.ribbonControl1;
             this.txtDocStatus.Name = "txtDocStatus";
             this.txtDocStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtDocStatus.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtDocStatus.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.txtDocStatus.Properties.ReadOnly = true;
             this.txtDocStatus.Size = new System.Drawing.Size(111, 22);
             this.txtDocStatus.TabIndex = 11;
             this.txtDocStatus.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtDocStatus_ButtonClick);
@@ -140,8 +142,10 @@
             this.barNewDocument.Caption = "New";
             this.barNewDocument.Glyph = ((System.Drawing.Image)(resources.GetObject("barNewDocument.Glyph")));
             this.barNewDocument.Id = 1;
+            this.barNewDocument.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
             this.barNewDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNewDocument.LargeGlyph")));
             this.barNewDocument.Name = "barNewDocument";
+            this.barNewDocument.ShortcutKeyDisplayString = "CTR+N";
             this.barNewDocument.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNewDocument_ItemClick);
             // 
             // barSaveDocument
@@ -149,6 +153,7 @@
             this.barSaveDocument.Caption = "Save";
             this.barSaveDocument.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveDocument.Glyph")));
             this.barSaveDocument.Id = 2;
+            this.barSaveDocument.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.barSaveDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveDocument.LargeGlyph")));
             this.barSaveDocument.Name = "barSaveDocument";
             this.barSaveDocument.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
@@ -159,6 +164,7 @@
             this.barFindDocument.Caption = "Find";
             this.barFindDocument.Glyph = ((System.Drawing.Image)(resources.GetObject("barFindDocument.Glyph")));
             this.barFindDocument.Id = 3;
+            this.barFindDocument.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
             this.barFindDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barFindDocument.LargeGlyph")));
             this.barFindDocument.Name = "barFindDocument";
             this.barFindDocument.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
@@ -169,9 +175,19 @@
             this.barPrintDocument.Caption = "Print";
             this.barPrintDocument.Glyph = ((System.Drawing.Image)(resources.GetObject("barPrintDocument.Glyph")));
             this.barPrintDocument.Id = 4;
+            this.barPrintDocument.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
             this.barPrintDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barPrintDocument.LargeGlyph")));
             this.barPrintDocument.Name = "barPrintDocument";
             this.barPrintDocument.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barPrintDocument_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Exit";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -192,7 +208,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(474, 34);
+            this.labelControl15.Location = new System.Drawing.Point(474, 49);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(58, 13);
             this.labelControl15.TabIndex = 12;
@@ -200,21 +216,23 @@
             // 
             // txtCreatedBy
             // 
-            this.txtCreatedBy.Location = new System.Drawing.Point(573, 34);
+            this.txtCreatedBy.Location = new System.Drawing.Point(573, 49);
             this.txtCreatedBy.Name = "txtCreatedBy";
+            this.txtCreatedBy.Properties.ReadOnly = true;
             this.txtCreatedBy.Size = new System.Drawing.Size(112, 20);
             this.txtCreatedBy.TabIndex = 13;
             // 
             // txtModifiedBy
             // 
-            this.txtModifiedBy.Location = new System.Drawing.Point(573, 88);
+            this.txtModifiedBy.Location = new System.Drawing.Point(573, 103);
             this.txtModifiedBy.Name = "txtModifiedBy";
+            this.txtModifiedBy.Properties.ReadOnly = true;
             this.txtModifiedBy.Size = new System.Drawing.Size(112, 20);
             this.txtModifiedBy.TabIndex = 17;
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(474, 60);
+            this.labelControl14.Location = new System.Drawing.Point(474, 75);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(69, 13);
             this.labelControl14.TabIndex = 14;
@@ -223,7 +241,7 @@
             // dtCreated
             // 
             this.dtCreated.EditValue = null;
-            this.dtCreated.Location = new System.Drawing.Point(573, 60);
+            this.dtCreated.Location = new System.Drawing.Point(573, 75);
             this.dtCreated.Name = "dtCreated";
             this.dtCreated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -231,12 +249,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtCreated.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
             this.dtCreated.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
+            this.dtCreated.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtCreated.Size = new System.Drawing.Size(112, 20);
             this.dtCreated.TabIndex = 15;
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(474, 114);
+            this.labelControl13.Location = new System.Drawing.Point(474, 129);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(70, 13);
             this.labelControl13.TabIndex = 18;
@@ -245,7 +264,7 @@
             // dtModified
             // 
             this.dtModified.EditValue = null;
-            this.dtModified.Location = new System.Drawing.Point(573, 114);
+            this.dtModified.Location = new System.Drawing.Point(573, 129);
             this.dtModified.Name = "dtModified";
             this.dtModified.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -253,12 +272,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtModified.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
             this.dtModified.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
+            this.dtModified.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtModified.Size = new System.Drawing.Size(112, 20);
             this.dtModified.TabIndex = 19;
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(474, 88);
+            this.labelControl12.Location = new System.Drawing.Point(474, 103);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(59, 13);
             this.labelControl12.TabIndex = 16;
@@ -293,7 +313,7 @@
             // 
             this.txtLoanNo.AutoHeight = false;
             this.txtLoanNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtLoanNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.txtLoanNo.Name = "txtLoanNo";
             this.txtLoanNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtLoanNo_ButtonClick);
             // 
@@ -325,7 +345,7 @@
             // 
             // colRefDocument
             // 
-            this.colRefDocument.Caption = "Reference Document[ATM/PDC#]";
+            this.colRefDocument.Caption = "ATM/PDC";
             this.colRefDocument.FieldName = "ReferenceDocument";
             this.colRefDocument.Name = "colRefDocument";
             this.colRefDocument.Visible = true;
@@ -334,6 +354,8 @@
             // colReceivedAmount
             // 
             this.colReceivedAmount.Caption = "Received Amount";
+            this.colReceivedAmount.DisplayFormat.FormatString = "{0:N}";
+            this.colReceivedAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colReceivedAmount.FieldName = "ReceivedAmount";
             this.colReceivedAmount.Name = "colReceivedAmount";
             this.colReceivedAmount.Visible = true;
@@ -349,7 +371,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(13, 206);
+            this.gridControl1.Location = new System.Drawing.Point(13, 221);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -377,7 +399,7 @@
             // 
             // lblDocNo
             // 
-            this.lblDocNo.Location = new System.Drawing.Point(14, 6);
+            this.lblDocNo.Location = new System.Drawing.Point(14, 21);
             this.lblDocNo.Name = "lblDocNo";
             this.lblDocNo.Size = new System.Drawing.Size(63, 13);
             this.lblDocNo.TabIndex = 0;
@@ -386,7 +408,7 @@
             // txtDocNum
             // 
             this.txtDocNum.EditValue = "########";
-            this.txtDocNum.Location = new System.Drawing.Point(84, 6);
+            this.txtDocNum.Location = new System.Drawing.Point(84, 21);
             this.txtDocNum.MenuManager = this.ribbonControl1;
             this.txtDocNum.Name = "txtDocNum";
             this.txtDocNum.Properties.ReadOnly = true;
@@ -395,7 +417,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(14, 34);
+            this.labelControl1.Location = new System.Drawing.Point(14, 49);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 2;
@@ -403,7 +425,7 @@
             // 
             // cboSourceOfFund
             // 
-            this.cboSourceOfFund.Location = new System.Drawing.Point(84, 34);
+            this.cboSourceOfFund.Location = new System.Drawing.Point(84, 49);
             this.cboSourceOfFund.MenuManager = this.ribbonControl1;
             this.cboSourceOfFund.Name = "cboSourceOfFund";
             this.cboSourceOfFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -414,7 +436,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(14, 60);
+            this.labelControl2.Location = new System.Drawing.Point(14, 75);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(16, 13);
             this.labelControl2.TabIndex = 4;
@@ -422,7 +444,7 @@
             // 
             // cboFundDestination
             // 
-            this.cboFundDestination.Location = new System.Drawing.Point(84, 60);
+            this.cboFundDestination.Location = new System.Drawing.Point(84, 75);
             this.cboFundDestination.Name = "cboFundDestination";
             this.cboFundDestination.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -432,7 +454,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(14, 115);
+            this.labelControl3.Location = new System.Drawing.Point(14, 130);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 13);
             this.labelControl3.TabIndex = 6;
@@ -440,7 +462,7 @@
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(84, 115);
+            this.txtRemarks.Location = new System.Drawing.Point(84, 130);
             this.txtRemarks.MenuManager = this.ribbonControl1;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(247, 59);
@@ -448,7 +470,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(14, 180);
+            this.labelControl4.Location = new System.Drawing.Point(14, 195);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(41, 13);
             this.labelControl4.TabIndex = 8;
@@ -457,7 +479,7 @@
             // txtAmount
             // 
             this.txtAmount.EditValue = "0";
-            this.txtAmount.Location = new System.Drawing.Point(84, 180);
+            this.txtAmount.Location = new System.Drawing.Point(84, 195);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Properties.Mask.EditMask = "#,###,###,###,###.00";
             this.txtAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -467,7 +489,7 @@
             // 
             // lblGuarantor
             // 
-            this.lblGuarantor.Location = new System.Drawing.Point(14, 88);
+            this.lblGuarantor.Location = new System.Drawing.Point(14, 103);
             this.lblGuarantor.Name = "lblGuarantor";
             this.lblGuarantor.Size = new System.Drawing.Size(53, 13);
             this.lblGuarantor.TabIndex = 4;
@@ -475,7 +497,7 @@
             // 
             // cboGuarantorFinancer
             // 
-            this.cboGuarantorFinancer.Location = new System.Drawing.Point(84, 89);
+            this.cboGuarantorFinancer.Location = new System.Drawing.Point(84, 104);
             this.cboGuarantorFinancer.Name = "cboGuarantorFinancer";
             this.cboGuarantorFinancer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -514,15 +536,6 @@
             this.xtraScrollableControl1.Size = new System.Drawing.Size(710, 418);
             this.xtraScrollableControl1.TabIndex = 25;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Exit";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // CashReleaseDocument
             // 

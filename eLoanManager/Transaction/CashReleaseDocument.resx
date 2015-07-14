@@ -497,6 +497,16 @@
   <metadata name="labelControl12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="txtLoanNo.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAG3RFWHRUaXRsZQBBZGQ7UGx1
+        cztCYXJzO1JpYmJvbjuVBjMvAAAAlklEQVQ4T62T0Q2AIAwFGcVB+GY6ncJhWIfEAbRHJMHGkkj9eIml
+        r4e0EGKMQSlJvImyqNzimzVyD38fLJJcRYfoNEQOD95a2wAs7INCDcRbIQ0A1drVWqemAjiX9dttgzcI
+        NQkDzbF2GQGo2TDQ4VlABsCoeoAeq457b/kF4D6Cu4nuMdIH10UC4L7KDTL9mPpZf3rOFxlFX1xSazHS
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="gridControl1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

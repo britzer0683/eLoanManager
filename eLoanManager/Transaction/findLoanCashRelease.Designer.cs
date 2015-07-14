@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AllowDisplayRibbon = false;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(findLoanCashRelease));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.cboSearchIndex = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -64,7 +63,7 @@
             this.txtSearch.Location = new System.Drawing.Point(162, 50);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.txtSearch.Size = new System.Drawing.Size(423, 22);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtSearch_ButtonClick);
@@ -164,7 +163,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(597, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(597, 32);
             // 
             // ribbonPage1
             // 
@@ -178,11 +177,12 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // findLoan
+            // findLoanCashRelease
             // 
+            this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 320);
+            this.ClientSize = new System.Drawing.Size(597, 312);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.gridControl1);
@@ -190,7 +190,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "findLoan";
+            this.Name = "findLoanCashRelease";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "findLoan";

@@ -45,6 +45,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.colDocStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGuarantor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSearchIndex.Properties)).BeginInit();
@@ -57,7 +58,7 @@
             this.gridControl1.Location = new System.Drawing.Point(11, 67);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(624, 275);
+            this.gridControl1.Size = new System.Drawing.Size(692, 275);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -67,6 +68,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colLoanNo,
             this.colCardName,
+            this.colGuarantor,
             this.colLoanAmount,
             this.colDocStatus});
             this.gridView1.GridControl = this.gridControl1;
@@ -92,8 +94,8 @@
             this.colCardName.FieldName = "CardName";
             this.colCardName.Name = "colCardName";
             this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 1;
-            this.colCardName.Width = 355;
+            this.colCardName.VisibleIndex = 2;
+            this.colCardName.Width = 250;
             // 
             // colLoanAmount
             // 
@@ -103,8 +105,8 @@
             this.colLoanAmount.FieldName = "LoanAmount";
             this.colLoanAmount.Name = "colLoanAmount";
             this.colLoanAmount.Visible = true;
-            this.colLoanAmount.VisibleIndex = 2;
-            this.colLoanAmount.Width = 133;
+            this.colLoanAmount.VisibleIndex = 3;
+            this.colLoanAmount.Width = 93;
             // 
             // cboSearchIndex
             // 
@@ -126,7 +128,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
-            this.txtSearch.Size = new System.Drawing.Size(474, 22);
+            this.txtSearch.Size = new System.Drawing.Size(542, 22);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtSearch_ButtonClick);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
@@ -167,7 +169,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(647, 32);
+            this.ribbonControl1.Size = new System.Drawing.Size(711, 32);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // ribbonPage1
@@ -187,7 +189,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 377);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(647, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(711, 27);
             // 
             // colDocStatus
             // 
@@ -195,14 +197,24 @@
             this.colDocStatus.FieldName = "DocStatus";
             this.colDocStatus.Name = "colDocStatus";
             this.colDocStatus.Visible = true;
-            this.colDocStatus.VisibleIndex = 3;
+            this.colDocStatus.VisibleIndex = 4;
+            this.colDocStatus.Width = 56;
+            // 
+            // colGuarantor
+            // 
+            this.colGuarantor.Caption = "Guarantor";
+            this.colGuarantor.FieldName = "Guarrantor";
+            this.colGuarantor.Name = "colGuarantor";
+            this.colGuarantor.Visible = true;
+            this.colGuarantor.VisibleIndex = 1;
+            this.colGuarantor.Width = 140;
             // 
             // findLoan
             // 
             this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 404);
+            this.ClientSize = new System.Drawing.Size(711, 404);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cboSearchIndex);
@@ -211,6 +223,8 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.ribbonControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "findLoan";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -244,5 +258,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraGrid.Columns.GridColumn colDocStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colGuarantor;
     }
 }

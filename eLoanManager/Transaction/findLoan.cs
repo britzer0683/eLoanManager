@@ -84,19 +84,19 @@ namespace eLoanSystem.Transaction
                 oCommand.Connection = oConnection;
                 if (cboSearchIndex.SelectedIndex == 0)
                 {
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName ORDER BY DocNum ASC";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName ORDER BY DocNum DESC";
                     oCommand.Parameters.Add(new SqlParameter("@CardName", "%" + txtSearch.Text + "%"));
 
                 }
                 else if (cboSearchIndex.SelectedIndex == 1)
                 {
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE Guarantor LIKE @Guarantor ORDER BY DocNum ASC";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE Guarrantor LIKE @Guarantor ORDER BY DocNum DESC";
                     oCommand.Parameters.Add(new SqlParameter("@Guarantor", "%" + txtSearch.Text + "%"));
                 }
                 else if (cboSearchIndex.SelectedIndex == 2)
                 {
 
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum  ORDER BY DocNum ASC";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum  ORDER BY DocNum DESC";
                     oCommand.Parameters.Add(new SqlParameter("@DocNum", "%" + txtSearch.Text + "%"));
                 }
 

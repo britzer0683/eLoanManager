@@ -146,6 +146,7 @@ namespace eLoanSystem.Transaction
             oCommand.CommandText = "SELECT * FROM OCR WHERE DocNum=@DocNum";
             oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocNum));
 
+            oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dtHeader);
 
 
@@ -156,6 +157,7 @@ namespace eLoanSystem.Transaction
             oCommand.CommandText = "SELECT * FROM CR1 WHERE DocNum=@DocNum";
             oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocNum));
 
+            oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dtLineItems);
 
 
@@ -318,7 +320,7 @@ namespace eLoanSystem.Transaction
 
             cboGuarantorFinancer.Properties.DataSource = dtGuarantor;
             cboGuarantorFinancer.Properties.DisplayMember = "GuarantorFinancerName";
-            cboGuarantorFinancer.Properties.ValueMember = "GuarantorFinancerCode";
+            cboGuarantorFinancer.Properties.ValueMember = "GuarantorFinancerName";
 
             DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
 
@@ -481,11 +483,12 @@ namespace eLoanSystem.Transaction
 
 
                 oCommand.Connection = oConnection;
-                oCommand.CommandText = "INSERT INTO OCR (DocNum, SourceOfFund, DestinationOfFund, Remarks, Amount, DocStatus, DateCreated, CreatedBy, DateModified, ModifiedBy) VALUES (@DocNum, @SourceOfFund, @DestinationOfFund, @Remarks, @Amount, @DocStatus, @DateCreated, @CreatedBy, @DateModified, @ModifiedBy)";
+                oCommand.CommandText = "INSERT INTO OCR (DocNum, Guarantor, SourceOfFund, DestinationOfFund, Remarks, Amount, DocStatus, DateCreated, CreatedBy, DateModified, ModifiedBy) VALUES (@DocNum, @Guarantor, @SourceOfFund, @DestinationOfFund, @Remarks, @Amount, @DocStatus, @DateCreated, @CreatedBy, @DateModified, @ModifiedBy)";
                 txtDocNum.Text = GetSeries();
                 oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
                 oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", cboSourceOfFund.EditValue != null ? cboSourceOfFund.EditValue : ""));
                 oCommand.Parameters.Add(new SqlParameter("@DestinationOfFund", cboFundDestination.EditValue != null ? cboFundDestination.EditValue : ""));
+                oCommand.Parameters.Add(new SqlParameter("@Guarantor", cboGuarantorFinancer.EditValue.ToString()));
                 oCommand.Parameters.Add(new SqlParameter("@Remarks", txtRemarks.Text));
                 oCommand.Parameters.Add(new SqlParameter("@Amount", txtAmount.EditValue != null ? txtAmount.EditValue : "0"));
 
@@ -532,17 +535,18 @@ namespace eLoanSystem.Transaction
                 oConnection.Open();
 
                 oCommand.Connection = oConnection;
-                oCommand.CommandText = "UPDATE OCR SET DocStatus=@DocStatus, SourceOfFund=@SourceOfFund, DestinationOfFund=@DestinationOfFund, Remarks=@Remarks, Amount=@Amount, DateModified=@DateModified, ModifiedBy=@ModifiedBy where DocNum=@DocNum";
+                oCommand.CommandText = "UPDATE OCR SET Guarantor=@Guarantor, DocStatus=@DocStatus, SourceOfFund=@SourceOfFund, DestinationOfFund=@DestinationOfFund, Remarks=@Remarks, Amount=@Amount, DateModified=@DateModified, ModifiedBy=@ModifiedBy where DocNum=@DocNum";
 
                 oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
 
                 oCommand.Parameters.Add(new SqlParameter("@SourceOfFund", cboSourceOfFund.EditValue != null ? cboSourceOfFund.EditValue : ""));
                 oCommand.Parameters.Add(new SqlParameter("@DestinationOfFund", cboFundDestination.EditValue != null ? cboFundDestination.EditValue : ""));
+                oCommand.Parameters.Add(new SqlParameter("@Guarantor", cboGuarantorFinancer.Text));
                 oCommand.Parameters.Add(new SqlParameter("@Remarks", txtRemarks.Text));
                 oCommand.Parameters.Add(new SqlParameter("@Amount", txtAmount.EditValue != null ? txtAmount.EditValue : "0"));
 
                 oCommand.Parameters.Add(new SqlParameter("@DocStatus", txtDocStatus.Text));
-                oCommand.Parameters.Add(new SqlParameter("@DateModified", dtModified.EditValue != null ? (DateTime)dtModified.EditValue : System.DateTime.Now));
+                oCommand.Parameters.Add(new SqlParameter("@DateModified", dtModified.EditValue != null ? Convert.ToDateTime(dtModified.EditValue) : System.DateTime.Now));
                 oCommand.Parameters.Add(new SqlParameter("@ModifiedBy", txtModifiedBy.Text));
 
                 oCommand.ExecuteNonQuery();
@@ -583,7 +587,16 @@ namespace eLoanSystem.Transaction
 
         private void barFindDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            findCashReleaseDocument oForm = new findCashReleaseDocument();
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ShowDialog();
 
+            if (oForm.DocumentNumber == null)
+            {
+                return;
+            }
+
+            OpenDocument(oForm.DocumentNumber);
         }
 
         private void barPrintDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
