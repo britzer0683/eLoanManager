@@ -61,7 +61,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(609, 32);
+            this.ribbonControl1.Size = new System.Drawing.Size(609, 27);
             // 
             // ribbonPage1
             // 

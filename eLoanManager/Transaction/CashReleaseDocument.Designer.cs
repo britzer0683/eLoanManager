@@ -75,6 +75,7 @@
             this.lblGuarantor = new DevExpress.XtraEditors.LabelControl();
             this.cboGuarantorFinancer = new DevExpress.XtraEditors.LookUpEdit();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.cboStatus = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
@@ -95,11 +96,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantorFinancer.Properties)).BeginInit();
             this.xtraScrollableControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(474, 21);
+            this.labelControl16.Location = new System.Drawing.Point(472, 25);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(35, 13);
             this.labelControl16.TabIndex = 10;
@@ -108,7 +110,7 @@
             // txtDocStatus
             // 
             this.txtDocStatus.EditValue = "Draft";
-            this.txtDocStatus.Location = new System.Drawing.Point(573, 21);
+            this.txtDocStatus.Location = new System.Drawing.Point(571, 25);
             this.txtDocStatus.MenuManager = this.ribbonControl1;
             this.txtDocStatus.Name = "txtDocStatus";
             this.txtDocStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -135,7 +137,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(710, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(710, 144);
             // 
             // barNewDocument
             // 
@@ -208,7 +210,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(474, 49);
+            this.labelControl15.Location = new System.Drawing.Point(472, 53);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(58, 13);
             this.labelControl15.TabIndex = 12;
@@ -216,7 +218,7 @@
             // 
             // txtCreatedBy
             // 
-            this.txtCreatedBy.Location = new System.Drawing.Point(573, 49);
+            this.txtCreatedBy.Location = new System.Drawing.Point(571, 53);
             this.txtCreatedBy.Name = "txtCreatedBy";
             this.txtCreatedBy.Properties.ReadOnly = true;
             this.txtCreatedBy.Size = new System.Drawing.Size(112, 20);
@@ -224,7 +226,7 @@
             // 
             // txtModifiedBy
             // 
-            this.txtModifiedBy.Location = new System.Drawing.Point(573, 103);
+            this.txtModifiedBy.Location = new System.Drawing.Point(571, 107);
             this.txtModifiedBy.Name = "txtModifiedBy";
             this.txtModifiedBy.Properties.ReadOnly = true;
             this.txtModifiedBy.Size = new System.Drawing.Size(112, 20);
@@ -232,7 +234,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(474, 75);
+            this.labelControl14.Location = new System.Drawing.Point(472, 79);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(69, 13);
             this.labelControl14.TabIndex = 14;
@@ -241,7 +243,7 @@
             // dtCreated
             // 
             this.dtCreated.EditValue = null;
-            this.dtCreated.Location = new System.Drawing.Point(573, 75);
+            this.dtCreated.Location = new System.Drawing.Point(571, 79);
             this.dtCreated.Name = "dtCreated";
             this.dtCreated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -255,7 +257,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(474, 129);
+            this.labelControl13.Location = new System.Drawing.Point(472, 133);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(70, 13);
             this.labelControl13.TabIndex = 18;
@@ -264,7 +266,7 @@
             // dtModified
             // 
             this.dtModified.EditValue = null;
-            this.dtModified.Location = new System.Drawing.Point(573, 129);
+            this.dtModified.Location = new System.Drawing.Point(571, 133);
             this.dtModified.Name = "dtModified";
             this.dtModified.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -278,7 +280,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(474, 103);
+            this.labelControl12.Location = new System.Drawing.Point(472, 107);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(59, 13);
             this.labelControl12.TabIndex = 16;
@@ -322,8 +324,6 @@
             this.colCardCode.Caption = "Code";
             this.colCardCode.FieldName = "CardCode";
             this.colCardCode.Name = "colCardCode";
-            this.colCardCode.Visible = true;
-            this.colCardCode.VisibleIndex = 2;
             // 
             // colCardName
             // 
@@ -341,7 +341,7 @@
             this.colLoanAmount.FieldName = "LoanAmount";
             this.colLoanAmount.Name = "colLoanAmount";
             this.colLoanAmount.Visible = true;
-            this.colLoanAmount.VisibleIndex = 3;
+            this.colLoanAmount.VisibleIndex = 2;
             // 
             // colRefDocument
             // 
@@ -349,7 +349,7 @@
             this.colRefDocument.FieldName = "ReferenceDocument";
             this.colRefDocument.Name = "colRefDocument";
             this.colRefDocument.Visible = true;
-            this.colRefDocument.VisibleIndex = 4;
+            this.colRefDocument.VisibleIndex = 3;
             // 
             // colReceivedAmount
             // 
@@ -359,29 +359,32 @@
             this.colReceivedAmount.FieldName = "ReceivedAmount";
             this.colReceivedAmount.Name = "colReceivedAmount";
             this.colReceivedAmount.Visible = true;
-            this.colReceivedAmount.VisibleIndex = 5;
+            this.colReceivedAmount.VisibleIndex = 4;
             // 
             // colStatus
             // 
             this.colStatus.Caption = "Status";
+            this.colStatus.ColumnEdit = this.cboStatus;
             this.colStatus.FieldName = "DocStatus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 6;
+            this.colStatus.VisibleIndex = 5;
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(13, 221);
+            this.gridControl1.Location = new System.Drawing.Point(11, 225);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cboDueDate,
             this.txtLoanNo,
-            this.cboScheduleNo});
+            this.cboScheduleNo,
+            this.cboStatus});
             this.gridControl1.Size = new System.Drawing.Size(684, 254);
             this.gridControl1.TabIndex = 20;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // cboDueDate
             // 
@@ -399,7 +402,7 @@
             // 
             // lblDocNo
             // 
-            this.lblDocNo.Location = new System.Drawing.Point(14, 21);
+            this.lblDocNo.Location = new System.Drawing.Point(12, 25);
             this.lblDocNo.Name = "lblDocNo";
             this.lblDocNo.Size = new System.Drawing.Size(63, 13);
             this.lblDocNo.TabIndex = 0;
@@ -408,7 +411,7 @@
             // txtDocNum
             // 
             this.txtDocNum.EditValue = "########";
-            this.txtDocNum.Location = new System.Drawing.Point(84, 21);
+            this.txtDocNum.Location = new System.Drawing.Point(82, 25);
             this.txtDocNum.MenuManager = this.ribbonControl1;
             this.txtDocNum.Name = "txtDocNum";
             this.txtDocNum.Properties.ReadOnly = true;
@@ -417,7 +420,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(14, 49);
+            this.labelControl1.Location = new System.Drawing.Point(12, 53);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 2;
@@ -425,7 +428,7 @@
             // 
             // cboSourceOfFund
             // 
-            this.cboSourceOfFund.Location = new System.Drawing.Point(84, 49);
+            this.cboSourceOfFund.Location = new System.Drawing.Point(82, 53);
             this.cboSourceOfFund.MenuManager = this.ribbonControl1;
             this.cboSourceOfFund.Name = "cboSourceOfFund";
             this.cboSourceOfFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -436,7 +439,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(14, 75);
+            this.labelControl2.Location = new System.Drawing.Point(12, 79);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(16, 13);
             this.labelControl2.TabIndex = 4;
@@ -444,7 +447,7 @@
             // 
             // cboFundDestination
             // 
-            this.cboFundDestination.Location = new System.Drawing.Point(84, 75);
+            this.cboFundDestination.Location = new System.Drawing.Point(82, 79);
             this.cboFundDestination.Name = "cboFundDestination";
             this.cboFundDestination.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -454,7 +457,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(14, 130);
+            this.labelControl3.Location = new System.Drawing.Point(12, 134);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 13);
             this.labelControl3.TabIndex = 6;
@@ -462,7 +465,7 @@
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(84, 130);
+            this.txtRemarks.Location = new System.Drawing.Point(82, 134);
             this.txtRemarks.MenuManager = this.ribbonControl1;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(247, 59);
@@ -470,7 +473,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(14, 195);
+            this.labelControl4.Location = new System.Drawing.Point(12, 199);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(41, 13);
             this.labelControl4.TabIndex = 8;
@@ -479,7 +482,7 @@
             // txtAmount
             // 
             this.txtAmount.EditValue = "0";
-            this.txtAmount.Location = new System.Drawing.Point(84, 195);
+            this.txtAmount.Location = new System.Drawing.Point(82, 199);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Properties.Mask.EditMask = "#,###,###,###,###.00";
             this.txtAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -489,7 +492,7 @@
             // 
             // lblGuarantor
             // 
-            this.lblGuarantor.Location = new System.Drawing.Point(14, 103);
+            this.lblGuarantor.Location = new System.Drawing.Point(12, 107);
             this.lblGuarantor.Name = "lblGuarantor";
             this.lblGuarantor.Size = new System.Drawing.Size(53, 13);
             this.lblGuarantor.TabIndex = 4;
@@ -497,7 +500,7 @@
             // 
             // cboGuarantorFinancer
             // 
-            this.cboGuarantorFinancer.Location = new System.Drawing.Point(84, 104);
+            this.cboGuarantorFinancer.Location = new System.Drawing.Point(82, 108);
             this.cboGuarantorFinancer.Name = "cboGuarantorFinancer";
             this.cboGuarantorFinancer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -531,11 +534,21 @@
             this.xtraScrollableControl1.Controls.Add(this.labelControl15);
             this.xtraScrollableControl1.Controls.Add(this.gridControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 144);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(710, 418);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(710, 420);
             this.xtraScrollableControl1.TabIndex = 25;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.AutoHeight = false;
+            this.cboStatus.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboStatus.Items.AddRange(new object[] {
+            "Released",
+            "Received"});
+            this.cboStatus.Name = "cboStatus";
             // 
             // CashReleaseDocument
             // 
@@ -570,6 +583,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantorFinancer.Properties)).EndInit();
             this.xtraScrollableControl1.ResumeLayout(false);
             this.xtraScrollableControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,6 +633,7 @@
         private DevExpress.XtraBars.BarButtonItem barFindDocument;
         private DevExpress.XtraBars.BarButtonItem barPrintDocument;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboStatus;
 
     }
 }

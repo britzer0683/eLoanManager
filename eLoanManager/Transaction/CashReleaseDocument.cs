@@ -613,6 +613,15 @@ namespace eLoanSystem.Transaction
                 txtDocStatus.Properties.Buttons[1].Visible = true;
                 EnableControls();
                 barSaveDocument.Enabled = true;
+                gridView1.OptionsBehavior.Editable = true;
+
+                colRefLoanNo.OptionsColumn.AllowEdit = true;
+                colCardName.OptionsColumn.AllowEdit = true;
+                colCardCode.OptionsColumn.AllowEdit = true;
+                colLoanAmount.OptionsColumn.AllowEdit = true;
+                colRefDocument.OptionsColumn.AllowEdit = true;
+                colReceivedAmount.OptionsColumn.AllowEdit = true;
+                colStatus.OptionsColumn.AllowEdit = true;
 
             }
             else if (txtDocStatus.Text == "Posted")
@@ -621,6 +630,16 @@ namespace eLoanSystem.Transaction
                 txtDocStatus.Properties.Buttons[0].Visible = false;
                 txtDocStatus.Properties.Buttons[1].Visible = true;
                 DisableControls();
+
+                colRefLoanNo.OptionsColumn.AllowEdit = false;
+                colCardName.OptionsColumn.AllowEdit = false;
+                colCardCode.OptionsColumn.AllowEdit = false;
+                colLoanAmount.OptionsColumn.AllowEdit = false;
+                colRefDocument.OptionsColumn.AllowEdit = true;
+                colReceivedAmount.OptionsColumn.AllowEdit = true;
+                colStatus.OptionsColumn.AllowEdit = true;
+                
+                //gridView1.OptionsBehavior.Editable = false;
                 //barSaveDocument.Enabled = false;
             }
             else if (txtDocStatus.Text == "Canceled" || txtDocStatus.Text == "Closed")
@@ -629,6 +648,17 @@ namespace eLoanSystem.Transaction
                 txtDocStatus.Properties.Buttons[0].Visible = false;
                 txtDocStatus.Properties.Buttons[1].Visible = false;
                 barSaveDocument.Enabled = false;
+                gridView1.OptionsBehavior.Editable = false;
+
+
+                colRefLoanNo.OptionsColumn.AllowEdit = false;
+                colCardName.OptionsColumn.AllowEdit = false;
+                colCardCode.OptionsColumn.AllowEdit = false;
+                colLoanAmount.OptionsColumn.AllowEdit = false;
+                colRefDocument.OptionsColumn.AllowEdit = false;
+                colReceivedAmount.OptionsColumn.AllowEdit = false;
+                colStatus.OptionsColumn.AllowEdit = false;
+
                 DisableControls();
             }
         }
@@ -636,6 +666,11 @@ namespace eLoanSystem.Transaction
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
       
     }
