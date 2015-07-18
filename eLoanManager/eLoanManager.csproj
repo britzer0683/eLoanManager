@@ -136,6 +136,12 @@
     <Compile Include="Transaction\addOtherCharges.Designer.cs">
       <DependentUpon>addOtherCharges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transaction\CollectionWorkspace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\CollectionWorkspace.Designer.cs">
+      <DependentUpon>CollectionWorkspace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction\CashFundRelease.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,18 @@
     </Compile>
     <Compile Include="Transaction\findCashReleaseDocument.Designer.cs">
       <DependentUpon>findCashReleaseDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\findEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\findEmployee.Designer.cs">
+      <DependentUpon>findEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\findGuarantor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\findGuarantor.Designer.cs">
+      <DependentUpon>findGuarantor.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction\findLoan.cs">
       <SubType>Form</SubType>
@@ -317,6 +335,9 @@
     <EmbeddedResource Include="Transaction\addOtherCharges.resx">
       <DependentUpon>addOtherCharges.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\CollectionWorkspace.resx">
+      <DependentUpon>CollectionWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction\CashFundRelease.resx">
       <DependentUpon>CashFundRelease.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\findCashReleaseDocument.resx">
       <DependentUpon>findCashReleaseDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\findEmployee.resx">
+      <DependentUpon>findEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\findGuarantor.resx">
+      <DependentUpon>findGuarantor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\findLoan.resx">
       <DependentUpon>findLoan.cs</DependentUpon>
@@ -361,6 +388,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForms\viewBorrowers.resx">
       <DependentUpon>viewBorrowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\viewEmployer.resx">
+      <DependentUpon>viewEmployer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\viewGuarantorFinancer.resx">
+      <DependentUpon>viewGuarantorFinancer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

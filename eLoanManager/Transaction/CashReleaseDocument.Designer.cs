@@ -59,6 +59,7 @@
             this.colRefDocument = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colReceivedAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cboStatus = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.cboDueDate = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.cboScheduleNo = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
@@ -75,7 +76,6 @@
             this.lblGuarantor = new DevExpress.XtraEditors.LabelControl();
             this.cboGuarantorFinancer = new DevExpress.XtraEditors.LookUpEdit();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.cboStatus = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
@@ -86,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoanNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDueDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboScheduleNo)).BeginInit();
@@ -96,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantorFinancer.Properties)).BeginInit();
             this.xtraScrollableControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl16
@@ -137,7 +137,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(710, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(710, 146);
             // 
             // barNewDocument
             // 
@@ -370,6 +370,16 @@
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 5;
             // 
+            // cboStatus
+            // 
+            this.cboStatus.AutoHeight = false;
+            this.cboStatus.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboStatus.Items.AddRange(new object[] {
+            "Released",
+            "Received"});
+            this.cboStatus.Name = "cboStatus";
+            // 
             // gridControl1
             // 
             this.gridControl1.Location = new System.Drawing.Point(11, 225);
@@ -534,21 +544,11 @@
             this.xtraScrollableControl1.Controls.Add(this.labelControl15);
             this.xtraScrollableControl1.Controls.Add(this.gridControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 144);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(710, 420);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(710, 418);
             this.xtraScrollableControl1.TabIndex = 25;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
-            // 
-            // cboStatus
-            // 
-            this.cboStatus.AutoHeight = false;
-            this.cboStatus.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboStatus.Items.AddRange(new object[] {
-            "Released",
-            "Received"});
-            this.cboStatus.Name = "cboStatus";
             // 
             // CashReleaseDocument
             // 
@@ -572,6 +572,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtModified.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoanNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDueDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboScheduleNo)).EndInit();
@@ -583,7 +584,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantorFinancer.Properties)).EndInit();
             this.xtraScrollableControl1.ResumeLayout(false);
             this.xtraScrollableControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboStatus)).EndInit();
             this.ResumeLayout(false);
 
         }

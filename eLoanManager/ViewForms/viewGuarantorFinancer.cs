@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eLoan.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,24 @@ namespace eLoanSystem.ViewForms
         public viewGuarantorFinancer()
         {
             InitializeComponent();
+        }
+
+        public string ConnectionString { get; set; }
+        private void BindGuarantor()
+        {
+            GuarantorFinancerManager oManager = new GuarantorFinancerManager();
+
+            oManager.ConnectionString = this.ConnectionString;
+            oManager.Open();
+            DataTable dtGuarantor = oManager.GetGuarantorInfo();
+            oManager.Close();
+
+            grdCtlGuarantorFinancer.DataSource = dtGuarantor;
+            grdCtlGuarantorFinancer.Refresh();
+        }
+        private void viewGuarantorFinancer_Load(object sender, EventArgs e)
+        {
+            BindGuarantor();
         }
     }
 }

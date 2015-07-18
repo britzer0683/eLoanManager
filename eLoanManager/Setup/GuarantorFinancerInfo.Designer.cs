@@ -42,8 +42,8 @@
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.lblEmpCode = new DevExpress.XtraEditors.LabelControl();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
-            this.barSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
+            this.barSave = new DevExpress.XtraBars.BarButtonItem();
+            this.barFind = new DevExpress.XtraBars.BarButtonItem();
             this.barCloseForm = new DevExpress.XtraBars.BarButtonItem();
             this.barNew = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -154,8 +154,8 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.barSaveAndClose,
-            this.barSaveAndNew,
+            this.barSave,
+            this.barFind,
             this.barCloseForm,
             this.barNew});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -165,24 +165,27 @@
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(662, 146);
             // 
-            // barSaveAndClose
+            // barSave
             // 
-            this.barSaveAndClose.Caption = "Save && Close";
-            this.barSaveAndClose.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndClose.Glyph")));
-            this.barSaveAndClose.Id = 1;
-            this.barSaveAndClose.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndClose.LargeGlyph")));
-            this.barSaveAndClose.Name = "barSaveAndClose";
-            this.barSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveAndClose_ItemClick);
+            this.barSave.Caption = "Save";
+            this.barSave.Glyph = ((System.Drawing.Image)(resources.GetObject("barSave.Glyph")));
+            this.barSave.Id = 1;
+            this.barSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
+            this.barSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSave.LargeGlyph")));
+            this.barSave.Name = "barSave";
+            this.barSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSave_ItemClick);
             // 
-            // barSaveAndNew
+            // barFind
             // 
-            this.barSaveAndNew.Caption = "Save && New";
-            this.barSaveAndNew.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndNew.Glyph")));
-            this.barSaveAndNew.Id = 2;
-            this.barSaveAndNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndNew.LargeGlyph")));
-            this.barSaveAndNew.Name = "barSaveAndNew";
-            this.barSaveAndNew.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barSaveAndNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveAndNew_ItemClick);
+            this.barFind.Caption = "Find";
+            this.barFind.Glyph = ((System.Drawing.Image)(resources.GetObject("barFind.Glyph")));
+            this.barFind.Id = 2;
+            this.barFind.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
+            this.barFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barFind.LargeGlyph")));
+            this.barFind.Name = "barFind";
+            this.barFind.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barFind.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barFind_ItemClick);
             // 
             // barCloseForm
             // 
@@ -191,7 +194,7 @@
             this.barCloseForm.Id = 5;
             this.barCloseForm.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barCloseForm.LargeGlyph")));
             this.barCloseForm.Name = "barCloseForm";
-            this.barCloseForm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barCloseForm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barCloseForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCloseForm_ItemClick);
             // 
             // barNew
@@ -213,9 +216,9 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barSaveAndClose);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barSaveAndNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barCloseForm);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barFind);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barCloseForm, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
             // 
@@ -280,8 +283,8 @@
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.LabelControl lblEmpCode;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.BarButtonItem barSaveAndClose;
-        private DevExpress.XtraBars.BarButtonItem barSaveAndNew;
+        private DevExpress.XtraBars.BarButtonItem barSave;
+        private DevExpress.XtraBars.BarButtonItem barFind;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barCloseForm;

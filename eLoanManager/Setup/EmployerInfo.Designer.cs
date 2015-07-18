@@ -44,13 +44,12 @@
             this.lblContactPerson = new DevExpress.XtraEditors.LabelControl();
             this.txtContactPerson = new DevExpress.XtraEditors.TextEdit();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
-            this.barSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
+            this.barSave = new DevExpress.XtraBars.BarButtonItem();
+            this.barFind = new DevExpress.XtraBars.BarButtonItem();
             this.barClose = new DevExpress.XtraBars.BarButtonItem();
             this.barNew = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployerName.Properties)).BeginInit();
@@ -173,8 +172,8 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.barSaveAndClose,
-            this.barSaveAndNew,
+            this.barSave,
+            this.barFind,
             this.barClose,
             this.barNew});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -183,26 +182,29 @@
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(720, 146);
-            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
-            // barSaveAndClose
+            // barSave
             // 
-            this.barSaveAndClose.Caption = "Save && Close";
-            this.barSaveAndClose.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndClose.Glyph")));
-            this.barSaveAndClose.Id = 1;
-            this.barSaveAndClose.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndClose.LargeGlyph")));
-            this.barSaveAndClose.Name = "barSaveAndClose";
-            this.barSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveAndClose_ItemClick);
+            this.barSave.Caption = "Save";
+            this.barSave.Glyph = ((System.Drawing.Image)(resources.GetObject("barSave.Glyph")));
+            this.barSave.Id = 1;
+            this.barSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
+            this.barSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSave.LargeGlyph")));
+            this.barSave.Name = "barSave";
+            this.barSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSave_ItemClick);
             // 
-            // barSaveAndNew
+            // barFind
             // 
-            this.barSaveAndNew.Caption = "Save && New";
-            this.barSaveAndNew.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndNew.Glyph")));
-            this.barSaveAndNew.Id = 2;
-            this.barSaveAndNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndNew.LargeGlyph")));
-            this.barSaveAndNew.Name = "barSaveAndNew";
-            this.barSaveAndNew.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barSaveAndNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveAndNew_ItemClick);
+            this.barFind.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
+            this.barFind.Caption = "Find";
+            this.barFind.Glyph = ((System.Drawing.Image)(resources.GetObject("barFind.Glyph")));
+            this.barFind.Id = 2;
+            this.barFind.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
+            this.barFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barFind.LargeGlyph")));
+            this.barFind.Name = "barFind";
+            this.barFind.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barFind.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barFind_ItemClick);
             // 
             // barClose
             // 
@@ -211,7 +213,7 @@
             this.barClose.Id = 5;
             this.barClose.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barClose.LargeGlyph")));
             this.barClose.Name = "barClose";
-            this.barClose.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barClose.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barClose_ItemClick);
             // 
             // barNew
@@ -219,6 +221,7 @@
             this.barNew.Caption = "New";
             this.barNew.Glyph = ((System.Drawing.Image)(resources.GetObject("barNew.Glyph")));
             this.barNew.Id = 7;
+            this.barNew.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
             this.barNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barNew.LargeGlyph")));
             this.barNew.Name = "barNew";
             this.barNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNew_ItemClick);
@@ -233,18 +236,11 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barSaveAndClose);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barSaveAndNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barClose);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barFind);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barClose, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 497);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(720, 27);
             // 
             // xtraScrollableControl1
             // 
@@ -265,21 +261,19 @@
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(720, 351);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(720, 362);
             this.xtraScrollableControl1.TabIndex = 16;
             // 
             // EmployerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 524);
+            this.ClientSize = new System.Drawing.Size(720, 508);
             this.Controls.Add(this.xtraScrollableControl1);
-            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "EmployerInfo";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Employer File";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EmployerInfo_Load);
@@ -316,10 +310,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barSaveAndClose;
-        private DevExpress.XtraBars.BarButtonItem barSaveAndNew;
+        private DevExpress.XtraBars.BarButtonItem barSave;
+        private DevExpress.XtraBars.BarButtonItem barFind;
         private DevExpress.XtraBars.BarButtonItem barClose;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarButtonItem barNew;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
     }

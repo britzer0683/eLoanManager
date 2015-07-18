@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eLoan.BL;
+using eLoanSystem.Transaction;
 
 namespace eLoanSystem.Setup
 {
@@ -76,16 +77,7 @@ namespace eLoanSystem.Setup
             oManager.AddEmployer(oUnit);
 
             oManager.Close();
-
-            txtCode.Text = "";
-            txtEmployerName.Text = "";
-            txtTINIDNo.Text = "";
-            txtAddress.Text = "";
-            txtContactNo.Text = "";
-            txtEmailAddress.Text = "";
-            txtContactNo.Text = "";
-            txtContactPerson.Text = "";
-
+            txtCode.Enabled = false;
             
         }
         public void UpdateEmployer()
@@ -126,7 +118,7 @@ namespace eLoanSystem.Setup
             this.Close();
         }
 
-        private void barSaveAndClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (txtCode.Text.Trim() == "")
             {
@@ -137,8 +129,8 @@ namespace eLoanSystem.Setup
             if (IsEmployerCodeExists(txtCode.Text) == false)
             {
                 AddEmployer();
-                this.MainMenu.RefreshMainMenu();
-                this.Close();
+                txtCode.Enabled = false;
+                MessageBox.Show("Adding is successfull", "Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -150,52 +142,22 @@ namespace eLoanSystem.Setup
                 else
                 {
                     UpdateEmployer();
-                    this.MainMenu.RefreshMainMenu();
-                    this.Close();
+                    txtCode.Enabled = false;
+                    MessageBox.Show("Updating is successfull", "Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
-        private void barSaveAndNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barFind_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtCode.Text.Trim() == "")
-            {
-                MessageBox.Show("Blank code is not accepted, please insert code.", "Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            findEmployee oForm = new findEmployee();
 
-            if (IsEmployerCodeExists(txtCode.Text) == false)
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ShowDialog();
+
+            if (oForm.EmployeeCode != null)
             {
-                AddEmployer();
-                this.MainMenu.RefreshMainMenu();
-                txtCode.Text = "";
-                txtEmployerName.Text = "";
-                txtTINIDNo.Text = "";
-                txtAddress.Text = "";
-                txtContactNo.Text = "";
-                txtEmailAddress.Text = "";
-                txtContactPerson.Text = "";
-            }
-            else
-            {
-                if (txtCode.Enabled == true)
-                {
-                    MessageBox.Show("Code already exists in the database. Please check or try another code.", "Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    UpdateEmployer();
-                    this.MainMenu.RefreshMainMenu();
-                    txtCode.Enabled = true;
-                    txtCode.Text = "";
-                    txtEmployerName.Text = "";
-                    txtTINIDNo.Text = "";
-                    txtAddress.Text = "";
-                    txtContactNo.Text = "";
-                    txtEmailAddress.Text = "";
-                    txtContactPerson.Text = "";
-                }
+                this.OpenEmployerInfo(oForm.EmployeeCode);
             }
 
         }

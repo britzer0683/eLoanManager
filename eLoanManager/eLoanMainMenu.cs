@@ -125,5 +125,33 @@ namespace eLoanSystem
             oForm.MdiParent = this;
             oForm.Show();
         }
+
+        private void navViewGuarantor_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            viewGuarantorFinancer oForm = new viewGuarantorFinancer();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.MdiParent = this;
+            oForm.Show();
+        }
+
+        private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            viewEmployer oForm = new viewEmployer();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.MdiParent = this;
+            oForm.Show();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CollectionWorkspace oForm = new CollectionWorkspace();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ActiveUserID = this.ActiveUserID;
+            oForm.MdiParent = this;
+            oForm.Show();
+        }
     }
 }

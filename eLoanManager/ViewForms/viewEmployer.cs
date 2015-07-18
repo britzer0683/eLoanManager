@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eLoan.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,25 @@ namespace eLoanSystem.ViewForms
         public viewEmployer()
         {
             InitializeComponent();
+        }
+
+        public string ConnectionString { get; set; }
+        private void BindEmployers()
+        {
+            EmployerManager oManager = new EmployerManager();
+
+            oManager.ConnectionString = this.ConnectionString;
+            oManager.Open();
+
+            gridControl2.DataSource = oManager.GetEmployerInfo();
+            gridControl2.Refresh();
+
+            oManager.Close();
+        }
+
+        private void viewEmployer_Load(object sender, EventArgs e)
+        {
+            BindEmployers();
         }
     }
 }

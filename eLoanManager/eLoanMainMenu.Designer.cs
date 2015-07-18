@@ -56,7 +56,7 @@
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarBorrowerFiles = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navViewGuarantor = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -92,7 +92,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(821, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(821, 146);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.ribbonControl1_Merge);
             // 
@@ -204,6 +204,7 @@
             this.barButtonItem7.Id = 12;
             this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -229,10 +230,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 484);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 488);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(821, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(821, 27);
             // 
             // navBarControl1
             // 
@@ -249,12 +250,12 @@
             this.navBarItem1,
             this.navBarItem2,
             this.navBarBorrowerFiles,
-            this.navBarItem4,
+            this.navViewGuarantor,
             this.navBarItem5});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 144);
+            this.navBarControl1.Location = new System.Drawing.Point(0, 146);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 205;
-            this.navBarControl1.Size = new System.Drawing.Size(205, 340);
+            this.navBarControl1.Size = new System.Drawing.Size(205, 342);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -309,7 +310,7 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarBorrowerFiles),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navViewGuarantor),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
@@ -319,15 +320,17 @@
             this.navBarBorrowerFiles.Name = "navBarBorrowerFiles";
             this.navBarBorrowerFiles.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBorrowerFiles_LinkClicked);
             // 
-            // navBarItem4
+            // navViewGuarantor
             // 
-            this.navBarItem4.Caption = "Guarantor/Financer Information";
-            this.navBarItem4.Name = "navBarItem4";
+            this.navViewGuarantor.Caption = "Guarantor/Financer Information";
+            this.navViewGuarantor.Name = "navViewGuarantor";
+            this.navViewGuarantor.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navViewGuarantor_LinkClicked);
             // 
             // navBarItem5
             // 
             this.navBarItem5.Caption = "Employer Information";
             this.navBarItem5.Name = "navBarItem5";
+            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // ribbonPageGroup4
             // 
@@ -417,7 +420,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarBorrowerFiles;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarItem navViewGuarantor;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
     }
 }

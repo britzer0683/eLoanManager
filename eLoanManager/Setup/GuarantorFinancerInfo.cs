@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eLoan.BL;
+using eLoanSystem.Transaction;
 
 namespace eLoanSystem.Setup
 {
@@ -110,7 +111,7 @@ namespace eLoanSystem.Setup
             this.Close();
         }
 
-        private void barSaveAndClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (txtCode.Enabled == true)
             {
@@ -124,68 +125,42 @@ namespace eLoanSystem.Setup
                     MessageBox.Show("Code is already exists please try another code!!!!", "Record Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
+
                 AddGuarantor();
-                this.eLoanMainMenu.RefreshMainMenu();
-                this.Close();
+                MessageBox.Show("Adding is successfull!!!!", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCode.Enabled = true;
+
             }
             else
             {
                 UpdateGuarantor();
-                this.eLoanMainMenu.RefreshMainMenu();
-                this.Close();
+                MessageBox.Show("Updating is successfull!!!!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCode.Enabled = true;
             }
         }
 
-        private void barSaveAndNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barFind_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtCode.Enabled == true)
-            {
-                if (txtCode.Text.Trim() == "")
-                {
-                    MessageBox.Show("Please insert code!!! Blank code is not permitted!!!", "Blank Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+            findGuarantor oForm = new findGuarantor();
 
-                if (IsExists(txtCode.Text))
-                {
-                    MessageBox.Show("Code is already exists please try another code!!!!", "Record Exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                AddGuarantor();
-                this.eLoanMainMenu.RefreshMainMenu();
-                txtCode.Text = "";
-                txtEmployerName.Text = "";
-                txtAddress.Text = "";
-                txtContactNo.Text = "";
-                txtEmailAddress.Text = "";
-                txtContactNo.Text = "";
-                txtContactPerson.Text = "";
-            }
-            else
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ShowDialog();
+
+            if (oForm.GuarantorID != null)
             {
-                UpdateGuarantor();
-                this.eLoanMainMenu.RefreshMainMenu();
-                txtCode.Enabled = true;
-                txtCode.Text = "";
-                txtEmployerName.Text = "";
-                txtAddress.Text = "";
-                txtContactNo.Text = "";
-                txtEmailAddress.Text = "";
-                txtContactNo.Text = "";
-                txtContactPerson.Text = "";
+                this.OpenGuarantorInfo(oForm.GuarantorID);
+                txtCode.Enabled = false;
             }
         }
 
         private void barNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            txtCode.Enabled = true;
-            txtCode.Text = "";
-            txtEmployerName.Text = "";
-            txtAddress.Text = "";
-            txtContactNo.Text = "";
-            txtEmailAddress.Text = "";
-            txtContactNo.Text = "";
-            txtContactPerson.Text = "";
+            GuarantorFinancerInfo oForm = new GuarantorFinancerInfo();
+
+            oForm.ConnectionString = this.ConnectionString;
+
+            oForm.MdiParent = this.MdiParent;
+            oForm.Show();
         }
     }
 }
