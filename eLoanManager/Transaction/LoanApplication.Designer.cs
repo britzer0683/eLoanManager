@@ -427,7 +427,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(714, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(710, 146);
             // 
             // barSaveLoan
             // 
@@ -671,7 +671,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(670, 192);
+            this.xtraTabPage2.Size = new System.Drawing.Size(666, 189);
             this.xtraTabPage2.Text = "Cash Released";
             // 
             // gridControl2
@@ -681,7 +681,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.ribbonControl1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(670, 192);
+            this.gridControl2.Size = new System.Drawing.Size(666, 189);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -753,7 +753,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.gridControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(670, 192);
+            this.xtraTabPage3.Size = new System.Drawing.Size(666, 189);
             this.xtraTabPage3.Text = "Collection";
             // 
             // gridControl3
@@ -763,7 +763,7 @@
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.MenuManager = this.ribbonControl1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(670, 192);
+            this.gridControl3.Size = new System.Drawing.Size(666, 189);
             this.gridControl3.TabIndex = 1;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1085,14 +1085,14 @@
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(714, 501);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(710, 489);
             this.xtraScrollableControl1.TabIndex = 71;
             // 
             // LoanApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 647);
+            this.ClientSize = new System.Drawing.Size(710, 635);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
             this.MaximizeBox = false;

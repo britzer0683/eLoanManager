@@ -377,23 +377,29 @@ namespace eLoanSystem.Transaction
 
         private void txtDocStatus_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to post this document?", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (e.Button.Index == 0)
             {
-                SqlConnection oConnection = new SqlConnection();
-                SqlCommand oCommand = new SqlCommand();
+                if (txtDocStatus.Text == "Draft")
+                {
+                    if (MessageBox.Show("Are you sure you want to post this document?", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        SqlConnection oConnection = new SqlConnection();
+                        SqlCommand oCommand = new SqlCommand();
 
-                oConnection.ConnectionString = this.ConnectionString;
-                oConnection.Open();
+                        oConnection.ConnectionString = this.ConnectionString;
+                        oConnection.Open();
 
-                oCommand.Connection = oConnection;
-                oCommand.CommandText = "UPDATE OCR SET DocStatus='Posted' where DocNum=@DocNum";
-                oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
-                oCommand.ExecuteNonQuery();
+                        oCommand.Connection = oConnection;
+                        oCommand.CommandText = "UPDATE OCR SET DocStatus='Posted' where DocNum=@DocNum";
+                        oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+                        oCommand.ExecuteNonQuery();
 
-                oConnection.Close();
+                        oConnection.Close();
 
-                txtDocStatus.Text = "Posted";
+                        txtDocStatus.Text = "Posted";
 
+                    }
+                }
             }
             if (e.Button.Index == 1)
             {
@@ -415,9 +421,10 @@ namespace eLoanSystem.Transaction
                         txtDocStatus.Text = "Canceled";
                     }
                 }
-                else if (txtDocStatus.Text == "Posted")
+
+                if (txtDocStatus.Text == "Posted")
                 {
-                    if (MessageBox.Show("Are you sure you want to cancel this document?", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure you want to close this document?", "Post", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                     {
                         SqlConnection oConnection = new SqlConnection();
                         SqlCommand oCommand = new SqlCommand();
@@ -601,7 +608,12 @@ namespace eLoanSystem.Transaction
 
         private void barPrintDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            PrintCashRelease oForm = new PrintCashRelease();
+            oForm.DocumentNumber = txtDocNum.Text;
+            oForm.ViewLayout();
 
+            //oForm.MdiParent = this;
+            oForm.ShowDialog();
         }
 
         private void txtDocStatus_EditValueChanged(object sender, EventArgs e)

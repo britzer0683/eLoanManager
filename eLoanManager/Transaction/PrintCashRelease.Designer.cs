@@ -1,6 +1,6 @@
 ﻿namespace eLoanSystem.Transaction
 {
-    partial class PrintApplication
+    partial class PrintCashRelease
     {
         /// <summary>
         /// Required designer variable.
@@ -40,24 +40,24 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.reportDocument1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(687, 416);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(616, 395);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // reportDocument1
             // 
-            this.reportDocument1.FileName = "rassdk://C:\\MEISIN\\Application.rpt";
+            this.reportDocument1.FileName = "rassdk://C:\\MEISIN\\CashReleased.rpt";
             // 
-            // PrintApplication
+            // PrintCashRelease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 416);
+            this.ClientSize = new System.Drawing.Size(616, 395);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "PrintApplication";
-            this.Text = "PrintApplication";
+            this.Name = "PrintCashRelease";
+            this.Text = "PrintCashRelease";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.PrintApplication_Load);
+            this.Load += new System.EventHandler(this.PrintCashRelease_Load);
             this.ResumeLayout(false);
 
         }

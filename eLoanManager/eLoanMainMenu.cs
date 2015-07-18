@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars.Ribbon;
 using eLoanSystem.Setup;
 using eLoanSystem.Transaction;
+using eLoanSystem.ViewForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,6 +113,15 @@ namespace eLoanSystem
 
             oForm.ConnectionString = this.ConnectionString;
             oForm.ActiveUserID = this.ActiveUserID;
+            oForm.MdiParent = this;
+            oForm.Show();
+        }
+
+        private void navBarBorrowerFiles_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            viewBorrowers oForm = new viewBorrowers();
+
+            oForm.ConnectionString = this.ConnectionString;
             oForm.MdiParent = this;
             oForm.Show();
         }

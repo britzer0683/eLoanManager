@@ -932,7 +932,7 @@ namespace eLoanSystem.Transaction
 
         private void btnPrintApplication_Click(object sender, EventArgs e)
         {
-            PrintApplication oForm = new PrintApplication();
+            PrintLoanApplication oForm = new PrintLoanApplication();
 
             oForm.DocumentNumber = txtLoanNo.Text;
             oForm.ViewLayout();
@@ -1052,7 +1052,7 @@ namespace eLoanSystem.Transaction
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PrintApplication oForm = new PrintApplication();
+            PrintLoanApplication oForm = new PrintLoanApplication();
 
             oForm.DocumentNumber = txtLoanNo.Text;
             oForm.ViewLayout();

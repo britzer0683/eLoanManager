@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eLoan.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using eLoan.BL;
+using eLoanSystem.Transaction;
 
 namespace eLoanSystem.Setup
 {
@@ -187,103 +188,14 @@ namespace eLoanSystem.Setup
             this.Close();
         }
 
-        private void barSaveAndClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtBorrowerCode.Enabled == true)
-            {
-                if (txtBorrowerCode.Text == "")
-                {
-                    MessageBox.Show("Blank code is not permitted!!!", "Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+            BorrowerInfo oForm = new BorrowerInfo();
 
-                BorrowerManager oManager = new BorrowerManager();
-                BorrowerUnit oUnit = new BorrowerUnit();
-
-                oManager.ConnectionString = this.ConnectionString;
-                oManager.Open();
-
-                if (oManager.isBorrowerCodeExists(txtBorrowerCode.Text))
-                {
-                    oManager.Close();
-
-                    MessageBox.Show("Code already exists!!! Please try another code", "Code", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                oUnit.CardType = cboType.Text;
-                oUnit.BorrowerCode = txtBorrowerCode.Text;
-                oUnit.LastName = txtLastName.Text;
-                oUnit.FirstName = txtFirstName.Text;
-                oUnit.MiddleName = txtMiddleName.Text;
-                oUnit.Address = txtAddress.Text;
-                oUnit.ContactNumber = txtContactNumber.Text;
-                oUnit.Employer = cboEmployer.EditValue.ToString();
-                oUnit.GuarantorID = cboGuarantorFinancer.EditValue.ToString();
-                oUnit.GuarantorName = cboGuarantorFinancer.Text;
-                oUnit.ATMNo = txtATMNo.Text;
-                oUnit.EmploymentStatus = cboEmploymentStatus.Text;
-                oUnit.EffectiveDate = Convert.ToDateTime(dtEffectiveDate.EditValue);
-                oUnit.FrequencyOfPayment = cboFrequencyOfPayment.Text;
-                oUnit.InterestRate = txtInterestRate.Text;
+            oForm.ConnectionString = this.ConnectionString;
             
-                if (cboPayDayCode.EditValue == null)
-                {
-                    oUnit.PayDayCode = "";
-                }
-                else
-                {
-                    oUnit.PayDayCode = cboPayDayCode.EditValue.ToString();
-                }
-                oUnit.MortgageInfo = txtMortgageInfo.Text;
-                oUnit.CreditLimit = Convert.ToDouble(txtCreditLimit.Text);
-                // Details
-
-                oManager.AddBorrower(oUnit);
-                oManager.Close();
-                this.MainMenuForm.RefreshMainMenu();
-                this.Close();
-            }
-            else
-            {
-                BorrowerManager oManager = new BorrowerManager();
-                BorrowerUnit oUnit = new BorrowerUnit();
-
-                oManager.ConnectionString = this.ConnectionString;
-                oManager.Open();
-
-                oUnit.CardType = cboType.Text;
-                oUnit.BorrowerCode = txtBorrowerCode.Text;
-                oUnit.LastName = txtLastName.Text;
-                oUnit.FirstName = txtFirstName.Text;
-                oUnit.MiddleName = txtMiddleName.Text;
-                oUnit.Address = txtAddress.Text;
-                oUnit.ContactNumber = txtContactNumber.Text;
-                oUnit.Employer = cboEmployer.EditValue.ToString();
-                oUnit.GuarantorID = cboGuarantorFinancer.EditValue.ToString();
-                oUnit.GuarantorName = cboGuarantorFinancer.Text;
-                oUnit.ATMNo = txtATMNo.Text;
-                oUnit.EmploymentStatus = cboEmploymentStatus.EditValue.ToString();
-                oUnit.EffectiveDate = Convert.ToDateTime(dtEffectiveDate.EditValue);
-                oUnit.InterestRate = txtInterestRate.Text;
-                oUnit.FrequencyOfPayment = cboFrequencyOfPayment.Text;
-                if (cboPayDayCode.EditValue == null)
-                {
-                    oUnit.PayDayCode = "";
-                }
-                else
-                {
-                    oUnit.PayDayCode = cboPayDayCode.EditValue.ToString();
-                }
-                oUnit.MortgageInfo = txtMortgageInfo.Text;
-                oUnit.CreditLimit = Convert.ToDouble(txtCreditLimit.Text);
-                // Details
-
-                oManager.UpdateBorrower(oUnit);
-                oManager.Close();
-                this.MainMenuForm.RefreshMainMenu();
-                this.Close();
-            }
+            oForm.MdiParent = this.MdiParent;
+            oForm.Show();
         }
 
         private void xtraScrollableControl1_Click(object sender, EventArgs e)
@@ -345,26 +257,7 @@ namespace eLoanSystem.Setup
                 oManager.AddBorrower(oUnit);
                 oManager.Close();
 
-                cboType.SelectedIndex = 0;
-                txtBorrowerCode.Text = "";
-                txtLastName.Text = "";
-                txtFirstName.Text = "";
-                txtMiddleName.Text = "";
-                txtAddress.Text = "";
-                txtContactNumber.Text = "";
-                cboEmployer.Text = null;
-                cboEmployer.ClosePopup();
-                cboGuarantorFinancer.EditValue = null;
-                cboGuarantorFinancer.ClosePopup();
-                //cboGuarantorFinancer.Text = "";
-                txtATMNo.Text = "";
-                cboEmploymentStatus.Text = "";
-                dtEffectiveDate.EditValue = System.DateTime.Now;
-                txtInterestRate.Text = "0.00";
-                cboPayDayCode.EditValue = null;
-                cboPayDayCode.ClosePopup();
 
-                this.MainMenuForm.RefreshMainMenu();
             }
             else
             {
@@ -403,23 +296,6 @@ namespace eLoanSystem.Setup
 
                 oManager.UpdateBorrower(oUnit);
                 oManager.Close();
-                txtBorrowerCode.Enabled = true;
-                cboType.SelectedIndex = 0;
-                txtBorrowerCode.Text = "";
-                txtLastName.Text = "";
-                txtFirstName.Text = "";
-                txtMiddleName.Text = "";
-                txtAddress.Text = "";
-                txtContactNumber.Text = "";
-                cboEmployer.EditValue = null;
-                cboGuarantorFinancer.EditValue = null;
-                txtATMNo.Text = "";
-                cboEmploymentStatus.Text = "";
-                dtEffectiveDate.EditValue = System.DateTime.Now;
-                txtInterestRate.Text = "0.00";
-                cboPayDayCode.EditValue = null;
-
-                this.MainMenuForm.RefreshMainMenu();
             }
         }
 
@@ -446,6 +322,20 @@ namespace eLoanSystem.Setup
 
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void barFindBorrower_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            fndBorrower oForm = new fndBorrower();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ShowDialog();
+
+            if (oForm.SelectedCode != null)
+            {
+                this.OpenDocument(oForm.SelectedCode);
+            }
 
         }
     }

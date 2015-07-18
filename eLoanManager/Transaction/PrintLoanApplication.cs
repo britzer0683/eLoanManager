@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace eLoanSystem.Transaction
 {
-    public partial class PrintApplication : Form
+    public partial class PrintLoanApplication : Form
     {
-        public PrintApplication()
+        public PrintLoanApplication()
         {
             InitializeComponent();
         }

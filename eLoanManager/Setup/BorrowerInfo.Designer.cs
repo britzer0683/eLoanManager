@@ -378,16 +378,16 @@
             // 
             // barSaveAndClose
             // 
-            this.barSaveAndClose.Caption = "Save && Close";
+            this.barSaveAndClose.Caption = "New";
             this.barSaveAndClose.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndClose.Glyph")));
             this.barSaveAndClose.Id = 1;
             this.barSaveAndClose.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndClose.LargeGlyph")));
             this.barSaveAndClose.Name = "barSaveAndClose";
-            this.barSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSaveAndClose_ItemClick);
+            this.barSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNew_ItemClick);
             // 
             // barSaveAndNew
             // 
-            this.barSaveAndNew.Caption = "Save && New";
+            this.barSaveAndNew.Caption = "Save";
             this.barSaveAndNew.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndNew.Glyph")));
             this.barSaveAndNew.Id = 2;
             this.barSaveAndNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveAndNew.LargeGlyph")));
@@ -400,8 +400,10 @@
             this.barFindBorrower.Caption = "Find";
             this.barFindBorrower.Glyph = ((System.Drawing.Image)(resources.GetObject("barFindBorrower.Glyph")));
             this.barFindBorrower.Id = 4;
+            this.barFindBorrower.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barFindBorrower.LargeGlyph")));
             this.barFindBorrower.Name = "barFindBorrower";
-            this.barFindBorrower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barFindBorrower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barFindBorrower.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barFindBorrower_ItemClick);
             // 
             // barPrintBorrower
             // 
@@ -419,7 +421,7 @@
             this.barCloseBorrower.Id = 6;
             this.barCloseBorrower.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barCloseBorrower.LargeGlyph")));
             this.barCloseBorrower.Name = "barCloseBorrower";
-            this.barCloseBorrower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.barCloseBorrower.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barCloseBorrower.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCloseBorrower_ItemClick);
             // 
             // ribbonPage1
@@ -434,9 +436,9 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barSaveAndClose);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSaveAndNew);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barFindBorrower);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barPrintBorrower, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barCloseBorrower);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barFindBorrower, true);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barPrintBorrower);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
             // 

@@ -208,11 +208,17 @@
     <Compile Include="Transaction\PaymentBreakdown.Designer.cs">
       <DependentUpon>PaymentBreakdown.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction\PrintApplication.cs">
+    <Compile Include="Transaction\PrintCashRelease.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction\PrintApplication.Designer.cs">
-      <DependentUpon>PrintApplication.cs</DependentUpon>
+    <Compile Include="Transaction\PrintCashRelease.Designer.cs">
+      <DependentUpon>PrintCashRelease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PrintLoanApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PrintLoanApplication.Designer.cs">
+      <DependentUpon>PrintLoanApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewForms\viewBorrowers.cs">
       <SubType>Form</SubType>
@@ -347,8 +353,14 @@
     <EmbeddedResource Include="Transaction\PaymentBreakdown.resx">
       <DependentUpon>PaymentBreakdown.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction\PrintApplication.resx">
-      <DependentUpon>PrintApplication.cs</DependentUpon>
+    <EmbeddedResource Include="Transaction\PrintCashRelease.resx">
+      <DependentUpon>PrintCashRelease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PrintLoanApplication.resx">
+      <DependentUpon>PrintLoanApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\viewBorrowers.resx">
+      <DependentUpon>viewBorrowers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
