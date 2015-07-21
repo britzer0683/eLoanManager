@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(findLoan));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLoanNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGuarantor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoanAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDocStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboSearchIndex = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -44,8 +46,6 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.colDocStatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGuarantor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSearchIndex.Properties)).BeginInit();
@@ -97,6 +97,15 @@
             this.colCardName.VisibleIndex = 2;
             this.colCardName.Width = 250;
             // 
+            // colGuarantor
+            // 
+            this.colGuarantor.Caption = "Guarantor";
+            this.colGuarantor.FieldName = "Guarrantor";
+            this.colGuarantor.Name = "colGuarantor";
+            this.colGuarantor.Visible = true;
+            this.colGuarantor.VisibleIndex = 1;
+            this.colGuarantor.Width = 140;
+            // 
             // colLoanAmount
             // 
             this.colLoanAmount.Caption = "Loan Amount";
@@ -107,6 +116,15 @@
             this.colLoanAmount.Visible = true;
             this.colLoanAmount.VisibleIndex = 3;
             this.colLoanAmount.Width = 93;
+            // 
+            // colDocStatus
+            // 
+            this.colDocStatus.Caption = "Status";
+            this.colDocStatus.FieldName = "DocStatus";
+            this.colDocStatus.Name = "colDocStatus";
+            this.colDocStatus.Visible = true;
+            this.colDocStatus.VisibleIndex = 4;
+            this.colDocStatus.Width = 56;
             // 
             // cboSearchIndex
             // 
@@ -127,7 +145,7 @@
             this.txtSearch.Location = new System.Drawing.Point(161, 38);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtSearch.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.txtSearch.Size = new System.Drawing.Size(542, 22);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtSearch_ButtonClick);
@@ -169,7 +187,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(711, 32);
+            this.ribbonControl1.Size = new System.Drawing.Size(707, 32);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // ribbonPage1
@@ -189,32 +207,14 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 377);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(711, 27);
-            // 
-            // colDocStatus
-            // 
-            this.colDocStatus.Caption = "Status";
-            this.colDocStatus.FieldName = "DocStatus";
-            this.colDocStatus.Name = "colDocStatus";
-            this.colDocStatus.Visible = true;
-            this.colDocStatus.VisibleIndex = 4;
-            this.colDocStatus.Width = 56;
-            // 
-            // colGuarantor
-            // 
-            this.colGuarantor.Caption = "Guarantor";
-            this.colGuarantor.FieldName = "Guarrantor";
-            this.colGuarantor.Name = "colGuarantor";
-            this.colGuarantor.Visible = true;
-            this.colGuarantor.VisibleIndex = 1;
-            this.colGuarantor.Width = 140;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(707, 27);
             // 
             // findLoan
             // 
             this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 404);
+            this.ClientSize = new System.Drawing.Size(707, 404);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cboSearchIndex);

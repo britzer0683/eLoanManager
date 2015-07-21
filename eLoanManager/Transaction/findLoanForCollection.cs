@@ -11,18 +11,22 @@ using System.Windows.Forms;
 
 namespace eLoanSystem.Transaction
 {
-    public partial class findLoanCashRelease : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class findLoanForCollection : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public findLoanCashRelease()
+        public findLoanForCollection()
         {
             InitializeComponent();
         }
-
         public string ConnectionString { get; set; }
         public string DocumentNo { get; set; }
         public string Guarantor { get; set; }
         public string Borrower { get; set; }
-        private void findLoan_Load(object sender, EventArgs e)
+        
+        void BindGrid(string sTargetSearch)
+        {
+
+        }
+        private void findLoanForCollection_Load(object sender, EventArgs e)
         {
             cboSearchIndex.SelectedIndex = 0;
         }
@@ -48,22 +52,21 @@ namespace eLoanSystem.Transaction
             oCommand.Connection = oConnection;
             if (cboSearchIndex.SelectedIndex == 0)
             {
-                oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName AND Guarrantor=@Guarrantor  AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
+                oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName AND Guarrantor=@Guarrantor  AND DocStatus='Posted'";
                 oCommand.Parameters.Add(new SqlParameter("@CardName", "%" + txtSearch.Text + "%"));
                 oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
             }
             else if (cboSearchIndex.SelectedIndex == 1)
             {
 
-                oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum AND Guarrantor=@Guarrantor AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
+                oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum AND Guarrantor=@Guarrantor AND DocStatus='Posted'";
                 oCommand.Parameters.Add(new SqlParameter("@DocNum", "%" + txtSearch.Text + "%"));
                 oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
             }
 
-
             oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dt);
-            
+
             oConnection.Close();
 
             gridControl1.DataSource = dt;
@@ -75,10 +78,29 @@ namespace eLoanSystem.Transaction
             this.Close();
         }
 
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                btnChoose_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            btnChoose_Click(sender, e);
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
                 SqlConnection oConnection = new SqlConnection();
                 SqlCommand oCommand = new SqlCommand();
                 SqlDataAdapter oAdapter = new SqlDataAdapter();
@@ -90,14 +112,14 @@ namespace eLoanSystem.Transaction
                 oCommand.Connection = oConnection;
                 if (cboSearchIndex.SelectedIndex == 0)
                 {
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName AND Guarrantor=@Guarrantor  AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE CARDNAME LIKE @CardName AND Guarrantor=@Guarrantor  AND DocStatus='Posted'";
                     oCommand.Parameters.Add(new SqlParameter("@CardName", "%" + txtSearch.Text + "%"));
                     oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
                 }
                 else if (cboSearchIndex.SelectedIndex == 1)
                 {
 
-                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum AND Guarrantor=@Guarrantor AND DocStatus='Approved' AND DocNum NOT IN (SELECT RefLoanNo FROM CR1)";
+                    oCommand.CommandText = "SELECT * FROM OLOAN WHERE DocNum LIKE @DocNum AND Guarrantor=@Guarrantor AND DocStatus='Posted'";
                     oCommand.Parameters.Add(new SqlParameter("@DocNum", "%" + txtSearch.Text + "%"));
                     oCommand.Parameters.Add(new SqlParameter("@Guarrantor", this.Guarantor));
                 }
@@ -111,23 +133,6 @@ namespace eLoanSystem.Transaction
                 gridControl1.Refresh();
             }
             if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-        }
-
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            btnChoose_Click(sender, e);
-        }
-
-        private void gridView1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnChoose_Click(sender, e);
-            }
-            else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
             }

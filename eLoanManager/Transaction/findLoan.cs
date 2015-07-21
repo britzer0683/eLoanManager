@@ -21,6 +21,7 @@ namespace eLoanSystem.Transaction
         public string ConnectionString { get; set; }
         public string ActiveUserID { get; set; }
         public string DocumentNumber { get; set; }
+        public string Borrower { get; set; }
         private void findLoan_Load(object sender, EventArgs e)
         {
             cboSearchIndex.SelectedIndex = 0;
@@ -114,6 +115,7 @@ namespace eLoanSystem.Transaction
         {
             int iFocusedRowIndex = gridView1.FocusedRowHandle;
             this.DocumentNumber = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
+            this.Borrower = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["CardName"]).ToString();
             this.Close();
         }
 
@@ -123,6 +125,8 @@ namespace eLoanSystem.Transaction
             {
                 int iFocusedRowIndex = gridView1.FocusedRowHandle;
                 this.DocumentNumber = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
+                this.Borrower = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["CardName"]).ToString();
+
                 this.Close();
             }
             else if (e.KeyCode == Keys.Escape)
@@ -135,6 +139,8 @@ namespace eLoanSystem.Transaction
         {
             int iFocusedRowIndex = gridView1.FocusedRowHandle;
             this.DocumentNumber = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["DocNum"]).ToString();
+            this.Borrower = gridView1.GetRowCellValue(iFocusedRowIndex, gridView1.Columns["CardName"]).ToString();
+
             this.Close();
         }
     }

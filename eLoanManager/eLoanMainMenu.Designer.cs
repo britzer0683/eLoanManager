@@ -41,7 +41,6 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barNewLoan = new DevExpress.XtraBars.BarButtonItem();
             this.barCashRelease = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -85,14 +84,13 @@
             this.barButtonItem5,
             this.barNewLoan,
             this.barCashRelease,
-            this.barButtonItem6,
             this.barButtonItem7});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(821, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(817, 146);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.ribbonControl1_Merge);
             // 
@@ -185,21 +183,11 @@
             this.barCashRelease.Id = 10;
             this.barCashRelease.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barCashRelease.LargeGlyph")));
             this.barCashRelease.Name = "barCashRelease";
-            this.barCashRelease.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barCashRelease.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCashRelease_ItemClick);
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Cash/Fund Entry";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
-            this.barButtonItem6.Id = 11;
-            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             // 
             // barButtonItem7
             // 
-            this.barButtonItem7.Caption = "Payment Transaction";
+            this.barButtonItem7.Caption = "Collection";
             this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
             this.barButtonItem7.Id = 12;
             this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
@@ -217,7 +205,6 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barNewLoan);
             this.ribbonPageGroup3.ItemLinks.Add(this.barCashRelease, true);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup3.ItemLinks.Add(this.barNewBorrower, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.barNewEmployer);
@@ -233,7 +220,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 488);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(821, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(817, 27);
             // 
             // navBarControl1
             // 
@@ -367,7 +354,7 @@
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 515);
+            this.ClientSize = new System.Drawing.Size(817, 515);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
@@ -415,7 +402,6 @@
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraBars.BarButtonItem barNewLoan;
         private DevExpress.XtraBars.BarButtonItem barCashRelease;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionWorkspace));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barNew = new DevExpress.XtraBars.BarButtonItem();
             this.barSaveDocument = new DevExpress.XtraBars.BarButtonItem();
@@ -43,27 +44,45 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtDocNo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cboPopupSchedule = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
+            this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtPaidAmount = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cboPopupSchedule = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.dtPostDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cboGuarantor = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPopupSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
+            this.popupContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaidAmount)).BeginInit();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -80,7 +99,8 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(613, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(829, 146);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barNew
             // 
@@ -138,7 +158,7 @@
             // 
             // lblDocNum
             // 
-            this.lblDocNum.Location = new System.Drawing.Point(12, 17);
+            this.lblDocNum.Location = new System.Drawing.Point(11, 16);
             this.lblDocNum.Name = "lblDocNum";
             this.lblDocNum.Size = new System.Drawing.Size(60, 13);
             this.lblDocNum.TabIndex = 1;
@@ -147,7 +167,7 @@
             // txtDocNum
             // 
             this.txtDocNum.EditValue = "######";
-            this.txtDocNum.Location = new System.Drawing.Point(79, 17);
+            this.txtDocNum.Location = new System.Drawing.Point(78, 16);
             this.txtDocNum.MenuManager = this.ribbonControl1;
             this.txtDocNum.Name = "txtDocNum";
             this.txtDocNum.Properties.ReadOnly = true;
@@ -156,7 +176,7 @@
             // 
             // lblRemarks
             // 
-            this.lblRemarks.Location = new System.Drawing.Point(9, 321);
+            this.lblRemarks.Location = new System.Drawing.Point(11, 68);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(45, 13);
             this.lblRemarks.TabIndex = 3;
@@ -164,21 +184,24 @@
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(76, 321);
+            this.txtRemarks.Location = new System.Drawing.Point(78, 68);
             this.txtRemarks.MenuManager = this.ribbonControl1;
             this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(241, 61);
+            this.txtRemarks.Size = new System.Drawing.Size(360, 61);
             this.txtRemarks.TabIndex = 4;
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(9, 75);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbonControl1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cboPopupSchedule});
-            this.gridControl1.Size = new System.Drawing.Size(592, 240);
+            this.cboPopupSchedule,
+            this.txtDocNo,
+            this.txtPaidAmount});
+            this.gridControl1.Size = new System.Drawing.Size(829, 296);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -188,21 +211,33 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn6,
+            this.gridColumn10,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Loan#";
+            this.gridColumn1.ColumnEdit = this.txtDocNo;
             this.gridColumn1.FieldName = "RefLoanNo";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            // 
+            // txtDocNo
+            // 
+            this.txtDocNo.AutoHeight = false;
+            this.txtDocNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("txtDocNo.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.txtDocNo.Name = "txtDocNo";
+            this.txtDocNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtDocNo_ButtonClick);
             // 
             // gridColumn6
             // 
@@ -212,36 +247,22 @@
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 1;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "ScheduleNo";
+            this.gridColumn10.FieldName = "ScheduleNo";
+            this.gridColumn10.Name = "gridColumn10";
+            // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Due Date";
+            this.gridColumn2.ColumnEdit = this.cboPopupSchedule;
+            this.gridColumn2.DisplayFormat.FormatString = "MM.dd.yyyy";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn2.FieldName = "DueDate";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Due Amount";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Paid Amount";
-            this.gridColumn4.FieldName = "PaidAmount";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Change";
-            this.gridColumn5.FieldName = "ChangeAmount";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
             // 
             // cboPopupSchedule
             // 
@@ -249,29 +270,132 @@
             this.cboPopupSchedule.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboPopupSchedule.Name = "cboPopupSchedule";
+            this.cboPopupSchedule.PopupControl = this.popupContainerControl1;
+            // 
+            // popupContainerControl1
+            // 
+            this.popupContainerControl1.Controls.Add(this.gridControl2);
+            this.popupContainerControl1.Location = new System.Drawing.Point(112, 60);
+            this.popupContainerControl1.Name = "popupContainerControl1";
+            this.popupContainerControl1.Size = new System.Drawing.Size(326, 240);
+            this.popupContainerControl1.TabIndex = 9;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.MenuManager = this.ribbonControl1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(326, 240);
+            this.gridControl2.TabIndex = 0;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.Click += new System.EventHandler(this.gridView2_Click);
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "#";
+            this.gridColumn7.FieldName = "ScheduleNo";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.FixedWidth = true;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 37;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Due Date";
+            this.gridColumn8.FieldName = "ScheduledDate";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            this.gridColumn8.Width = 132;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Due Amount";
+            this.gridColumn9.FieldName = "PaymentAmount";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 2;
+            this.gridColumn9.Width = 136;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Due Amount";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "DueAmount";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DueAmount", "{0:N}")});
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Paid Amount";
+            this.gridColumn4.ColumnEdit = this.txtPaidAmount;
+            this.gridColumn4.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn4.FieldName = "PaidAmount";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PaidAmount", "{0:N}")});
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            // 
+            // txtPaidAmount
+            // 
+            this.txtPaidAmount.AutoHeight = false;
+            this.txtPaidAmount.DisplayFormat.FormatString = "{0:N}";
+            this.txtPaidAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtPaidAmount.EditFormat.FormatString = "{0:N}";
+            this.txtPaidAmount.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtPaidAmount.Mask.EditMask = "#,###,###,###,###,###.00";
+            this.txtPaidAmount.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPaidAmount.Name = "txtPaidAmount";
+            this.txtPaidAmount.EditValueChanged += new System.EventHandler(this.txtPaidAmount_EditValueChanged);
+            this.txtPaidAmount.Leave += new System.EventHandler(this.txtPaidAmount_Leave);
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Change";
+            this.gridColumn5.DisplayFormat.FormatString = "{0:N}";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "ChangeAmount";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ChangeAmount", "{0:N}")});
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // xtraScrollableControl1
             // 
-            this.xtraScrollableControl1.Controls.Add(this.dtPostDate);
-            this.xtraScrollableControl1.Controls.Add(this.labelControl2);
-            this.xtraScrollableControl1.Controls.Add(this.cboGuarantor);
-            this.xtraScrollableControl1.Controls.Add(this.labelControl1);
-            this.xtraScrollableControl1.Controls.Add(this.gridControl1);
-            this.xtraScrollableControl1.Controls.Add(this.txtRemarks);
-            this.xtraScrollableControl1.Controls.Add(this.lblRemarks);
-            this.xtraScrollableControl1.Controls.Add(this.txtDocNum);
-            this.xtraScrollableControl1.Controls.Add(this.lblDocNum);
+            this.xtraScrollableControl1.Controls.Add(this.splitContainerControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(613, 401);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(829, 458);
             this.xtraScrollableControl1.TabIndex = 7;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
             // 
             // dtPostDate
             // 
             this.dtPostDate.EditValue = null;
-            this.dtPostDate.Location = new System.Drawing.Point(501, 17);
+            this.dtPostDate.Location = new System.Drawing.Point(338, 16);
             this.dtPostDate.MenuManager = this.ribbonControl1;
             this.dtPostDate.Name = "dtPostDate";
             this.dtPostDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -285,7 +409,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(430, 17);
+            this.labelControl2.Location = new System.Drawing.Point(267, 16);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(65, 13);
             this.labelControl2.TabIndex = 8;
@@ -293,7 +417,7 @@
             // 
             // cboGuarantor
             // 
-            this.cboGuarantor.Location = new System.Drawing.Point(79, 43);
+            this.cboGuarantor.Location = new System.Drawing.Point(78, 42);
             this.cboGuarantor.MenuManager = this.ribbonControl1;
             this.cboGuarantor.Name = "cboGuarantor";
             this.cboGuarantor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -301,20 +425,44 @@
             this.cboGuarantor.Properties.NullText = "[Guarantor]";
             this.cboGuarantor.Size = new System.Drawing.Size(173, 20);
             this.cboGuarantor.TabIndex = 7;
+            this.cboGuarantor.EditValueChanged += new System.EventHandler(this.cboGuarantor_EditValueChanged);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 43);
+            this.labelControl1.Location = new System.Drawing.Point(11, 42);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(53, 13);
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "Guarantor:";
             // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Horizontal = false;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtDocNum);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtPostDate);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lblDocNum);
+            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl2);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lblRemarks);
+            this.splitContainerControl1.Panel1.Controls.Add(this.cboGuarantor);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtRemarks);
+            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.popupContainerControl1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(829, 458);
+            this.splitContainerControl1.SplitterPosition = 150;
+            this.splitContainerControl1.TabIndex = 10;
+            this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
             // CollectionWorkspace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 547);
+            this.ClientSize = new System.Drawing.Size(829, 604);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "CollectionWorkspace";
@@ -326,12 +474,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDocNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPopupSchedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
+            this.popupContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaidAmount)).EndInit();
             this.xtraScrollableControl1.ResumeLayout(false);
-            this.xtraScrollableControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -363,5 +518,15 @@
         private DevExpress.XtraEditors.LookUpEdit cboGuarantor;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit dtPostDate;
+        private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit txtDocNo;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtPaidAmount;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     }
 }
