@@ -139,6 +139,7 @@
             this.cboSearchIndex.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cboSearchIndex.Size = new System.Drawing.Size(100, 20);
             this.cboSearchIndex.TabIndex = 8;
+            this.cboSearchIndex.TabStop = false;
             // 
             // txtSearch
             // 
@@ -187,7 +188,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(707, 32);
+            this.ribbonControl1.Size = new System.Drawing.Size(703, 32);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // ribbonPage1
@@ -207,14 +208,14 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 377);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(707, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(703, 27);
             // 
             // findLoan
             // 
             this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 404);
+            this.ClientSize = new System.Drawing.Size(703, 404);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cboSearchIndex);

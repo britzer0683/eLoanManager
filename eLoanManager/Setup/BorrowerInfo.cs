@@ -257,6 +257,8 @@ namespace eLoanSystem.Setup
                 oManager.AddBorrower(oUnit);
                 oManager.Close();
 
+                txtBorrowerCode.Enabled = false;
+                MessageBox.Show("Adding successfull!!!", "Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
@@ -296,6 +298,9 @@ namespace eLoanSystem.Setup
 
                 oManager.UpdateBorrower(oUnit);
                 oManager.Close();
+
+                txtBorrowerCode.Enabled = false;
+                MessageBox.Show("Updating successfull!!!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -336,6 +341,11 @@ namespace eLoanSystem.Setup
             {
                 this.OpenDocument(oForm.SelectedCode);
             }
+
+        }
+
+        private void txtBorrowerCode_EditValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

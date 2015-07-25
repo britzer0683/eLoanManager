@@ -83,7 +83,13 @@ namespace eLoanSystem
 
         private void navBarNewApplicationLoan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            
+            viewLoanApplications oForm = new viewLoanApplications();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ActiveUserID = this.ActiveUserID;
+            oForm.MdiParent = this;
+
+            oForm.Show();
         }
 
         
@@ -146,12 +152,36 @@ namespace eLoanSystem
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CollectionWorkspace oForm = new CollectionWorkspace();
+            CollectionDocument oForm = new CollectionDocument();
 
             oForm.ConnectionString = this.ConnectionString;
             oForm.ActiveUserID = this.ActiveUserID;
             oForm.MdiParent = this;
             oForm.Show();
+        }
+
+        private void navBarCashReleaseRegister_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            viewCashRelease oForm = new viewCashRelease();
+
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.MdiParent = this;
+            oForm.Show();
+        }
+
+        private void eLoanMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Application.Exit();
+        }
+
+        private void eLoanMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close this application?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
         }
     }
 }

@@ -136,11 +136,11 @@
     <Compile Include="Transaction\addOtherCharges.Designer.cs">
       <DependentUpon>addOtherCharges.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction\CollectionWorkspace.cs">
+    <Compile Include="Transaction\CollectionDocument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction\CollectionWorkspace.Designer.cs">
-      <DependentUpon>CollectionWorkspace.cs</DependentUpon>
+    <Compile Include="Transaction\CollectionDocument.Designer.cs">
+      <DependentUpon>CollectionDocument.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction\CashFundRelease.cs">
       <SubType>Form</SubType>
@@ -165,6 +165,12 @@
     </Compile>
     <Compile Include="Transaction\findCashReleaseDocument.Designer.cs">
       <DependentUpon>findCashReleaseDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\findCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\findCollection.Designer.cs">
+      <DependentUpon>findCollection.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction\findEmployee.cs">
       <SubType>Form</SubType>
@@ -238,6 +244,12 @@
     <Compile Include="Transaction\PrintCashRelease.Designer.cs">
       <DependentUpon>PrintCashRelease.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transaction\PrintCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PrintCollection.Designer.cs">
+      <DependentUpon>PrintCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction\PrintLoanApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,11 +268,11 @@
     <Compile Include="ViewForms\viewCashFundEntry.Designer.cs">
       <DependentUpon>viewCashFundEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewForms\viewCashFundRelease.cs">
+    <Compile Include="ViewForms\viewCashRelease.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewForms\viewCashFundRelease.Designer.cs">
-      <DependentUpon>viewCashFundRelease.cs</DependentUpon>
+    <Compile Include="ViewForms\viewCashRelease.Designer.cs">
+      <DependentUpon>viewCashRelease.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewForms\viewEmployer.cs">
       <SubType>Form</SubType>
@@ -341,8 +353,8 @@
     <EmbeddedResource Include="Transaction\addOtherCharges.resx">
       <DependentUpon>addOtherCharges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction\CollectionWorkspace.resx">
-      <DependentUpon>CollectionWorkspace.cs</DependentUpon>
+    <EmbeddedResource Include="Transaction\CollectionDocument.resx">
+      <DependentUpon>CollectionDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\CashFundRelease.resx">
       <DependentUpon>CashFundRelease.cs</DependentUpon>
@@ -355,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\findCashReleaseDocument.resx">
       <DependentUpon>findCashReleaseDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\findCollection.resx">
+      <DependentUpon>findCollection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaction\findEmployee.resx">
       <DependentUpon>findEmployee.cs</DependentUpon>
@@ -392,17 +407,26 @@
     <EmbeddedResource Include="Transaction\PrintCashRelease.resx">
       <DependentUpon>PrintCashRelease.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PrintCollection.resx">
+      <DependentUpon>PrintCollection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction\PrintLoanApplication.resx">
       <DependentUpon>PrintLoanApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForms\viewBorrowers.resx">
       <DependentUpon>viewBorrowers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\viewCashRelease.resx">
+      <DependentUpon>viewCashRelease.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewForms\viewEmployer.resx">
       <DependentUpon>viewEmployer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForms\viewGuarantorFinancer.resx">
       <DependentUpon>viewGuarantorFinancer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\viewLoanApplications.resx">
+      <DependentUpon>viewLoanApplications.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

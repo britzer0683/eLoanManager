@@ -124,6 +124,7 @@
             this.txtBorrowerCode.Name = "txtBorrowerCode";
             this.txtBorrowerCode.Size = new System.Drawing.Size(100, 20);
             this.txtBorrowerCode.TabIndex = 3;
+            this.txtBorrowerCode.EditValueChanged += new System.EventHandler(this.txtBorrowerCode_EditValueChanged);
             // 
             // txtLastName
             // 
@@ -373,7 +374,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(733, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(729, 144);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barSaveAndClose
@@ -479,9 +480,9 @@
             this.xtraScrollableControl1.Controls.Add(this.labelControl2);
             this.xtraScrollableControl1.Controls.Add(this.labelControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 144);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(733, 465);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(729, 455);
             this.xtraScrollableControl1.TabIndex = 15;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
             // 
@@ -525,7 +526,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 611);
+            this.ClientSize = new System.Drawing.Size(729, 599);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "BorrowerInfo";

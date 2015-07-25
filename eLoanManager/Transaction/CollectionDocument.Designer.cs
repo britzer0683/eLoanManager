@@ -1,6 +1,6 @@
 ﻿namespace eLoanSystem.Transaction
 {
-    partial class CollectionWorkspace
+    partial class CollectionDocument
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionWorkspace));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionDocument));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barNew = new DevExpress.XtraBars.BarButtonItem();
             this.barSaveDocument = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barMenuExit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.lblDocNum = new DevExpress.XtraEditors.LabelControl();
@@ -60,11 +61,11 @@
             this.txtPaidAmount = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dtPostDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cboGuarantor = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).BeginInit();
@@ -78,11 +79,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaidAmount)).BeginInit();
             this.xtraScrollableControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -93,13 +94,14 @@
             this.barNew,
             this.barSaveDocument,
             this.barButtonItem1,
-            this.barMenuExit});
+            this.barMenuExit,
+            this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(829, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(829, 144);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barNew
@@ -116,6 +118,7 @@
             this.barSaveDocument.Caption = "Save";
             this.barSaveDocument.Glyph = ((System.Drawing.Image)(resources.GetObject("barSaveDocument.Glyph")));
             this.barSaveDocument.Id = 2;
+            this.barSaveDocument.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.barSaveDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSaveDocument.LargeGlyph")));
             this.barSaveDocument.Name = "barSaveDocument";
             this.barSaveDocument.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
@@ -126,6 +129,7 @@
             this.barButtonItem1.Caption = "Find";
             this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
             this.barButtonItem1.Id = 3;
+            this.barButtonItem1.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
             this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
@@ -136,9 +140,20 @@
             this.barMenuExit.Caption = "Exit";
             this.barMenuExit.Glyph = ((System.Drawing.Image)(resources.GetObject("barMenuExit.Glyph")));
             this.barMenuExit.Id = 4;
+            this.barMenuExit.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q));
             this.barMenuExit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barMenuExit.LargeGlyph")));
             this.barMenuExit.Name = "barMenuExit";
             this.barMenuExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barMenuExit_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Print Preview";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -152,7 +167,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSaveDocument);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barMenuExit, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barMenuExit);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
             // 
@@ -201,7 +217,7 @@
             this.cboPopupSchedule,
             this.txtDocNo,
             this.txtPaidAmount});
-            this.gridControl1.Size = new System.Drawing.Size(829, 296);
+            this.gridControl1.Size = new System.Drawing.Size(829, 305);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -242,7 +258,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Borrower";
-            this.gridColumn6.FieldName = "Borrower";
+            this.gridColumn6.FieldName = "CardName";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 1;
@@ -386,11 +402,34 @@
             // 
             this.xtraScrollableControl1.Controls.Add(this.splitContainerControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 146);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 144);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(829, 458);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(829, 460);
             this.xtraScrollableControl1.TabIndex = 7;
             this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Horizontal = false;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtDocNum);
+            this.splitContainerControl1.Panel1.Controls.Add(this.dtPostDate);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lblDocNum);
+            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl2);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lblRemarks);
+            this.splitContainerControl1.Panel1.Controls.Add(this.cboGuarantor);
+            this.splitContainerControl1.Panel1.Controls.Add(this.txtRemarks);
+            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.popupContainerControl1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(829, 460);
+            this.splitContainerControl1.SplitterPosition = 150;
+            this.splitContainerControl1.TabIndex = 10;
+            this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // dtPostDate
             // 
@@ -435,37 +474,14 @@
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "Guarantor:";
             // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtDocNum);
-            this.splitContainerControl1.Panel1.Controls.Add(this.dtPostDate);
-            this.splitContainerControl1.Panel1.Controls.Add(this.lblDocNum);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.lblRemarks);
-            this.splitContainerControl1.Panel1.Controls.Add(this.cboGuarantor);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtRemarks);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.popupContainerControl1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(829, 458);
-            this.splitContainerControl1.SplitterPosition = 150;
-            this.splitContainerControl1.TabIndex = 10;
-            this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // CollectionWorkspace
+            // CollectionDocument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 604);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "CollectionWorkspace";
+            this.Name = "CollectionDocument";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Collection";
             this.Load += new System.EventHandler(this.batchPaymentCollection_Load);
@@ -482,11 +498,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaidAmount)).EndInit();
             this.xtraScrollableControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPostDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGuarantor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -528,5 +544,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit txtDocNo;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtPaidAmount;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

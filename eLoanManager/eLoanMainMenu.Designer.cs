@@ -90,7 +90,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(817, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(813, 144);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.ribbonControl1_Merge);
             // 
@@ -217,10 +217,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 488);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 484);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(817, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(813, 31);
             // 
             // navBarControl1
             // 
@@ -239,10 +239,10 @@
             this.navBarBorrowerFiles,
             this.navViewGuarantor,
             this.navBarItem5});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 146);
+            this.navBarControl1.Location = new System.Drawing.Point(0, 144);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 205;
-            this.navBarControl1.Size = new System.Drawing.Size(205, 342);
+            this.navBarControl1.Size = new System.Drawing.Size(205, 340);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -285,10 +285,11 @@
             // 
             this.navBarCashReleaseRegister.Caption = "Cash Release Register";
             this.navBarCashReleaseRegister.Name = "navBarCashReleaseRegister";
+            this.navBarCashReleaseRegister.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarCashReleaseRegister_LinkClicked);
             // 
             // navBarItem1
             // 
-            this.navBarItem1.Caption = "Cash/Fund Entry Register";
+            this.navBarItem1.Caption = "Collection Register";
             this.navBarItem1.Name = "navBarItem1";
             // 
             // navBarGroup2
@@ -354,7 +355,7 @@
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 515);
+            this.ClientSize = new System.Drawing.Size(813, 515);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
@@ -364,6 +365,8 @@
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "eLoanMainMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.eLoanMainMenu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.eLoanMainMenu_FormClosed);
             this.Load += new System.EventHandler(this.eLoanMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();

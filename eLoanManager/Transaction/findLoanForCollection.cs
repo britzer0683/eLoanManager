@@ -137,5 +137,10 @@ namespace eLoanSystem.Transaction
                 this.Close();
             }
         }
+
+        private void cboSearchIndex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

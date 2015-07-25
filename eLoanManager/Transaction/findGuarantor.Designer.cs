@@ -57,7 +57,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(570, 32);
+            this.ribbonControl1.Size = new System.Drawing.Size(566, 32);
             // 
             // ribbonPage1
             // 
@@ -92,6 +92,7 @@
             "Guarantor ID"});
             this.cboSelectedIndex.Size = new System.Drawing.Size(100, 20);
             this.cboSelectedIndex.TabIndex = 2;
+            this.cboSelectedIndex.TabStop = false;
             // 
             // txtSearch
             // 
@@ -170,7 +171,7 @@
             this.AllowDisplayRibbon = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 321);
+            this.ClientSize = new System.Drawing.Size(566, 328);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.gridControl1);

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace eLoanSystem.Transaction
 {
-    public partial class CollectionWorkspace : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class CollectionDocument : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public CollectionWorkspace()
+        public CollectionDocument()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace eLoanSystem.Transaction
             DataTable dt = new DataTable();
 
             dt.Columns.Add("RefLoanNo", typeof(string));
-            dt.Columns.Add("Borrower", typeof(string));
+            dt.Columns.Add("CardName", typeof(string));
             dt.Columns.Add("ScheduleNo", typeof(string));
             dt.Columns.Add("DueDate", typeof(DateTime));
             dt.Columns.Add("DueAmount", typeof(double));
@@ -63,7 +63,7 @@ namespace eLoanSystem.Transaction
 
             oCommand.Connection = oConnection;
             oCommand.CommandText = "SELECT * FROM OCL WHERE OCL.DocNum=@DocNum";
-            oCommand.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
+            oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocumentNo));
 
             oAdapter.SelectCommand = oCommand;
             oAdapter.Fill(dt);
@@ -74,8 +74,20 @@ namespace eLoanSystem.Transaction
             cboGuarantor.EditValue = oRow["Guarantor"].ToString();
             txtRemarks.Text = oRow["Remarks"].ToString();
             dtPostDate.EditValue = (DateTime)oRow["DateCreated"];
+            
+            DataTable dtLineItems = new DataTable();
+            oAdapter = new SqlDataAdapter();
+            oCommand = new SqlCommand();
 
-            gridControl1.DataSource = dt;
+            oCommand.Connection = oConnection;
+            oCommand.CommandText = "SELECT * FROM CL1 WHERE DocNum=@DocNum";
+            oCommand.Parameters.Add(new SqlParameter("@DocNum", sDocumentNo));
+
+            oAdapter.SelectCommand = oCommand;
+            oAdapter.Fill(dtLineItems);
+            this.LineItems = dtLineItems;
+
+            gridControl1.DataSource = this.LineItems;
             gridControl1.Refresh();
 
             oConnection.Close();
@@ -103,7 +115,7 @@ namespace eLoanSystem.Transaction
 
         private void barNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CollectionWorkspace oForm = new CollectionWorkspace();
+            CollectionDocument oForm = new CollectionDocument();
 
             oForm.ConnectionString = this.ConnectionString;
             oForm.MdiParent = this.MdiParent;
@@ -139,7 +151,16 @@ namespace eLoanSystem.Transaction
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            findCollection oForm = new findCollection();
 
+            oForm.ConnectionString = this.ConnectionString;
+            oForm.ShowDialog();
+
+            if (oForm.DocumentNumber == null)
+            {
+                return;
+            }
+            OpenDocument(oForm.DocumentNumber);
         }
 
         string GetSeries()
@@ -195,11 +216,14 @@ namespace eLoanSystem.Transaction
                         cmd = new SqlCommand();
 
                         cmd.Connection = oConnection;
-                        cmd.CommandText = "INSERT INTO CL1 (DocNum, RefLoanNo, ScheduleNo, DueAmount, PaidAmount, ChangeAmount) VALUES (@DocNum, @RefLoanNo, @ScheduleNo, @DueAmount, @PaidAmount, @ChangeAmount)";
+                        cmd.CommandText = "INSERT INTO CL1 (DocNum, RefLoanNo, CardName, ScheduleNo, DueDate, DueAmount, PaidAmount, ChangeAmount) VALUES (@DocNum, @RefLoanNo, @CardName, @ScheduleNo, @DueDate, @DueAmount, @PaidAmount, @ChangeAmount)";
 
                         cmd.Parameters.Add(new SqlParameter("@DocNum", txtDocNum.Text));
                         cmd.Parameters.Add(new SqlParameter("@RefLoanNo", oRow["RefLoanNo"].ToString()));
+                        cmd.Parameters.Add(new SqlParameter("@CardName", oRow["CardName"].ToString()));
                         cmd.Parameters.Add(new SqlParameter("@ScheduleNo", oRow["ScheduleNo"].ToString()));
+                        cmd.Parameters.Add(new SqlParameter("@DueDate", oRow["DueDate"].ToString()));
+                        
                         cmd.Parameters.Add(new SqlParameter("@DueAmount", oRow["DueAmount"].ToString()));
                         cmd.Parameters.Add(new SqlParameter("@PaidAmount", oRow["PaidAmount"].ToString()));
                         cmd.Parameters.Add(new SqlParameter("@ChangeAmount", oRow["ChangeAmount"].ToString()));
@@ -320,7 +344,7 @@ namespace eLoanSystem.Transaction
             int iFocusedRowIndex = gridView1.FocusedRowHandle;
                 
             gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["RefLoanNo"], oForm.DocumentNo);
-            gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["Borrower"], oForm.Borrower);
+            gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["CardName"], oForm.Borrower);
             
 
             BindSchedule(oForm.DocumentNo);
@@ -385,6 +409,16 @@ namespace eLoanSystem.Transaction
 
             gridView1.SetRowCellValue(iFocusedRowIndex, gridView1.Columns["ChangeAmount"], val - dueAmount);
             
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PrintCollection oForm = new PrintCollection();
+
+            oForm.DocumentNumber = txtDocNum.Text;
+            oForm.ViewLayout();
+
+            oForm.ShowDialog();
         }
     }
 }

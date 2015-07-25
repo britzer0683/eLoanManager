@@ -91,7 +91,6 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewClientControl3 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnRefreshCashReleased = new DevExpress.XtraEditors.SimpleButton();
@@ -133,6 +132,7 @@
             this.layoutViewColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutViewColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutViewColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.backstageViewClientControl5 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewClientControl8 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
@@ -275,7 +275,7 @@
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.MenuManager = this.ribbonControl1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(808, 557);
+            this.gridControl1.Size = new System.Drawing.Size(804, 545);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2,
@@ -319,7 +319,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
-            this.ribbonControl1.Size = new System.Drawing.Size(996, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(992, 146);
             // 
             // barNewBorrower
             // 
@@ -495,7 +495,7 @@
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.SelectedTab = this.backstageViewTabItem7;
             this.backstageViewControl1.SelectedTabIndex = 9;
-            this.backstageViewControl1.Size = new System.Drawing.Size(996, 545);
+            this.backstageViewControl1.Size = new System.Drawing.Size(992, 533);
             this.backstageViewControl1.TabIndex = 1;
             this.backstageViewControl1.Text = "backstageViewControl1";
             this.backstageViewControl1.Click += new System.EventHandler(this.backstageViewControl1_Click);
@@ -505,7 +505,7 @@
             this.backstageViewClientControl11.Controls.Add(this.grdCtlLoanInfo);
             this.backstageViewClientControl11.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl11.Name = "backstageViewClientControl11";
-            this.backstageViewClientControl11.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl11.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl11.TabIndex = 12;
             // 
             // grdCtlLoanInfo
@@ -517,7 +517,7 @@
             this.grdCtlLoanInfo.Name = "grdCtlLoanInfo";
             this.grdCtlLoanInfo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtLoanNo});
-            this.grdCtlLoanInfo.Size = new System.Drawing.Size(808, 557);
+            this.grdCtlLoanInfo.Size = new System.Drawing.Size(804, 545);
             this.grdCtlLoanInfo.TabIndex = 0;
             this.grdCtlLoanInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdViewLoanInfo});
@@ -680,7 +680,7 @@
             this.backstageViewClientControl2.Controls.Add(this.splitContainerControl1);
             this.backstageViewClientControl2.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl2.Name = "backstageViewClientControl2";
-            this.backstageViewClientControl2.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl2.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl2.TabIndex = 1;
             // 
             // splitContainerControl1
@@ -697,7 +697,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(808, 557);
+            this.splitContainerControl1.Size = new System.Drawing.Size(804, 545);
             this.splitContainerControl1.SplitterPosition = 54;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -776,7 +776,7 @@
             this.gridControl3.MainView = this.gridView4;
             this.gridControl3.MenuManager = this.ribbonControl1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(808, 491);
+            this.gridControl3.Size = new System.Drawing.Size(804, 479);
             this.gridControl3.TabIndex = 0;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -871,20 +871,12 @@
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 7;
             // 
-            // backstageViewClientControl5
-            // 
-            this.backstageViewClientControl5.Location = new System.Drawing.Point(192, 0);
-            this.backstageViewClientControl5.Name = "backstageViewClientControl5";
-            this.backstageViewClientControl5.Size = new System.Drawing.Size(808, 557);
-            this.backstageViewClientControl5.TabIndex = 5;
-            this.backstageViewClientControl5.Load += new System.EventHandler(this.backstageViewClientControl5_Load);
-            // 
             // backstageViewClientControl3
             // 
             this.backstageViewClientControl3.Controls.Add(this.splitContainerControl2);
             this.backstageViewClientControl3.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl3.Name = "backstageViewClientControl3";
-            this.backstageViewClientControl3.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl3.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl3.TabIndex = 2;
             // 
             // splitContainerControl2
@@ -901,7 +893,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gridControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(808, 557);
+            this.splitContainerControl2.Size = new System.Drawing.Size(804, 545);
             this.splitContainerControl2.SplitterPosition = 52;
             this.splitContainerControl2.TabIndex = 2;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -980,7 +972,7 @@
             this.gridControl4.MainView = this.gridView5;
             this.gridControl4.MenuManager = this.ribbonControl1;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(808, 493);
+            this.gridControl4.Size = new System.Drawing.Size(804, 481);
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -1081,7 +1073,7 @@
             this.backstageViewClientControl4.Controls.Add(this.grdCtlEmployersInfo);
             this.backstageViewClientControl4.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl4.Name = "backstageViewClientControl4";
-            this.backstageViewClientControl4.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl4.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl4.TabIndex = 3;
             // 
             // grdCtlEmployersInfo
@@ -1090,7 +1082,7 @@
             this.grdCtlEmployersInfo.Location = new System.Drawing.Point(0, 0);
             this.grdCtlEmployersInfo.MainView = this.grdViewEmployersInfo;
             this.grdCtlEmployersInfo.Name = "grdCtlEmployersInfo";
-            this.grdCtlEmployersInfo.Size = new System.Drawing.Size(808, 557);
+            this.grdCtlEmployersInfo.Size = new System.Drawing.Size(804, 545);
             this.grdCtlEmployersInfo.TabIndex = 0;
             this.grdCtlEmployersInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdViewEmployersInfo});
@@ -1105,7 +1097,7 @@
             this.backstageViewClientControl6.Controls.Add(this.grdCtlBorrowerInfo);
             this.backstageViewClientControl6.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl6.Name = "backstageViewClientControl6";
-            this.backstageViewClientControl6.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl6.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl6.TabIndex = 6;
             // 
             // grdCtlBorrowerInfo
@@ -1116,7 +1108,7 @@
             this.grdCtlBorrowerInfo.Name = "grdCtlBorrowerInfo";
             this.grdCtlBorrowerInfo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtBorrowerCode});
-            this.grdCtlBorrowerInfo.Size = new System.Drawing.Size(808, 557);
+            this.grdCtlBorrowerInfo.Size = new System.Drawing.Size(804, 545);
             this.grdCtlBorrowerInfo.TabIndex = 3;
             this.grdCtlBorrowerInfo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1204,7 +1196,7 @@
             this.backstageViewClientControl7.Controls.Add(this.grdCtlGuarantorFinancer);
             this.backstageViewClientControl7.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl7.Name = "backstageViewClientControl7";
-            this.backstageViewClientControl7.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl7.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl7.TabIndex = 7;
             // 
             // grdCtlGuarantorFinancer
@@ -1215,7 +1207,7 @@
             this.grdCtlGuarantorFinancer.Name = "grdCtlGuarantorFinancer";
             this.grdCtlGuarantorFinancer.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtCode});
-            this.grdCtlGuarantorFinancer.Size = new System.Drawing.Size(808, 557);
+            this.grdCtlGuarantorFinancer.Size = new System.Drawing.Size(804, 545);
             this.grdCtlGuarantorFinancer.TabIndex = 1;
             this.grdCtlGuarantorFinancer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView2});
@@ -1297,12 +1289,20 @@
             this.layoutViewColumn6.Visible = true;
             this.layoutViewColumn6.VisibleIndex = 5;
             // 
+            // backstageViewClientControl5
+            // 
+            this.backstageViewClientControl5.Location = new System.Drawing.Point(192, 0);
+            this.backstageViewClientControl5.Name = "backstageViewClientControl5";
+            this.backstageViewClientControl5.Size = new System.Drawing.Size(804, 545);
+            this.backstageViewClientControl5.TabIndex = 5;
+            this.backstageViewClientControl5.Load += new System.EventHandler(this.backstageViewClientControl5_Load);
+            // 
             // backstageViewClientControl8
             // 
             this.backstageViewClientControl8.Controls.Add(this.gridControl2);
             this.backstageViewClientControl8.Location = new System.Drawing.Point(208, 0);
             this.backstageViewClientControl8.Name = "backstageViewClientControl8";
-            this.backstageViewClientControl8.Size = new System.Drawing.Size(788, 545);
+            this.backstageViewClientControl8.Size = new System.Drawing.Size(784, 533);
             this.backstageViewClientControl8.TabIndex = 8;
             // 
             // gridControl2
@@ -1313,7 +1313,7 @@
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtCardCode});
-            this.gridControl2.Size = new System.Drawing.Size(788, 545);
+            this.gridControl2.Size = new System.Drawing.Size(784, 533);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1});
@@ -1390,7 +1390,7 @@
             this.backstageViewClientControl10.Controls.Add(this.gridControl1);
             this.backstageViewClientControl10.Location = new System.Drawing.Point(192, 0);
             this.backstageViewClientControl10.Name = "backstageViewClientControl10";
-            this.backstageViewClientControl10.Size = new System.Drawing.Size(808, 557);
+            this.backstageViewClientControl10.Size = new System.Drawing.Size(804, 545);
             this.backstageViewClientControl10.TabIndex = 10;
             // 
             // backstageViewTabItem10
@@ -1795,7 +1795,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 691);
+            this.ClientSize = new System.Drawing.Size(992, 679);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "eLoanMain";

@@ -98,5 +98,21 @@ namespace eLoan.BL
 
         }
 
+        public DataTable GetCashReleased()
+        {
+            SqlCommand oCommand = new SqlCommand();
+            SqlDataAdapter oAdapter = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            oCommand.Connection = this.Connection;
+            oCommand.CommandType = CommandType.Text;
+            oCommand.CommandText = "select ocr.DocNum, OCR.SourceOfFund, OCR.Guarantor, OCR.Remarks, CR1.RefLoanNo, CR1.CardName Borrower, CR1.LoanAmount  from OCR join cr1 on ocr.DocNum = cr1.DocNum";
+            oAdapter.SelectCommand = oCommand;
+            oAdapter.Fill(dt);
+
+            return dt;
+
+        }
+
     }
 }
